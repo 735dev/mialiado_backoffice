@@ -1,0 +1,42 @@
+/* Tokens de Aliado, tomados de los prototipos (aliado_prototipos/backoffice). */
+:root {
+  --bg: #f3f8f1;
+  --surface: #ffffff;
+  --surface-2: #eaf1e6;
+  --line: #e3eae6;
+  --line-strong: #869790;
+  --text: #0e1a16;
+  --text-soft: #2f3f39;
+  --text-muted: #566660;
+  --primary: #22f797;
+  --on-primary: #0b1f17;
+  --primary-deep: #067a46;
+  --primary-tint: #ddfbeb;
+  --warn: #7a5309;
+  --warn-tint: #f8ebc8;
+  --err: #d2503b;
+  --err-deep: #b03a26;
+  --err-tint: #fbe4df;
+  color-scheme: light;
+}
+
+:root.dark {
+  --bg: #0d1613;
+  --surface: #15211c;
+  --surface-2: #1c2b25;
+  --line: #24352e;
+  --line-strong: #4f645b;
+  --text: #e9f3ee;
+  --text-soft: #c3d3cb;
+  --text-muted: #93a89e;
+  --primary: #22f797;
+  --on-primary: #0b1f17;
+  --primary-deep: #5ee7a3;
+  --primary-tint: #12352a;
+  --warn: #f2c96b;
+  --warn-tint: #3a2f14;
+  --err: #f08a76;
+  --err-deep: #f08a76;
+  --err-tint: #3d1f19;
+  color-scheme: dark;
+}
