@@ -12,7 +12,7 @@ interface PaginatedCompleteProps {
 
 /** Numeros de pagina con "..." cuando hay muchas (siempre primera, ultima y vecinas de la actual). */
 export function pageWindow(page: number, totalPages: number): (number | 'gap')[] {
-  if (totalPages <= 7) return Array.from({ length: totalPages }, (_, i) => i + 1);
+  if (totalPages <= 5) return Array.from({ length: totalPages }, (_, i) => i + 1);
   const keep = new Set([1, totalPages, page - 1, page, page + 1]);
   const result: (number | 'gap')[] = [];
   let last = 0;
@@ -32,7 +32,7 @@ export function PaginatedComplete({ page, limit, total, links, onPageChange }: P
   const totalPages = Math.max(1, Math.ceil(total / limit));
 
   return (
-    <nav aria-label={t('pagination.page', { page, total: totalPages })} className="flex items-center justify-center gap-1.5">
+    <nav aria-label={t('pagination.page', { page, total: totalPages })} className="flex flex-wrap items-center justify-center gap-1.5">
       <button
         type="button"
         className={NAV}

@@ -44,13 +44,13 @@ interface FlechasProps {
 function Flechas({ nodo, index, total, busy, onMove }: FlechasProps) {
   const t = useT();
   return (
-    <div className="flex flex-none flex-col">
+    <div className="flex flex-none flex-row sm:flex-col">
       <button
         type="button"
         aria-label={t('categorias.arbol.subir', { nombre: nodo.nombre })}
         disabled={index === 0 || busy}
         onClick={() => onMove(nodo, -1)}
-        className="flex h-5 w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
+        className="flex h-10 w-9 sm:h-5 sm:w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
       >
         <ChevronUp size={14} />
       </button>
@@ -59,7 +59,7 @@ function Flechas({ nodo, index, total, busy, onMove }: FlechasProps) {
         aria-label={t('categorias.arbol.bajar', { nombre: nodo.nombre })}
         disabled={index === total - 1 || busy}
         onClick={() => onMove(nodo, 1)}
-        className="flex h-5 w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
+        className="flex h-10 w-9 sm:h-5 sm:w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
       >
         <ChevronDown size={14} />
       </button>
@@ -110,7 +110,7 @@ function Fila({ nodo, index, total, open, dragging, setDragging, selectedId, can
         dragging?.id === nodo.id && 'opacity-50',
       )}
     >
-      <GripVertical size={18} aria-hidden="true" className={cn('flex-none text-ink-muted', canEdit ? 'cursor-grab' : 'opacity-30')} />
+      <GripVertical size={18} aria-hidden="true" className={cn('hidden flex-none text-ink-muted sm:block', canEdit ? 'cursor-grab' : 'opacity-30')} />
       {!sub && (
         <button
           type="button"
@@ -118,12 +118,12 @@ function Fila({ nodo, index, total, open, dragging, setDragging, selectedId, can
           aria-expanded={open}
           aria-label={t(open ? 'categorias.arbol.contraerUna' : 'categorias.arbol.expandirUna', { nombre: nodo.nombre })}
           disabled={nodo.hijos === 0}
-          className="flex h-8 w-8 flex-none items-center justify-center rounded-full hover:bg-surface disabled:opacity-30"
+          className="flex h-10 w-10 sm:h-8 sm:w-8 flex-none items-center justify-center rounded-full hover:bg-surface disabled:opacity-30"
         >
           {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
         </button>
       )}
-      <span className="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-primary-tint text-primary-deep">
+      <span className="hidden h-9 w-9 sm:flex flex-none items-center justify-center rounded-full bg-primary-tint text-primary-deep">
         {renderIcono(nodo.icono)}
       </span>
       <div className="min-w-0 flex-1">
@@ -169,7 +169,7 @@ export function CategoriaTree({ arbol, expanded, ...rest }: CategoriaTreeProps) 
               <Fila {...rest} nodo={c} index={i} total={tops.length} open={open} dragging={dragging} setDragging={setDragging} />
             </ul>
             {open && hijos.length > 0 && (
-              <ul className="ml-6 flex flex-col gap-1.5 border-l-2 border-line pl-3 sm:ml-10">
+              <ul className="ml-2 flex flex-col gap-1.5 border-l-2 border-line pl-3 sm:ml-10">
                 {hijos.map((h, j) => (
                   <Fila key={h.id} {...rest} nodo={h} index={j} total={hijos.length} dragging={dragging} setDragging={setDragging} />
                 ))}
