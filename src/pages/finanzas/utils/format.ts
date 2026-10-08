@@ -11,13 +11,6 @@ export function formatMinutes(min: number): { h: number; m: number } {
   return { h: Math.floor(total / 60), m: total % 60 };
 }
 
-const csvCell = (v: string | number) => `"${String(v).replace(/"/g, '""')}"`;
-
-/** CSV de movimientos (cabecera + filas) listo para descargar. */
-export function toCsv(rows: Array<Array<string | number>>): string {
-  return rows.map((r) => r.map(csvCell).join(',')).join('\n');
-}
-
 const METODOS_CONOCIDOS = ['tarjeta', 'paypal', 'binance_pay'];
 /** Clave i18n del metodo de pago o, si es desconocido, null (se muestra el valor del backend tal cual). */
 export function metodoKey(metodo: string): string | null {

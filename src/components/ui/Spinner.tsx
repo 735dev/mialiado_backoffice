@@ -1,10 +1,12 @@
+import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 
 export function Spinner({ size = 24, className }: { size?: number; className?: string }) {
+  const t = useT();
   return (
     <svg
       role="status"
-      aria-label="loading"
+      aria-label={t('common.loading')}
       width={size}
       height={size}
       viewBox="0 0 24 24"

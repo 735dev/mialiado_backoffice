@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils/cn';
 import type { ComercioDetalle, DocumentoComercio } from '@/providers/comerciosProvider';
 import { osmEmbedUrl, osmLink, resumenHorario } from '../utils/format';
 import { formatDateTime } from '@/lib/utils/format';
+import { esUrlHttp } from '@/lib/utils/url';
 
 export function Panel({ title, subtitle, action, children }: { title: string; subtitle?: string; action?: ReactNode; children: ReactNode }) {
   return (
@@ -86,15 +87,17 @@ export function DocumentosCard({ documentos, puedeEditar, busy, onToggle }: Docs
                 </div>
                 <div className="flex items-center justify-between gap-2">
                   <Badge tone={d.revisado ? 'ok' : 'warn'}>{d.revisado ? t('comercios.detalle.revisado') : t('comercios.detalle.pendiente')}</Badge>
-                  <a
-                    href={d.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label={t('comercios.detalle.abrirDoc', { tipo })}
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2"
-                  >
-                    <ExternalLink size={18} aria-hidden="true" />
-                  </a>
+                  {esUrlHttp(d.url) ? (
+                    <a
+                      href={d.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={t('comercios.detalle.abrirDoc', { tipo })}
+                      className="flex h-11 w-11 items-center justify-center rounded-full text-ink-muted hover:bg-surface-2"
+                    >
+                      <ExternalLink size={18} aria-hidden="true" />
+                    </a>
+                  ) : null}
                 </div>
                 <button
                   type="button"
@@ -130,6 +133,8 @@ export function UbicacionCard({ c, confirmada }: { c: ComercioDetalle; confirmad
             title={t('comercios.detalle.mapa')}
             src={osmEmbedUrl(c.lat as number, c.lng as number)}
             loading="lazy"
+            sandbox="allow-scripts allow-same-origin"
+            referrerPolicy="no-referrer"
             className="block h-56 w-full border-0 md:h-64"
           />
         ) : (
@@ -144,7 +149,7 @@ export function UbicacionCard({ c, confirmada }: { c: ComercioDetalle; confirmad
           <span>
             {t('comercios.detalle.mapaCoords', { lat: (c.lat as number).toFixed(4), lng: (c.lng as number).toFixed(4) })}
           </span>
-          <a href={osmLink(c.lat as number, c.lng as number)} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center font-sans text-sm font-bold text-primary-deep">
+          <a href={osmLink(c.lat as number, c.lng as number)} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-sans text-sm font-bold text-primary-deep">
             {t('comercios.detalle.abrirMapa')}
           </a>
         </p>

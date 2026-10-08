@@ -12,7 +12,7 @@ import type {
   Reporte,
   Zona,
 } from '../models/reporte';
-import { buildQuery, run, runBlob } from './http';
+import { buildQuery, run, runBlob } from '@/lib/api/http';
 
 // Contrato: aliado_backend/docs/api/admin.md, seccion «Reportes (B14)».
 

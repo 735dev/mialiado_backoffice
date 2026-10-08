@@ -1,7 +1,7 @@
 import { apiAxios } from '@/lib/api/api';
 import type { ApiResult, Paginated } from '@/lib/api/types';
 import type { ConsultaAuditoria, DetalleEvento, Evento, Persona } from '../models/evento';
-import { buildQuery, run, runBlob } from './http';
+import { buildQuery, run, runBlob } from '@/lib/api/http';
 
 // Contrato: aliado_backend/docs/api/admin.md, seccion «Auditoria (B16)».
 

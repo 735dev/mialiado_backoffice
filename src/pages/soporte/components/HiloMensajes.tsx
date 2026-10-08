@@ -3,19 +3,10 @@ import { useEffect, useRef } from 'react';
 import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
+import { esUrlHttp } from '@/lib/utils/url';
 import type { MensajeTicket } from '../models/ticket';
 import { formatDateTime } from '@/lib/utils/format';
 import { Avatar } from '@/components/ui/Avatar';
-
-/** Solo se enlazan adjuntos http(s); cualquier otro texto se muestra como nombre de archivo. */
-function esUrlSegura(valor: string): boolean {
-  try {
-    const u = new URL(valor);
-    return u.protocol === 'https:' || u.protocol === 'http:';
-  } catch {
-    return false;
-  }
-}
 
 function Adjunto({ valor }: { valor: string }) {
   const contenido = (
@@ -25,7 +16,7 @@ function Adjunto({ valor }: { valor: string }) {
     </>
   );
   const clases = 'mt-2 inline-flex h-9 max-w-full items-center gap-2 rounded-pill bg-surface-2 px-3.5 text-xs font-semibold text-ink-soft';
-  return esUrlSegura(valor) ? (
+  return esUrlHttp(valor) ? (
     <a href={valor} target="_blank" rel="noopener noreferrer" className={cn(clases, 'hover:text-primary-deep')}>
       {contenido}
     </a>

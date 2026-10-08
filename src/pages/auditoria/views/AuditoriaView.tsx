@@ -9,7 +9,7 @@ import { FiltrosAuditoria } from '../components/FiltrosAuditoria';
 import { RegistroEventos } from '../components/RegistroEventos';
 import { useAuditoria, usePersonas } from '../hooks/useAuditoria';
 import { exportarEventos } from '../providers/auditoriaProvider';
-import { guardarArchivo, nombreSeguro } from '../utils/descarga';
+import { guardarArchivo, nombreSeguro } from '@/lib/utils/descarga';
 import { hoyCaracas } from '../utils/fechas';
 
 export const routeName = PATHS.auditoria;

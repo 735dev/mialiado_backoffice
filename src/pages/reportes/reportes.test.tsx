@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { renderWithProviders, resetStore, signInAs } from '@/test/utils';
 import { reporteInicial, reporteSchema } from './schemas/reporteSchemas';
-import { nombreSeguro } from './utils/descarga';
+import { nombreSeguro } from '@/lib/utils/descarga';
 import { rangoRapido } from './utils/format';
 import ReportesView from './views/ReportesView';
 

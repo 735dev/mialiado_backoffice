@@ -11,7 +11,7 @@ import {
   listarZonas,
   obtenerColumnas,
 } from '../providers/reportesProvider';
-import { guardarArchivo, nombreSeguro } from '../utils/descarga';
+import { guardarArchivo, nombreSeguro } from '@/lib/utils/descarga';
 import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 /** Columnas por tipo, categorias y zonas para armar el reporte. Si alguna falla, el selector queda sin opciones. */

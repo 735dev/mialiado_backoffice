@@ -11,7 +11,7 @@ import type {
   Plantilla,
   Zona,
 } from '../models/notificacion';
-import { buildQuery, run } from './http';
+import { buildQuery, run } from '@/lib/api/http';
 
 // Contrato: aliado_backend/docs/api/admin.md, seccion «Notificaciones masivas (B12)».
 

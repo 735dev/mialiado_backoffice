@@ -10,7 +10,7 @@ import type {
   TicketDetalle,
   UsuarioBusqueda,
 } from '../models/ticket';
-import { buildQuery, run } from './http';
+import { buildQuery, run } from '@/lib/api/http';
 
 // Contrato: aliado_backend/docs/api/admin.md, seccion «Soporte (B13)».
 

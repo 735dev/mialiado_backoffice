@@ -1,7 +1,7 @@
 import { apiAxios } from '@/lib/api/api';
 import type { ApiResult } from '@/lib/api/types';
 import type { CambiosMiembro, FiltroEstado, InvitacionNueva, ListaEquipo, MatrizPermisos, MiembroInvitado, RespuestaPermisos } from '../models/equipo';
-import { buildQuery, run } from './http';
+import { buildQuery, run } from '@/lib/api/http';
 
 // Contrato: aliado_backend/docs/api/admin.md, seccion «Equipo y roles (B15)».
 

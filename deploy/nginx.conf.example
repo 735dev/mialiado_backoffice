@@ -3,6 +3,17 @@ server {
     listen 80;
     server_name admin.aliado.example;
 
+    # Cabeceras de seguridad. `add_header` no se hereda si un location define las suyas: los location de abajo no definen add_header para heredarlas.
+    # CSP: scripts y conexiones solo del propio origen (la API pasa por /api/); fuentes de Google; mapa de OSM en iframe;
+    # imagenes de https (logos y fotos del servidor). 'unsafe-inline' solo en estilos (React usa style=).
+    # Si HTTPS termina en este nginx, mantener Strict-Transport-Security; si lo termina un balanceador, ponerlo alli.
+    add_header Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self'; frame-src https://www.openstreetmap.org; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()" always;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
     root /var/www/aliado_backoffice/dist;
     index index.html;
 
@@ -11,10 +22,18 @@ server {
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
+        client_max_body_size 10m;
+    }
+
+    # Los archivos con hash de Vite pueden cachearse; index.html no. Sin add_header propio: hereda las de seguridad.
+    location /assets/ {
+        expires 1y;
+        try_files $uri =404;
     }
 
     # SPA: cualquier ruta sin archivo vuelve a index.html
     location / {
+        expires -1; # sin add_header aqui: asi se heredan las cabeceras de seguridad del server
         try_files $uri $uri/ /index.html;
     }
 }
