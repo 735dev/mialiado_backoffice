@@ -1,3 +1,78 @@
 {
-  "title": "Categorías"
+  "title": "Categorías",
+  "subtitle": "Ordena cómo los usuarios descubren comercios. Los cambios se ven en la app al instante.",
+  "arbol": {
+    "titulo": "Categorías de la app",
+    "resumen": "{subs} subcategorías · {comercios} comercios",
+    "arrastra": "arrastra para ordenar",
+    "contraerTodo": "Contraer todo",
+    "expandirTodo": "Expandir todo",
+    "subcategorias": "{n} subcategorías",
+    "sinSub": "Sin subcategorías",
+    "comercios": "{n} comercios",
+    "oculta": "Oculta",
+    "contraerUna": "Contraer {nombre}",
+    "expandirUna": "Expandir {nombre}",
+    "subir": "Subir {nombre}",
+    "bajar": "Bajar {nombre}",
+    "mostrar": "Mostrar {nombre} en la app",
+    "editar": "Editar {nombre}"
+  },
+  "editor": {
+    "titulo": "Editor de categoría",
+    "editandoCategoria": "Editando categoría",
+    "editandoSub": "Editando subcategoría",
+    "cerrar": "Cerrar editor",
+    "asiSeVe": "Así se ve en la app de usuarios",
+    "nombre": "Nombre",
+    "icono": "Icono",
+    "iconoDe": "Icono {nombre}",
+    "posicionDentro": "Posición dentro de {padre}",
+    "posicionApp": "Posición en la app",
+    "posicion": "Posición",
+    "subirPosicion": "Subir posición",
+    "bajarPosicion": "Bajar posición",
+    "visible": "Visible en la app",
+    "visibleAyuda": "Si la ocultas, sus {n} comercios dejan de salir en los filtros",
+    "verComercios": "Ver los {n} comercios",
+    "descartar": "Descartar",
+    "guardar": "Guardar cambios",
+    "eliminar": "Eliminar",
+    "vacioTitulo": "Elige una categoría",
+    "vacioTexto": "Toca el lápiz de una categoría para editar su nombre, icono, posición y visibilidad."
+  },
+  "nueva": {
+    "boton": "Nueva categoría",
+    "titulo": "Nueva categoría",
+    "descripcion": "Crea una categoría principal o una subcategoría dentro de una existente.",
+    "nombre": "Nombre",
+    "padre": "Dentro de",
+    "principal": "Ninguna (categoría principal)",
+    "crear": "Crear"
+  },
+  "eliminar": {
+    "titulo": "¿Eliminar {nombre}?",
+    "texto": "Solo se puede eliminar si no tiene subcategorías ni comercios. Quedará registrado en Auditoría."
+  },
+  "vacio": {
+    "titulo": "Sin categorías",
+    "texto": "Crea la primera con «Nueva categoría»."
+  },
+  "error": {
+    "titulo": "No pudimos cargar las categorías",
+    "texto": "Revisa tu conexión e inténtalo de nuevo."
+  },
+  "toast": {
+    "creada": "Categoría creada",
+    "guardada": "Cambios guardados",
+    "eliminada": "Categoría eliminada",
+    "ordenada": "Orden actualizado",
+    "oculta": "{nombre} ahora está oculta",
+    "visible": "{nombre} ahora es visible"
+  },
+  "errors": {
+    "entero": "Usa un número entero",
+    "posicion": "Mínimo {n}",
+    "posicionMax": "Máximo {n}"
+  }
 }

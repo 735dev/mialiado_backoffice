@@ -1,3 +1,78 @@
 {
-  "title": "Categories"
+  "title": "Categories",
+  "subtitle": "Arrange how users discover merchants. Changes show up in the app instantly.",
+  "arbol": {
+    "titulo": "App categories",
+    "resumen": "{subs} subcategories · {comercios} merchants",
+    "arrastra": "drag to reorder",
+    "contraerTodo": "Collapse all",
+    "expandirTodo": "Expand all",
+    "subcategorias": "{n} subcategories",
+    "sinSub": "No subcategories",
+    "comercios": "{n} merchants",
+    "oculta": "Hidden",
+    "contraerUna": "Collapse {nombre}",
+    "expandirUna": "Expand {nombre}",
+    "subir": "Move {nombre} up",
+    "bajar": "Move {nombre} down",
+    "mostrar": "Show {nombre} in the app",
+    "editar": "Edit {nombre}"
+  },
+  "editor": {
+    "titulo": "Category editor",
+    "editandoCategoria": "Editing category",
+    "editandoSub": "Editing subcategory",
+    "cerrar": "Close editor",
+    "asiSeVe": "How it looks in the users app",
+    "nombre": "Name",
+    "icono": "Icon",
+    "iconoDe": "Icon {nombre}",
+    "posicionDentro": "Position inside {padre}",
+    "posicionApp": "Position in the app",
+    "posicion": "Position",
+    "subirPosicion": "Move position up",
+    "bajarPosicion": "Move position down",
+    "visible": "Visible in the app",
+    "visibleAyuda": "If you hide it, its {n} merchants stop appearing in the filters",
+    "verComercios": "See the {n} merchants",
+    "descartar": "Discard",
+    "guardar": "Save changes",
+    "eliminar": "Delete",
+    "vacioTitulo": "Pick a category",
+    "vacioTexto": "Tap the pencil on a category to edit its name, icon, position and visibility."
+  },
+  "nueva": {
+    "boton": "New category",
+    "titulo": "New category",
+    "descripcion": "Create a main category or a subcategory inside an existing one.",
+    "nombre": "Name",
+    "padre": "Inside",
+    "principal": "None (main category)",
+    "crear": "Create"
+  },
+  "eliminar": {
+    "titulo": "Delete {nombre}?",
+    "texto": "It can only be deleted if it has no subcategories or merchants. It will be recorded in the Audit log."
+  },
+  "vacio": {
+    "titulo": "No categories",
+    "texto": "Create the first one with “New category”."
+  },
+  "error": {
+    "titulo": "We could not load the categories",
+    "texto": "Check your connection and try again."
+  },
+  "toast": {
+    "creada": "Category created",
+    "guardada": "Changes saved",
+    "eliminada": "Category deleted",
+    "ordenada": "Order updated",
+    "oculta": "{nombre} is now hidden",
+    "visible": "{nombre} is now visible"
+  },
+  "errors": {
+    "entero": "Use a whole number",
+    "posicion": "Minimum {n}",
+    "posicionMax": "Maximum {n}"
+  }
 }
