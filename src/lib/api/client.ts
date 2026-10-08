@@ -2,7 +2,7 @@ import axios, { type AxiosError, type AxiosInstance, type InternalAxiosRequestCo
 import { env } from '@/lib/config/env';
 import { PATHS } from '@/lib/routes/paths';
 import { getStoreRef, persistor } from '@/lib/store';
-import { logout, tokensRenewed } from '@/lib/store/slices/authSlice';
+import { logout, profileLoaded, tokensRenewed } from '@/lib/store/slices/authSlice';
 import { showInfoModal } from '@/lib/store/slices/uiSlice';
 
 export const httpClient: AxiosInstance = axios.create({
@@ -60,6 +60,30 @@ async function refreshSession(): Promise<string | null> {
   throw new Error(res.detail);
 }
 
+/** Un 403 de permiso («No tienes acceso a <modulo>») suele significar que la matriz de B15 cambio con la sesion abierta. */
+const FORBIDDEN_RE = /no tienes acceso/i;
+let lastPermissionSync = 0;
+
+/**
+ * Tras un 403 de permiso se vuelve a pedir /auth/me: si ya no tiene `ver` del modulo actual, `RequireAccess` lo lleva a B18
+ * (Sin permiso); si solo faltaba una accion (editar/aprobar) se queda y ve el aviso. Como mucho una vez cada 5 s.
+ */
+async function resyncPermissions(): Promise<void> {
+  const store = getStoreRef();
+  const role = store.getState().auth.user?.role;
+  if (!role || Date.now() - lastPermissionSync < 5_000) return;
+  lastPermissionSync = Date.now();
+  const { obtenerMe } = await import('@/providers/adminAuthProvider');
+  const res = await obtenerMe(role);
+  if (res.ok) store.dispatch(profileLoaded({ user: res.data.user, permisos: res.data.permisos }));
+}
+
+async function onForbidden(error: AxiosError, original: RetriableConfig): Promise<void> {
+  if (original.url?.includes('/auth/me')) return;
+  const detail = (error.response?.data as { detail?: unknown } | undefined)?.detail;
+  if (typeof detail === 'string' && FORBIDDEN_RE.test(detail)) await resyncPermissions().catch(() => undefined);
+}
+
 /** Renueva compartiendo una sola promesa entre quien lo pida. null = sesion cerrada; lanza si no hubo red / 5xx. */
 export function renewSession(): Promise<string | null> {
   refreshing ??= refreshSession().finally(() => {
@@ -94,6 +118,7 @@ httpClient.interceptors.response.use(
       await endSession();
       return Promise.reject(error);
     }
+    if (status === 403 && original && !isAuthUrl(original.url) && store.getState().auth.token) await onForbidden(error, original);
     if (status >= 500) {
       store.dispatch(showInfoModal({ type: 'error', code: status, description: 'errors.serverGeneric' }));
     }

@@ -97,5 +97,6 @@
     "confirmar": "Reject promotion",
     "hecho": "Promotion rejected"
   },
-  "subtituloUno": "1 promotion is waiting for review before it is published."
+  "subtituloUno": "1 promotion is waiting for review before it is published.",
+  "reglasAuto": "Automatic rules"
 }

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { usePagination } from '@/lib/hooks/usePagination';
 import {
   listarCategorias,
@@ -19,13 +20,23 @@ export interface FiltrosState {
   zona: string;
 }
 
+/** `?categoria=<id>` (lo usa «Ver los N comercios» de B11): id valido o null. */
+function categoriaDeUrl(params: URLSearchParams): number | null {
+  const n = Number(params.get('categoria'));
+  return Number.isInteger(n) && n > 0 ? n : null;
+}
+
 export const FILTROS_INICIALES: FiltrosState = { tab: 'todos', q: '', categoriaId: null, zona: '' };
 
 type Query = { tab: TabComercios; q: string; categoria_id: number | null; zona: string };
 
 /** Lista B03: filtros + busqueda con debounce + paginacion (`usePagination`) + conteos por pestana. */
 export function useComerciosLista() {
-  const [filtros, setFiltros] = useState<FiltrosState>(FILTROS_INICIALES);
+  const [params, setParams] = useSearchParams();
+  const categoriaUrl = categoriaDeUrl(params);
+  const [resto, setResto] = useState<Omit<FiltrosState, 'categoriaId'>>({ tab: FILTROS_INICIALES.tab, q: '', zona: '' });
+  // La categoria vive en la URL (fuente unica): un enlace desde otra seccion o el boton atras la aplican sin sincronizar estados.
+  const filtros = useMemo<FiltrosState>(() => ({ ...resto, categoriaId: categoriaUrl }), [resto, categoriaUrl]);
   const [conteos, setConteos] = useState<ConteosComercios | null>(null);
   const [categorias, setCategorias] = useState<CategoriaOpcion[]>([]);
   const [zonas, setZonas] = useState<ZonaOpcion[]>([]);
@@ -52,8 +63,31 @@ export function useComerciosLista() {
     };
   }, []);
 
-  const patch = useCallback((p: Partial<FiltrosState>) => setFiltros((f) => ({ ...f, ...p })), []);
-  const limpiar = useCallback(() => setFiltros((f) => ({ ...FILTROS_INICIALES, tab: f.tab })), []);
+  const guardarCategoria = useCallback(
+    (id: number | null) =>
+      setParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          if (id === null) next.delete('categoria');
+          else next.set('categoria', String(id));
+          return next;
+        },
+        { replace: true },
+      ),
+    [setParams],
+  );
+  const patch = useCallback(
+    (p: Partial<FiltrosState>) => {
+      const { categoriaId, ...otros } = p;
+      if (Object.keys(otros).length) setResto((f) => ({ ...f, ...otros }));
+      if (categoriaId !== undefined) guardarCategoria(categoriaId);
+    },
+    [guardarCategoria],
+  );
+  const limpiar = useCallback(() => {
+    setResto((f) => ({ tab: f.tab, q: '', zona: '' }));
+    guardarCategoria(null);
+  }, [guardarCategoria]);
   const hayFiltros = filtros.q.trim() !== '' || filtros.categoriaId !== null || filtros.zona !== '';
 
   return { filtros, patch, limpiar, hayFiltros, conteos, categorias, zonas, lista, buscando: filtros.q.trim() !== q };

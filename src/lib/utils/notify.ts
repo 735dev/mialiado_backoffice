@@ -43,7 +43,8 @@ export const notify = {
   },
   /** 422 muestra el `detail` exacto del backend en un toast; el resto abre el modal global. */
   fromApiError: (err: ApiError) => {
-    if (err.status === 422) {
+    // 422 y 403 son avisos breves: un 403 puede acabar en B18 (Sin permiso) y un toast sobrevive a ese cambio de pantalla.
+    if (err.status === 422 || err.status === 403) {
       toast.error(err.detail);
       return;
     }

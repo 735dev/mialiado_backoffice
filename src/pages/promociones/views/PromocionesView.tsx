@@ -1,5 +1,6 @@
-import { Check, ClipboardCheck } from 'lucide-react';
+import { Check, ClipboardCheck, SlidersHorizontal } from 'lucide-react';
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Spinner } from '@/components/ui/Spinner';
@@ -48,10 +49,18 @@ export default function PromocionesView() {
           <h1 className="text-3xl font-extrabold tracking-tight">{t('promociones.title')}</h1>
           <p className="text-ink-muted">{(() => { const n = m.conteos?.todas ?? m.total; return t(n === 1 ? 'promociones.subtituloUno' : 'promociones.subtitle', { n }); })()}</p>
         </div>
+        <div className="flex flex-wrap gap-3">
+        {puede('niveles_reglas') && (
+          <Link to={PATHS.niveles} className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-surface px-[22px] text-sm font-bold text-ink ring-1 ring-inset ring-line-strong">
+            <SlidersHorizontal size={18} aria-hidden="true" />
+            {t('promociones.reglasAuto')}
+          </Link>
+        )}
         <Button size="md" variant="primary" disabled={!puedeAprobar || sinAlertas === 0 || m.busy} onClick={aprobarSinAlertas} className="bg-ink text-bg">
           <Check size={18} aria-hidden="true" />
           {t(sinAlertas === 1 ? 'promociones.sinAlertas.botonUno' : 'promociones.sinAlertas.boton', { n: sinAlertas })}
         </Button>
+        </div>
       </header>
 
       <div className="flex flex-wrap items-center gap-3">

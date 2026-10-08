@@ -155,6 +155,14 @@ describe('B03 lista de comercios', () => {
     expect(listarComercios.mock.calls.length).toBe(before + 1);
   });
 
+  it('el filtro ?categoria=<id> (enlace de B11) se aplica y se refleja en el selector', async () => {
+    listarComercios.mockResolvedValue(pagina([item(1, 'Big Burger')]));
+    renderApp('/comercios?categoria=1');
+    await screen.findByText('Big Burger');
+    expect(listarComercios).toHaveBeenCalledWith(expect.objectContaining({ categoria_id: 1 }));
+    await waitFor(() => expect(screen.getByLabelText('Categoría')).toHaveValue('1'));
+  });
+
   it('sin resultados ofrece limpiar filtros', async () => {
     listarComercios.mockResolvedValueOnce(pagina([item(1, 'Big Burger')]));
     listarComercios.mockResolvedValue(pagina([], 0));

@@ -24,7 +24,7 @@ function Header({ onHistorial }: { onHistorial?: () => void }) {
   return (
     <header className="flex flex-wrap items-end justify-between gap-4">
       <div className="flex flex-col gap-1">
-        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.configuracion')} · B10</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.configuracion')}</p>
         <h1 className="text-3xl font-extrabold tracking-tight">{t('niveles.title')}</h1>
         <p className="text-ink-muted">{t('niveles.subtitle')}</p>
       </div>

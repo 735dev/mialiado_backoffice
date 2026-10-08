@@ -1,8 +1,10 @@
-import { Search, Users } from 'lucide-react';
+import { Download, Search, Send, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { Spinner } from '@/components/ui/Spinner';
 import { PaginatedComplete } from '@/components/pagination/PaginatedComplete';
+import { useAuth } from '@/lib/hooks/useAuth';
 import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { PATHS } from '@/lib/routes/paths';
@@ -23,16 +25,33 @@ const FIELD = 'h-11 min-w-0 rounded-pill border-[1.5px] border-line-strong bg-su
 export default function UsuariosView() {
   const t = useT();
   const { lang } = useLang();
+  const { puede } = useAuth();
   const u = useUsuarios();
   const from = u.total === 0 ? 0 : (u.page - 1) * u.limit + 1;
   const to = Math.min(u.total, (u.page - 1) * u.limit + u.items.length);
 
   return (
     <section data-screen="B05" className="flex max-w-[1200px] flex-col gap-6">
-      <header>
-        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.operacion')}</p>
-        <h1 className="text-3xl font-extrabold tracking-tight">{t('usuarios.title')}</h1>
-        <p className="text-ink-muted">{t('usuarios.subtitle')}</p>
+      <header className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="min-w-0">
+          <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.operacion')}</p>
+          <h1 className="text-3xl font-extrabold tracking-tight">{t('usuarios.title')}</h1>
+          <p className="text-ink-muted">{t('usuarios.subtitle')}</p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {puede('reportes') && (
+            <Link to={PATHS.reportes} className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-surface px-[22px] text-sm font-bold text-ink ring-1 ring-inset ring-line-strong">
+              <Download size={18} aria-hidden="true" />
+              {t('usuarios.exportar')}
+            </Link>
+          )}
+          {puede('notificaciones') && (
+            <Link to={PATHS.notificaciones} className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-primary px-[22px] text-sm font-bold text-primary-on shadow-e1">
+              <Send size={18} aria-hidden="true" />
+              {t('usuarios.enviarMensaje')}
+            </Link>
+          )}
+        </div>
       </header>
 
       <ResumenCards resumen={u.resumen} />

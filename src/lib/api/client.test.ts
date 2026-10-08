@@ -4,6 +4,8 @@ import { getStoreRef } from '@/lib/store';
 import { signedIn } from '@/lib/store/slices/authSlice';
 import { httpClient } from './client';
 
+const obtenerMe = vi.fn();
+vi.mock('@/providers/adminAuthProvider', () => ({ obtenerMe: (r: string) => obtenerMe(r) }));
 const renovarSesion = vi.fn();
 vi.mock('@/providers/refreshProvider', () => ({ renovarSesion: (t: string) => renovarSesion(t) }));
 
@@ -85,5 +87,22 @@ describe('renovacion de sesion en 401', () => {
     expect(renovarSesion).not.toHaveBeenCalled();
     expect(replace).not.toHaveBeenCalled();
     expect(getStoreRef().getState().auth.token).toBe('viejo');
+  });
+});
+
+describe('403 de permiso', () => {
+  it('vuelve a pedir /auth/me para que el guard lleve a B18 si ya no tiene ver', async () => {
+    const adapter: AxiosAdapter = async (config: InternalAxiosRequestConfig) => {
+      const response = { data: { detail: 'No tienes acceso a comercios' }, status: 403, statusText: '', headers: {}, config };
+      throw Object.assign(new Error('403'), { isAxiosError: true, config, response }) as AxiosError;
+    };
+    httpClient.defaults.adapter = adapter;
+    const permisos = { comercios: { ver: false, editar: false, aprobar: false } };
+    obtenerMe.mockResolvedValue({ ok: true, data: { user, permisos, admins: [] } });
+    await expect(httpClient.get('/comercios')).rejects.toMatchObject({ response: { status: 403 } });
+    expect(obtenerMe).toHaveBeenCalledWith('admin');
+    expect(getStoreRef().getState().auth.permisos).toEqual(permisos);
+    expect(getStoreRef().getState().auth.isAuthenticated).toBe(true);
+    expect(renovarSesion).not.toHaveBeenCalled();
   });
 });

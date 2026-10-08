@@ -25,7 +25,7 @@ function Cabecera({ onNueva }: { onNueva?: () => void }) {
   return (
     <header className="flex flex-wrap items-end justify-between gap-4">
       <div className="flex flex-col gap-1">
-        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.configuracion')} · B11</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.configuracion')}</p>
         <h1 className="text-3xl font-extrabold tracking-tight">{t('categorias.title')}</h1>
         <p className="text-ink-muted">{t('categorias.subtitle')}</p>
       </div>

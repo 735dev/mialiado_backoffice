@@ -16,7 +16,7 @@ export function FinanzasHeader({ canApprove, pendientes, busy, canExport, onConc
   return (
     <header className="flex flex-wrap items-end justify-between gap-4">
       <div className="flex flex-col gap-1">
-        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.negocio')} · B09</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.negocio')}</p>
         <h1 className="text-3xl font-extrabold tracking-tight">{t('finanzas.title')}</h1>
         <p className="text-ink-muted">{t('finanzas.subtitle')}</p>
       </div>

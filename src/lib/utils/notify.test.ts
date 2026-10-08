@@ -23,8 +23,14 @@ describe('notify', () => {
   it('5xx abre el modal de error y 4xx el de advertencia', () => {
     notify.fromApiError({ ok: false, status: 503, title: 't', detail: 'caido' });
     expect(store.getState().ui.infoModal).toMatchObject({ open: true, type: 'error', code: 503 });
-    notify.fromApiError({ ok: false, status: 403, title: 't', detail: 'no' });
-    expect(store.getState().ui.infoModal).toMatchObject({ type: 'warning', code: 403 });
+    notify.fromApiError({ ok: false, status: 409, title: 't', detail: 'no' });
+    expect(store.getState().ui.infoModal).toMatchObject({ type: 'warning', code: 409 });
+  });
+
+  it('403 es un toast (sobrevive al paso a B18) y no abre el modal', () => {
+    notify.fromApiError({ ok: false, status: 403, title: 't', detail: 'No tienes acceso a comercios' });
+    expect(toastError).toHaveBeenCalledWith('No tienes acceso a comercios');
+    expect(store.getState().ui.infoModal.open).toBe(false);
   });
 
   it('sin red (status 0) es un error', () => {

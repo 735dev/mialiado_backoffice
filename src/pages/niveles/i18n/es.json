@@ -75,7 +75,8 @@
     "restaurar": "Restaurar",
     "vigente": "Vigente",
     "borradorDe": "Borrador de {autor}",
-    "sinPublicar": "Sin publicar"
+    "sinPublicar": "Sin publicar",
+    "verAuditoria": "Ver en Auditoría"
   },
   "publicar": {
     "sinPublicar": "Cambios sin publicar",

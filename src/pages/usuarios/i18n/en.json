@@ -136,5 +136,7 @@
     "mensajeEjemplo": "Arrives as a notification and push on their phone",
     "enviar": "Send message",
     "enviado": "Message sent"
-  }
+  },
+  "exportar": "Export",
+  "enviarMensaje": "Send message"
 }

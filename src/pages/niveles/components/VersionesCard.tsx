@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
+import { useAuth } from '@/lib/hooks/useAuth';
 import { useT } from '@/lib/hooks/useT';
+import { PATHS } from '@/lib/routes/paths';
 import { useFormato } from '../hooks/useFormato';
 import type { Version } from '../models/reglas';
 import { listarVersiones } from '../providers/reglasProvider';
@@ -21,6 +24,7 @@ const RESUMIDO = 4;
 /** Historial de versiones: la vigente, las anteriores con "Restaurar" y, si hay cambios, la fila del borrador. */
 export function VersionesCard({ versiones, actual, borrador, canRestore, onRestore, expanded, onExpandedChange }: VersionesCardProps) {
   const t = useT();
+  const { puede } = useAuth();
   const { fecha } = useFormato();
   const [todas, setTodas] = useState<Version[] | null>(null);
   const [cargando, setCargando] = useState(false);
@@ -83,6 +87,11 @@ export function VersionesCard({ versiones, actual, borrador, canRestore, onResto
           </li>
         ))}
       </ul>
+      {puede('auditoria') && (
+        <Link to={PATHS.auditoria} className="mt-2 inline-flex min-h-11 items-center text-sm font-bold text-primary-deep">
+          {t('niveles.versiones.verAuditoria')}
+        </Link>
+      )}
     </section>
   );
 }

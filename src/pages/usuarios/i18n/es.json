@@ -136,5 +136,7 @@
     "mensajeEjemplo": "Llega como notificación y push a su celular",
     "enviar": "Enviar mensaje",
     "enviado": "Mensaje enviado"
-  }
+  },
+  "exportar": "Exportar",
+  "enviarMensaje": "Enviar mensaje"
 }

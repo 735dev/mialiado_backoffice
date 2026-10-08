@@ -75,7 +75,8 @@
     "restaurar": "Restore",
     "vigente": "Current",
     "borradorDe": "Draft by {autor}",
-    "sinPublicar": "Unpublished"
+    "sinPublicar": "Unpublished",
+    "verAuditoria": "View in Audit log"
   },
   "publicar": {
     "sinPublicar": "Unpublished changes",
