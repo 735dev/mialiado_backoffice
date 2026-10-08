@@ -184,7 +184,7 @@ describe('B07 moderacion de promociones', () => {
     aprobarSinAlertas.mockResolvedValue({ ok: true, data: { aprobadas: 1 } });
     renderWithProviders(<PromocionesView />);
     await screen.findByRole('article', { name: 'Brownie con helado' });
-    await userEvent.click(screen.getByRole('button', { name: 'Aprobar las 1 sin alertas' }));
+    await userEvent.click(screen.getByRole('button', { name: 'Aprobar la que no tiene alertas' }));
     expect(notifyConfirm).toHaveBeenCalled();
     await waitFor(() => expect(aprobarSinAlertas).toHaveBeenCalled());
   });
@@ -195,7 +195,7 @@ describe('B07 moderacion de promociones', () => {
     setup();
     renderWithProviders(<PromocionesView />);
     await screen.findByRole('article', { name: 'Brownie con helado' });
-    for (const name of ['Aprobar y publicar', 'Rechazar', 'Pedir cambios', 'Aprobar las 1 sin alertas']) {
+    for (const name of ['Aprobar y publicar', 'Rechazar', 'Pedir cambios', 'Aprobar la que no tiene alertas']) {
       expect(screen.getByRole('button', { name })).toBeDisabled();
     }
   });

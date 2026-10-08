@@ -3,7 +3,7 @@ import type { Lang } from '@/lib/store/slices/langSlice';
 const locale = (lang: Lang) => (lang === 'en' ? 'en-US' : 'es-VE');
 
 export function money(value: number, lang: Lang): string {
-  return new Intl.NumberFormat(locale(lang), { style: 'currency', currency: 'USD' }).format(value);
+  return new Intl.NumberFormat(locale(lang), { style: 'currency', currency: 'USD', currencyDisplay: 'narrowSymbol' }).format(value);
 }
 
 /** "hace 12 min", "hace 3 h", "hace 2 d" a partir de una fecha ISO. */

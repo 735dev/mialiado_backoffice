@@ -35,7 +35,7 @@ export function KpisUsuario({ u }: { u: UsuarioDetalle }) {
         value={integer(u.compras, lang)}
         hint={u.primera_compra ? t('usuarios.detalle.desde', { fecha: dateOnly(u.primera_compra, lang) }) : t('usuarios.detalle.sinCompras')}
       />
-      <Kpi icon={Tag} label={t('usuarios.detalle.ahorro')} value={money(u.ahorro_total, lang)} hint={t('usuarios.detalle.enComercios', { n: u.comercios_visitados })} />
+      <Kpi icon={Tag} label={t('usuarios.detalle.ahorro')} value={money(u.ahorro_total, lang)} hint={t(u.comercios_visitados === 1 ? 'usuarios.detalle.enComercioUno' : 'usuarios.detalle.enComercios', { n: u.comercios_visitados })} />
       <Kpi
         icon={Star}
         label={t('usuarios.detalle.calificaciones')}
@@ -66,7 +66,7 @@ export function ProgresoNivelCard({ u }: { u: UsuarioDetalle }) {
           <p className="text-sm text-ink-muted">
             {p.es_maximo
               ? t('usuarios.detalle.esMaximo', { nivel: NIVEL_LABEL[p.codigo] })
-              : t('usuarios.detalle.faltanParaSiguiente', { n: p.siguiente?.faltan ?? 0, nivel: p.siguiente?.nombre ?? '' })}
+              : t(p.siguiente?.faltan === 1 ? 'usuarios.detalle.faltaParaSiguiente' : 'usuarios.detalle.faltanParaSiguiente', { n: p.siguiente?.faltan ?? 0, nivel: p.siguiente?.nombre ?? '' })}
           </p>
         </div>
         <NivelBadge nivel={p.codigo} />
@@ -101,7 +101,7 @@ export function ProgresoNivelCard({ u }: { u: UsuarioDetalle }) {
           <div className="h-full rounded-pill bg-primary" style={{ width: `${pct}%` }} />
         </div>
         <p className="text-sm text-ink-muted">
-          {m.faltan > 0 ? t('usuarios.detalle.mantenimientoFaltan', { n: m.faltan, nivel: NIVEL_LABEL[p.codigo] }) : t('usuarios.detalle.mantenimientoOk', { nivel: NIVEL_LABEL[p.codigo] })}
+          {m.faltan > 0 ? t(m.faltan === 1 ? 'usuarios.detalle.mantenimientoFaltaUna' : 'usuarios.detalle.mantenimientoFaltan', { n: m.faltan, nivel: NIVEL_LABEL[p.codigo] }) : t('usuarios.detalle.mantenimientoOk', { nivel: NIVEL_LABEL[p.codigo] })}
         </p>
       </div>
     </section>

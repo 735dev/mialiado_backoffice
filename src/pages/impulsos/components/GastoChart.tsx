@@ -71,7 +71,7 @@ export function GastoChart({ resumen, dias, onDias, loading }: { resumen: Impuls
           {marcas.map((f) => (
             <g key={f}>
               <line x1={M.l} x2={W - M.r} y1={M.t + ph * (1 - f)} y2={M.t + ph * (1 - f)} className="stroke-line" strokeWidth="1" />
-              <text x={M.l - 8} y={M.t + ph * (1 - f) + 4} textAnchor="end" className="fill-ink-muted text-[10px]">{money(maxGasto * f, lang, 0)}</text>
+              <text x={M.l - 8} y={M.t + ph * (1 - f) + 4} textAnchor="end" className="fill-ink-muted text-[10px]">{money(maxGasto * f, lang, maxGasto < 10 ? 2 : 0)}</text>
               <text x={W - M.r + 8} y={M.t + ph * (1 - f) + 4} className="fill-ink-muted text-[10px]">{integer(Math.round(maxCanjes * f), lang)}</text>
             </g>
           ))}

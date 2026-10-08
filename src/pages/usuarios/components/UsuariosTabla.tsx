@@ -48,7 +48,7 @@ export function UsuariosTabla({ items, isLoading }: { items: UsuarioFila[]; isLo
               </span>
               <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                 <NivelBadge nivel={u.nivel} />
-                <span>{t('usuarios.tabla.comprasN', { n: integer(u.compras, lang) })}</span>
+                <span>{t(u.compras === 1 ? 'usuarios.tabla.compraUna' : 'usuarios.tabla.comprasN', { n: integer(u.compras, lang) })}</span>
                 <span className="font-bold">{money(u.ahorro_total, lang)}</span>
               </span>
               <span className="text-xs text-ink-muted">

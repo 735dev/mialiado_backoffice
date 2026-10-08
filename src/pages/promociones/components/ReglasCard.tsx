@@ -42,7 +42,7 @@ export function ReglasCard({ p }: { p: PromoDetalle }) {
         ))}
       </ul>
       <p className={cn('rounded-card p-4 text-sm', todo ? 'bg-surface-2' : 'bg-warn-tint text-warn')}>
-        {todo ? t('promociones.reglas.todoEnRegla', { comercio: p.comercio.nombre }) : t('promociones.reglas.hayPendientes', { n: total - cumplidas })}
+        {todo ? t('promociones.reglas.todoEnRegla', { comercio: p.comercio.nombre }) : t(total - cumplidas === 1 ? 'promociones.reglas.hayPendienteUno' : 'promociones.reglas.hayPendientes', { n: total - cumplidas })}
       </p>
     </section>
   );

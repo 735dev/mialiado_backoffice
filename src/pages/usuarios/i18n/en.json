@@ -32,7 +32,8 @@
     "ultimoAcceso": "Last access",
     "ver": "View detail",
     "verDe": "View details for {nombre}",
-    "comprasN": "{n} purchases"
+    "comprasN": "{n} purchases",
+    "compraUna": "1 purchase"
   },
   "vacio": {
     "titulo": "No users yet",
@@ -76,7 +77,10 @@
     "volver": "Back to users",
     "ajustarNivel": "Adjust level",
     "enviarMensaje": "Send message",
-    "soloLectura": "Your role can only view users: actions are disabled."
+    "soloLectura": "Your role can only view users: actions are disabled.",
+    "enComercioUno": "at 1 business",
+    "mantenimientoFaltaUna": "1 more purchase this month to keep {nivel}.",
+    "faltaParaSiguiente": "1 more purchase to reach {nivel}"
   },
   "canjes": {
     "titulo": "Redemption history",

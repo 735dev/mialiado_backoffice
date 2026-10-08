@@ -3,7 +3,7 @@ import type { Lang } from '@/lib/store/slices/langSlice';
 const locale = (lang: Lang) => (lang === 'en' ? 'en-US' : 'es-VE');
 
 export function money(value: number, lang: Lang, decimals = 2): string {
-  return new Intl.NumberFormat(locale(lang), { style: 'currency', currency: 'USD', minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(value);
+  return new Intl.NumberFormat(locale(lang), { style: 'currency', currency: 'USD', currencyDisplay: 'narrowSymbol', minimumFractionDigits: decimals, maximumFractionDigits: decimals }).format(value);
 }
 
 export function integer(value: number, lang: Lang): string {

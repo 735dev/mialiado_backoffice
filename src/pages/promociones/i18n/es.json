@@ -21,7 +21,9 @@
     "titulo": "Cola de revisión",
     "pendientes": "{n} pendientes, las más antiguas arriba",
     "plus": "Plus -{pct}%",
-    "verRestantes": "Ver las {n} restantes"
+    "verRestantes": "Ver las {n} restantes",
+    "pendienteUno": "1 pendiente, las más antiguas arriba",
+    "verRestanteUno": "Ver la restante"
   },
   "vacio": {
     "titulo": "Cola al día",
@@ -31,14 +33,18 @@
   "sinAlertas": {
     "boton": "Aprobar las {n} sin alertas",
     "confirmar": "¿Aprobar y publicar las {n} promociones que no tienen alertas?",
-    "hecho": "{n} promociones aprobadas"
+    "hecho": "{n} promociones aprobadas",
+    "botonUno": "Aprobar la que no tiene alertas",
+    "confirmarUno": "¿Aprobar y publicar la promoción que no tiene alertas?",
+    "hechoUno": "1 promoción aprobada"
   },
   "preview": {
     "asiLoVera": "Así lo verá {nombre}",
     "vigente": "Vigente del {desde} al {hasta}",
     "quedan": "Quedan {n} días",
     "canjear": "Canjear con mi QR",
-    "nivel": "Nivel del usuario"
+    "nivel": "Nivel del usuario",
+    "quedaUno": "Queda 1 día"
   },
   "reglas": {
     "titulo": "Reglas automáticas",
@@ -51,7 +57,8 @@
     "sinAcumulacion": "Sin acumulación",
     "comercioVerificado": "Comercio verificado",
     "todoEnRegla": "Todo en regla. Si apruebas, se publica ahora y se avisa a los seguidores de {comercio}.",
-    "hayPendientes": "{n} reglas no se cumplen. Revísalas antes de aprobar o pide cambios al comercio."
+    "hayPendientes": "{n} reglas no se cumplen. Revísalas antes de aprobar o pide cambios al comercio.",
+    "hayPendienteUno": "1 regla no se cumple. Revísala antes de aprobar o pide cambios al comercio."
   },
   "precios": {
     "titulo": "Precio por nivel",
@@ -89,5 +96,6 @@
     "aviso": "Se notificará al comercio por la app y por correo. Podrá corregir la promoción y enviarla de nuevo.",
     "confirmar": "Rechazar promoción",
     "hecho": "Promoción rechazada"
-  }
+  },
+  "subtituloUno": "1 promoción espera revisión antes de publicarse."
 }

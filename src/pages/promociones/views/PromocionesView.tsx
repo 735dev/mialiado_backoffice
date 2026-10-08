@@ -36,7 +36,7 @@ export default function PromocionesView() {
   }, [m.activeId]);
 
   const aprobarSinAlertas = () =>
-    notify.confirm(t('promociones.sinAlertas.confirmar', { n: sinAlertas }), () => void m.aprobarLasSinAlertas((n) => t('promociones.sinAlertas.hecho', { n })));
+    notify.confirm(t(sinAlertas === 1 ? 'promociones.sinAlertas.confirmarUno' : 'promociones.sinAlertas.confirmar', { n: sinAlertas }), () => void m.aprobarLasSinAlertas((n) => t(n === 1 ? 'promociones.sinAlertas.hechoUno' : 'promociones.sinAlertas.hecho', { n })));
 
   const conteo = (tab: FiltroTipo) => (tab === 'todas' ? m.conteos?.todas : m.conteos?.[tab]);
 
@@ -46,11 +46,11 @@ export default function PromocionesView() {
         <div className="min-w-0 flex-1">
           <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('nav.group.operacion')}</p>
           <h1 className="text-3xl font-extrabold tracking-tight">{t('promociones.title')}</h1>
-          <p className="text-ink-muted">{t('promociones.subtitle', { n: m.conteos?.todas ?? m.total })}</p>
+          <p className="text-ink-muted">{(() => { const n = m.conteos?.todas ?? m.total; return t(n === 1 ? 'promociones.subtituloUno' : 'promociones.subtitle', { n }); })()}</p>
         </div>
         <Button size="md" variant="primary" disabled={!puedeAprobar || sinAlertas === 0 || m.busy} onClick={aprobarSinAlertas} className="bg-ink text-bg">
           <Check size={18} aria-hidden="true" />
-          {t('promociones.sinAlertas.boton', { n: sinAlertas })}
+          {t(sinAlertas === 1 ? 'promociones.sinAlertas.botonUno' : 'promociones.sinAlertas.boton', { n: sinAlertas })}
         </Button>
       </header>
 

@@ -52,7 +52,7 @@ export function ColaRevision({ items, total, activeId, isLoading, restantes, onS
         <h2 id="cola-titulo" className="text-xl font-extrabold tracking-tight">
           {t('promociones.cola.titulo')}
         </h2>
-        <p className="text-sm text-ink-muted">{t('promociones.cola.pendientes', { n: total })}</p>
+        <p className="text-sm text-ink-muted">{t(total === 1 ? 'promociones.cola.pendienteUno' : 'promociones.cola.pendientes', { n: total })}</p>
       </header>
       <ul className={cn('flex flex-col gap-3', isLoading && 'opacity-60')}>
         {items.map((p) => {
@@ -100,7 +100,7 @@ export function ColaRevision({ items, total, activeId, isLoading, restantes, onS
       {restantes > 0 && (
         <Button variant="ghost" size="md" onClick={onMore} disabled={isLoading} className="self-center text-primary-deep">
           <ChevronDown size={18} aria-hidden="true" />
-          {t('promociones.cola.verRestantes', { n: restantes })}
+          {t(restantes === 1 ? 'promociones.cola.verRestanteUno' : 'promociones.cola.verRestantes', { n: restantes })}
         </Button>
       )}
     </section>

@@ -32,7 +32,8 @@
     "ultimoAcceso": "Último acceso",
     "ver": "Ver detalle",
     "verDe": "Ver detalle de {nombre}",
-    "comprasN": "{n} compras"
+    "comprasN": "{n} compras",
+    "compraUna": "1 compra"
   },
   "vacio": {
     "titulo": "Aún no hay usuarios",
@@ -76,7 +77,10 @@
     "volver": "Volver a usuarios",
     "ajustarNivel": "Ajustar nivel",
     "enviarMensaje": "Enviar mensaje",
-    "soloLectura": "Tu rol solo puede consultar usuarios: las acciones están desactivadas."
+    "soloLectura": "Tu rol solo puede consultar usuarios: las acciones están desactivadas.",
+    "enComercioUno": "en 1 comercio",
+    "mantenimientoFaltaUna": "Le falta 1 compra este mes para mantener {nivel}.",
+    "faltaParaSiguiente": "Le falta 1 compra para llegar a {nivel}"
   },
   "canjes": {
     "titulo": "Historial de canjes",

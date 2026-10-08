@@ -21,7 +21,9 @@
     "titulo": "Review queue",
     "pendientes": "{n} pending, oldest first",
     "plus": "Plus -{pct}%",
-    "verRestantes": "Show the remaining {n}"
+    "verRestantes": "Show the remaining {n}",
+    "pendienteUno": "1 pending, oldest first",
+    "verRestanteUno": "Show the remaining one"
   },
   "vacio": {
     "titulo": "Queue is clear",
@@ -31,14 +33,18 @@
   "sinAlertas": {
     "boton": "Approve the {n} without alerts",
     "confirmar": "Approve and publish the {n} promotions that have no alerts?",
-    "hecho": "{n} promotions approved"
+    "hecho": "{n} promotions approved",
+    "botonUno": "Approve the one without alerts",
+    "confirmarUno": "Approve and publish the promotion that has no alerts?",
+    "hechoUno": "1 promotion approved"
   },
   "preview": {
     "asiLoVera": "How {nombre} will see it",
     "vigente": "Valid from {desde} to {hasta}",
     "quedan": "{n} days left",
     "canjear": "Redeem with my QR",
-    "nivel": "User level"
+    "nivel": "User level",
+    "quedaUno": "1 day left"
   },
   "reglas": {
     "titulo": "Automatic rules",
@@ -51,7 +57,8 @@
     "sinAcumulacion": "No stacking",
     "comercioVerificado": "Verified business",
     "todoEnRegla": "Everything is in order. If you approve, it goes live now and {comercio} followers are notified.",
-    "hayPendientes": "{n} rules are not met. Check them before approving or ask the business for changes."
+    "hayPendientes": "{n} rules are not met. Check them before approving or ask the business for changes.",
+    "hayPendienteUno": "1 rule is not met. Check it before approving or ask the business for changes."
   },
   "precios": {
     "titulo": "Price by level",
@@ -89,5 +96,6 @@
     "aviso": "The business will be notified in the app and by email. They can fix the promotion and send it again.",
     "confirmar": "Reject promotion",
     "hecho": "Promotion rejected"
-  }
+  },
+  "subtituloUno": "1 promotion is waiting for review before it is published."
 }

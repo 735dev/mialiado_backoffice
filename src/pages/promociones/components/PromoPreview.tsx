@@ -57,7 +57,7 @@ export function PromoPreview({ p }: { p: PromoDetalle }) {
           )}
           <p className="flex justify-between gap-2 text-xs opacity-80">
             <span>{t('promociones.preview.vigente', { desde: shortDate(p.inicio, lang), hasta: shortDate(p.fin, lang) })}</span>
-            {resto !== null && <span>{t('promociones.preview.quedan', { n: resto })}</span>}
+            {resto !== null && <span>{t(resto === 1 ? 'promociones.preview.quedaUno' : 'promociones.preview.quedan', { n: resto })}</span>}
           </p>
         </div>
         <div aria-hidden="true" className="flex h-12 items-center justify-center gap-2 rounded-pill bg-primary font-bold text-primary-on">
