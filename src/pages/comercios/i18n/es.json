@@ -79,6 +79,8 @@
     "abrirDoc": "Abrir {tipo}",
     "marcarRevisado": "Marcar {tipo} como revisado",
     "quitarRevisado": "Quitar revisión de {tipo}",
+    "quitarCorto": "Quitar revisión",
+    "marcarCorto": "Marcar revisado",
     "ubicacion": "Ubicación",
     "confirmada": "Confirmada",
     "sinConfirmar": "Sin confirmar",

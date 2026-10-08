@@ -79,6 +79,8 @@
     "abrirDoc": "Open {tipo}",
     "marcarRevisado": "Mark {tipo} as reviewed",
     "quitarRevisado": "Remove review from {tipo}",
+    "quitarCorto": "Remove review",
+    "marcarCorto": "Mark reviewed",
     "ubicacion": "Location",
     "confirmada": "Confirmed",
     "sinConfirmar": "Unconfirmed",

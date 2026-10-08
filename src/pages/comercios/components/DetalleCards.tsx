@@ -100,9 +100,10 @@ export function DocumentosCard({ documentos, puedeEditar, busy, onToggle }: Docs
                   disabled={!puedeEditar || busy}
                   title={puedeEditar ? undefined : t('comercios.sinPermisoEditar')}
                   onClick={() => onToggle(d)}
+                  aria-label={d.revisado ? t('comercios.detalle.quitarRevisado', { tipo }) : t('comercios.detalle.marcarRevisado', { tipo })}
                   className="h-11 rounded-pill bg-surface text-sm font-bold text-ink ring-1 ring-inset ring-line-strong disabled:cursor-not-allowed disabled:opacity-50"
                 >
-                  {d.revisado ? t('comercios.detalle.quitarRevisado', { tipo }) : t('comercios.detalle.marcarRevisado', { tipo })}
+                  {d.revisado ? t('comercios.detalle.quitarCorto') : t('comercios.detalle.marcarCorto')}
                 </button>
               </li>
             );

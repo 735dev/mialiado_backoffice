@@ -26,7 +26,7 @@ interface Props {
 export function FiltrosBar({ filtros, conteos, categorias, zonas, onChange }: Props) {
   const t = useT();
   return (
-    <div className="flex flex-col gap-4 p-4 md:p-5 xl:flex-row xl:items-center xl:justify-between">
+    <div className="flex flex-col gap-4 p-4 md:p-5 2xl:flex-row 2xl:items-center 2xl:justify-between">
       <div role="tablist" aria-label={t('comercios.tabs.label')} className="inline-flex max-w-full items-center gap-0.5 self-start overflow-x-auto rounded-pill bg-surface-2 p-1">
         {TABS.map((tab) => {
           const active = filtros.tab === tab.id;
@@ -49,7 +49,7 @@ export function FiltrosBar({ filtros, conteos, categorias, zonas, onChange }: Pr
         })}
       </div>
 
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,1fr)_minmax(0,180px)_minmax(0,160px)] xl:w-auto xl:grid-cols-[260px_180px_160px]">
+      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-[minmax(0,1fr)_minmax(0,180px)_minmax(0,160px)] 2xl:w-auto 2xl:grid-cols-[260px_180px_160px]">
         <label className="flex h-12 items-center gap-2.5 rounded-pill bg-surface px-[18px] text-ink-muted ring-1 ring-inset ring-line-strong focus-within:ring-2 focus-within:ring-primary-deep">
           <Search size={18} aria-hidden="true" />
           <input
