@@ -15,13 +15,13 @@ export function fmtBytes(bytes: number | null, lang: string): string {
 }
 
 export function fmtFechaHora(iso: string, lang: string): string {
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', timeZone: TZ }).format(new Date(iso));
+  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: TZ }).format(new Date(iso));
 }
 
 /** «8:00 am» a partir de «08:00». */
 export function fmtHora(hora: string, lang: string): string {
   const [h = 0, m = 0] = hora.split(':').map(Number);
-  return new Intl.DateTimeFormat(lang, { hour: 'numeric', minute: '2-digit', timeZone: 'UTC' }).format(new Date(Date.UTC(2000, 0, 1, h, m)));
+  return new Intl.DateTimeFormat(lang, { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'UTC' }).format(new Date(Date.UTC(2000, 0, 1, h, m)));
 }
 
 /** Dia de la semana con 0 = lunes (como el backend). */

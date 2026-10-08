@@ -32,8 +32,14 @@ export function SegmentoPicker({ zonas, conteos }: SegmentoPickerProps) {
   const zonasElegidas = watch('zonas');
 
   const subtitulo = (s: Segmento): string => {
-    if (s === 'nivel') return t('notificaciones.segmento.niveles', { n: niveles.length || NIVELES.length });
-    if (s === 'zona') return t('notificaciones.segmento.zonas', { n: zonasElegidas.length || zonas.length });
+    if (s === 'nivel') {
+      const n = niveles.length || NIVELES.length;
+      return t(n === 1 ? 'notificaciones.segmento.nivelesOne' : 'notificaciones.segmento.niveles', { n });
+    }
+    if (s === 'zona') {
+      const n = zonasElegidas.length || zonas.length;
+      return t(n === 1 ? 'notificaciones.segmento.zonasOne' : 'notificaciones.segmento.zonas', { n });
+    }
     return conteos[s] ?? '…';
   };
 

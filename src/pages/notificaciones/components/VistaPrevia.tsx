@@ -59,7 +59,7 @@ export function VistaPrevia({ titulo, mensaje, segmentoTexto, saleTexto, hora, f
           <div className="mt-4 text-sm font-medium opacity-70">{fmtFechaLarga(fecha, lang)}</div>
           <div className="text-6xl font-extrabold leading-[68px] tracking-tight">{hora}</div>
           <div className="mt-5 flex justify-center">
-            <div className={cn('w-full max-w-[300px] rounded-card bg-surface/95 px-4 py-3.5 text-left text-ink shadow-e1')}>
+            <div className={cn('w-full max-w-[300px] rounded-card bg-surface px-4 py-3.5 text-left text-ink shadow-e1')}>
               <div className="flex items-center gap-2 text-xs font-semibold tracking-wide text-ink-muted">
                 <span className="flex h-[18px] w-[18px] items-center justify-center rounded-[6px] bg-primary text-primary-on">
                   <Bell size={11} />

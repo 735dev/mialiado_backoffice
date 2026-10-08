@@ -12,7 +12,7 @@ interface Etiquetas {
   ahora: string;
 }
 
-const hora = (d: Date, lang: string) => new Intl.DateTimeFormat(lang, { hour: 'numeric', minute: '2-digit' }).format(d);
+const hora = (d: Date, lang: string) => new Intl.DateTimeFormat(lang, { hour: 'numeric', minute: '2-digit', hour12: true }).format(d);
 const dia = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate()).getTime();
 
 /** «Ahora», «Hoy, 9:02 am», «Ayer, 6:40 pm», «30 sep» o «—» si nunca entro. */

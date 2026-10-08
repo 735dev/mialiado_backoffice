@@ -11,7 +11,7 @@ export function hace(iso: string, lang: string, now: number = Date.now()): strin
 }
 
 export function fmtFechaHora(iso: string, lang: string): string {
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).format(new Date(iso));
+  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', hour12: true }).format(new Date(iso));
 }
 
 /** «$25,00» (es) o «$25.00» (en). */

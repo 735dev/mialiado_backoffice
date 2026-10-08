@@ -13,7 +13,7 @@ export function fmtCompacto(n: number, lang: string): string {
 
 export function fmtFechaHora(iso: string | null, lang: string): string {
   if (!iso) return '—';
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', timeZone: TZ }).format(new Date(iso));
+  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', hour12: true, timeZone: TZ }).format(new Date(iso));
 }
 
 export function fmtFechaLarga(date: Date, lang: string): string {
