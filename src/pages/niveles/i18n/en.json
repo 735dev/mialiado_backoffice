@@ -14,7 +14,8 @@
     "compras": "purchases",
     "pts": "pts",
     "hastaDe": "Up to, {nivel}",
-    "puntosDe": "Extra points, {nivel}"
+    "puntosDe": "Extra points, {nivel}",
+    "usuarios_one": "1 user"
   },
   "reglas": {
     "titulo": "Promotion and checkout rules",

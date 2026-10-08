@@ -16,7 +16,9 @@
     "subir": "Subir {nombre}",
     "bajar": "Bajar {nombre}",
     "mostrar": "Mostrar {nombre} en la app",
-    "editar": "Editar {nombre}"
+    "editar": "Editar {nombre}",
+    "comercios_one": "1 comercio",
+    "subcategorias_one": "1 subcategoría"
   },
   "editor": {
     "titulo": "Editor de categoría",

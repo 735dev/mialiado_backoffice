@@ -14,7 +14,8 @@
     "compras": "compras",
     "pts": "pts",
     "hastaDe": "Hasta, {nivel}",
-    "puntosDe": "Puntos extra, {nivel}"
+    "puntosDe": "Puntos extra, {nivel}",
+    "usuarios_one": "1 usuario"
   },
   "reglas": {
     "titulo": "Reglas de promociones y cobro",

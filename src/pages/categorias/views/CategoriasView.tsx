@@ -112,10 +112,9 @@ function Gestor({ arbol, reload }: { arbol: Arbol; reload: () => void }) {
 
   const confirmarEliminar = async () => {
     if (!nodo) return;
-    if (await acciones.eliminar(nodo.id)) {
-      setEliminar(false);
-      setSelectedId(null);
-    }
+    const ok = await acciones.eliminar(nodo.id);
+    setEliminar(false); // ante un 409 el aviso global queda solo, sin otro dialogo encima
+    if (ok) setSelectedId(null);
   };
 
   const editor = nodo && (

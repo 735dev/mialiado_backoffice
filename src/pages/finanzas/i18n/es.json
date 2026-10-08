@@ -8,7 +8,8 @@
     "pendientes": "Pendientes de conciliar",
     "comision": "Comisión",
     "reembolsos": "Reembolsos",
-    "operaciones": "{n} ops."
+    "operaciones": "{n} ops.",
+    "operaciones_one": "1 op."
   },
   "tabla": {
     "titulo": "Recargas de billetera",

@@ -53,7 +53,7 @@ export function KpiCards({ kpis, isLoading }: { kpis: Kpis | null; isLoading: bo
       <Card
         label={t('finanzas.kpi.reembolsos')}
         value={money(kpis.reembolsos.monto)}
-        extra={<span className="text-xs font-bold text-ink-muted">{t('finanzas.kpi.operaciones', { n: kpis.reembolsos.operaciones })}</span>}
+        extra={<span className="text-xs font-bold text-ink-muted">{t(kpis.reembolsos.operaciones === 1 ? 'finanzas.kpi.operaciones_one' : 'finanzas.kpi.operaciones', { n: kpis.reembolsos.operaciones })}</span>}
       />
     </div>
   );

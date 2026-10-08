@@ -36,11 +36,11 @@ export function useReglasEditor(data: Reglas, onSaved: () => void) {
       setBusy(true);
       const res = await guardarReglas(buildPayload(pending, data, resumen));
       setBusy(false);
+      setPending(null); // ante un error el borrador queda en el formulario; el aviso no compite con el dialogo
       if (!res.ok) {
         notify.fromApiError(res);
         return;
       }
-      setPending(null);
       notify.toast.success(t('niveles.toast.publicado'));
       onSaved();
     },

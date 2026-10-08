@@ -110,7 +110,7 @@ function Editor({ data, reload }: { data: Reglas; reload: () => void }) {
         confirmLabel={t('niveles.versiones.restaurar')}
         busy={editor.busy}
         onClose={() => setRestaurar(null)}
-        onConfirm={() => restaurar && void editor.restaurar(restaurar.version).then((ok) => ok && setRestaurar(null))}
+        onConfirm={() => restaurar && void editor.restaurar(restaurar.version).then(() => setRestaurar(null))}
       />
     </>
   );

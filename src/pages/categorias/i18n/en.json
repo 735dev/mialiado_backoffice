@@ -16,7 +16,9 @@
     "subir": "Move {nombre} up",
     "bajar": "Move {nombre} down",
     "mostrar": "Show {nombre} in the app",
-    "editar": "Edit {nombre}"
+    "editar": "Edit {nombre}",
+    "comercios_one": "1 merchant",
+    "subcategorias_one": "1 subcategory"
   },
   "editor": {
     "titulo": "Category editor",

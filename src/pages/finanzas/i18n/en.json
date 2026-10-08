@@ -8,7 +8,8 @@
     "pendientes": "Pending reconciliation",
     "comision": "Commission",
     "reembolsos": "Refunds",
-    "operaciones": "{n} ops."
+    "operaciones": "{n} ops.",
+    "operaciones_one": "1 op."
   },
   "tabla": {
     "titulo": "Wallet top-ups",

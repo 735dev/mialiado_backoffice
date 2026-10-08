@@ -69,9 +69,9 @@ function Flechas({ nodo, index, total, busy, onMove }: FlechasProps) {
 
 /** Texto de apoyo de una fila: subcategorias (solo en principales) y comercios. */
 function metaDe(nodo: Nodo, t: ReturnType<typeof useT>): string {
-  const comercios = t('categorias.arbol.comercios', { n: nodo.comercios });
+  const comercios = t(nodo.comercios === 1 ? 'categorias.arbol.comercios_one' : 'categorias.arbol.comercios', { n: nodo.comercios });
   if (nodo.parentId !== null) return comercios;
-  const subs = nodo.hijos === 0 ? t('categorias.arbol.sinSub') : t('categorias.arbol.subcategorias', { n: nodo.hijos });
+  const subs = nodo.hijos === 0 ? t('categorias.arbol.sinSub') : t(nodo.hijos === 1 ? 'categorias.arbol.subcategorias_one' : 'categorias.arbol.subcategorias', { n: nodo.hijos });
   return `${subs} · ${comercios}`;
 }
 
