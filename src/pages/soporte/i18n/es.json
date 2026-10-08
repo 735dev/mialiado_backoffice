@@ -1,3 +1,108 @@
 {
-  "title": "Soporte"
+  "title": "Soporte",
+  "subtitle": "Tickets de usuarios y comercios. Responde, asigna y cierra desde un solo lugar.",
+  "prioridad": {
+    "alta": "Alta",
+    "media": "Media",
+    "baja": "Baja"
+  },
+  "origen": {
+    "usuario": "Usuario",
+    "comercio": "Comercio"
+  },
+  "estado": {
+    "abierto": "Abierto",
+    "resuelto": "Resuelto"
+  },
+  "tabs": {
+    "abiertos": "Abiertos",
+    "mios": "Míos",
+    "resueltos": "Resueltos"
+  },
+  "errors": {
+    "elegirPersona": "Elige a la persona"
+  },
+  "inbox": {
+    "aria": "Bandeja de tickets",
+    "title": "Bandeja",
+    "unread": "{n} sin leer",
+    "unreadDot": "Sin leer",
+    "filter": "Filtrar tickets",
+    "searchLabel": "Buscar tickets",
+    "search": "Buscar por asunto o persona",
+    "priorityFilter": "Filtrar por prioridad",
+    "originFilter": "Filtrar por origen",
+    "allPriorities": "Toda prioridad",
+    "allOrigins": "Todo origen",
+    "emptyTitle": "No hay tickets aquí",
+    "emptyText": "Cuando llegue uno que coincida con estos filtros, lo verás en esta bandeja.",
+    "count": "Mostrando {shown} de {total}"
+  },
+  "detail": {
+    "noneTitle": "Elige un ticket",
+    "noneText": "Selecciona uno de la bandeja para leer la conversación y responder.",
+    "errorTitle": "No pudimos abrir el ticket",
+    "errorText": "Revisa tu conexión e inténtalo de nuevo.",
+    "readOnly": "Tu rol puede leer los tickets, pero no responderlos.",
+    "ticket": "Ticket {codigo}",
+    "back": "Volver a la bandeja",
+    "assignee": "Asignado a",
+    "unassigned": "Sin asignar",
+    "me": "Yo",
+    "state": "Estado del ticket",
+    "priority": "Prioridad",
+    "purchases": "{n} compras",
+    "updated": "Ticket actualizado"
+  },
+  "cobro": {
+    "folio": "Folio",
+    "consumo": "Consumo",
+    "cobrado": "Cobrado",
+    "esperado": "Esperado"
+  },
+  "thread": {
+    "aria": "Conversación",
+    "note": "Nota interna · solo el equipo · {autor}, {hora}"
+  },
+  "reply": {
+    "aria": "Responder al ticket",
+    "mode": "Tipo de mensaje",
+    "reply": "Responder",
+    "note": "Nota interna",
+    "quick": "Respuestas rápidas",
+    "label": "Tu respuesta a {nombre}",
+    "noteLabel": "Nota interna para el equipo",
+    "placeholder": "Escribe tu respuesta a {nombre}",
+    "notePlaceholder": "Solo la verá el equipo",
+    "send": "Enviar respuesta",
+    "saveNote": "Guardar nota",
+    "resolve": "Resolver y cerrar",
+    "reopen": "Reabrir ticket",
+    "sent": "Respuesta enviada",
+    "noteSaved": "Nota guardada",
+    "resolved": "Ticket resuelto",
+    "reopened": "Ticket reabierto"
+  },
+  "templates": {
+    "open": "Plantillas",
+    "title": "Plantillas de respuesta",
+    "description": "Elige una para insertarla en la respuesta.",
+    "pickTicket": "Abre un ticket para poder insertar una plantilla.",
+    "empty": "Aún no hay plantillas.",
+    "use": "Usar"
+  },
+  "newTicket": {
+    "open": "Nuevo ticket",
+    "title": "Nuevo ticket",
+    "description": "Abre un ticket a nombre del equipo para una persona de la app.",
+    "person": "Persona",
+    "personPlaceholder": "Busca por nombre, usuario o correo",
+    "results": "Personas encontradas",
+    "change": "Cambiar de persona",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "priority": "Prioridad",
+    "submit": "Abrir ticket",
+    "created": "Ticket abierto"
+  }
 }

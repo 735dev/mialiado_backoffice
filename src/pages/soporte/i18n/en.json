@@ -1,3 +1,108 @@
 {
-  "title": "Support"
+  "title": "Support",
+  "subtitle": "User and merchant tickets. Reply, assign and close from one place.",
+  "prioridad": {
+    "alta": "High",
+    "media": "Medium",
+    "baja": "Low"
+  },
+  "origen": {
+    "usuario": "User",
+    "comercio": "Merchant"
+  },
+  "estado": {
+    "abierto": "Open",
+    "resuelto": "Resolved"
+  },
+  "tabs": {
+    "abiertos": "Open",
+    "mios": "Mine",
+    "resueltos": "Resolved"
+  },
+  "errors": {
+    "elegirPersona": "Choose the person"
+  },
+  "inbox": {
+    "aria": "Ticket inbox",
+    "title": "Inbox",
+    "unread": "{n} unread",
+    "unreadDot": "Unread",
+    "filter": "Filter tickets",
+    "searchLabel": "Search tickets",
+    "search": "Search by subject or person",
+    "priorityFilter": "Filter by priority",
+    "originFilter": "Filter by origin",
+    "allPriorities": "Any priority",
+    "allOrigins": "Any origin",
+    "emptyTitle": "No tickets here",
+    "emptyText": "When one that matches these filters arrives, you will see it in this inbox.",
+    "count": "Showing {shown} of {total}"
+  },
+  "detail": {
+    "noneTitle": "Choose a ticket",
+    "noneText": "Select one from the inbox to read the conversation and reply.",
+    "errorTitle": "We could not open the ticket",
+    "errorText": "Check your connection and try again.",
+    "readOnly": "Your role can read tickets but cannot reply to them.",
+    "ticket": "Ticket {codigo}",
+    "back": "Back to inbox",
+    "assignee": "Assigned to",
+    "unassigned": "Unassigned",
+    "me": "Me",
+    "state": "Ticket status",
+    "priority": "Priority",
+    "purchases": "{n} purchases",
+    "updated": "Ticket updated"
+  },
+  "cobro": {
+    "folio": "Receipt",
+    "consumo": "Spent",
+    "cobrado": "Charged",
+    "esperado": "Expected"
+  },
+  "thread": {
+    "aria": "Conversation",
+    "note": "Internal note · team only · {autor}, {hora}"
+  },
+  "reply": {
+    "aria": "Reply to the ticket",
+    "mode": "Message type",
+    "reply": "Reply",
+    "note": "Internal note",
+    "quick": "Quick replies",
+    "label": "Your reply to {nombre}",
+    "noteLabel": "Internal note for the team",
+    "placeholder": "Write your reply to {nombre}",
+    "notePlaceholder": "Only the team will see it",
+    "send": "Send reply",
+    "saveNote": "Save note",
+    "resolve": "Resolve and close",
+    "reopen": "Reopen ticket",
+    "sent": "Reply sent",
+    "noteSaved": "Note saved",
+    "resolved": "Ticket resolved",
+    "reopened": "Ticket reopened"
+  },
+  "templates": {
+    "open": "Templates",
+    "title": "Reply templates",
+    "description": "Pick one to insert it into the reply.",
+    "pickTicket": "Open a ticket to be able to insert a template.",
+    "empty": "There are no templates yet.",
+    "use": "Use"
+  },
+  "newTicket": {
+    "open": "New ticket",
+    "title": "New ticket",
+    "description": "Open a ticket on behalf of the team for someone in the app.",
+    "person": "Person",
+    "personPlaceholder": "Search by name, username or email",
+    "results": "People found",
+    "change": "Change person",
+    "subject": "Subject",
+    "message": "Message",
+    "priority": "Priority",
+    "submit": "Open ticket",
+    "created": "Ticket opened"
+  }
 }
