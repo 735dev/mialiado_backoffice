@@ -1,39 +1,4 @@
-import type { Lang } from '@/lib/i18n';
 import type { EstadoComercio, HorarioDia } from '@/providers/comerciosProvider';
-
-const LOCALE: Record<Lang, string> = { es: 'es', en: 'en-US' };
-
-export function formatDate(iso: string | null | undefined, lang: Lang): string {
-  if (!iso) return '–';
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return '–';
-  return d.toLocaleDateString(LOCALE[lang], { day: 'numeric', month: 'short', year: 'numeric' }).replace(/\./g, '');
-}
-
-export function formatDateTime(iso: string | null | undefined, lang: Lang): string {
-  if (!iso) return '–';
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return '–';
-  const day = d.toLocaleDateString(LOCALE[lang], { day: 'numeric', month: 'short' }).replace(/\./g, '');
-  const time = d.toLocaleTimeString(LOCALE[lang], { hour: 'numeric', minute: '2-digit' });
-  return `${day} · ${time}`;
-}
-
-export function initials(nombre: string): string {
-  const parts = nombre.trim().split(/\s+/).filter(Boolean);
-  return ((parts[0]?.[0] ?? '') + (parts[1]?.[0] ?? parts[0]?.[1] ?? '')).toUpperCase();
-}
-
-const TONES = [
-  'bg-warn-tint text-warn',
-  'bg-primary-tint text-primary-deep',
-  'bg-surface-2 text-ink-soft',
-  'bg-err-tint text-err-deep',
-] as const;
-
-export function avatarTone(id: number): string {
-  return TONES[Math.abs(id) % TONES.length] ?? TONES[0];
-}
 
 export type EstadoTone = 'ok' | 'warn' | 'err';
 

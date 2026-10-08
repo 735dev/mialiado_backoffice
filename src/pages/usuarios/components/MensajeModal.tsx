@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/Button';
 import { useT } from '@/lib/hooks/useT';
 import type { UsuarioDetalle } from '@/providers/usuariosProvider';
 import { mensajeSchema, type MensajeValues } from '../schemas/usuarios';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface Props {
   usuario: UsuarioDetalle;

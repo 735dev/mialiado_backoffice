@@ -2,7 +2,8 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { Dias, ImpulsosResumen } from '@/providers/impulsosProvider';
-import { integer, money, niceMax, shortDate } from '../format';
+import { niceMax } from '../format';
+import { formatInteger, formatMoney, formatShortDate } from '@/lib/utils/format';
 
 const W = 640;
 const H = 250;
@@ -65,14 +66,14 @@ export function GastoChart({ resumen, dias, onDias, loading }: { resumen: Impuls
         <svg
           viewBox={`0 0 ${W} ${H}`}
           role="img"
-          aria-label={t('impulsos.chart.resumen', { dias, gasto: money(totalGasto, lang), canjes: integer(totalCanjes, lang) })}
+          aria-label={t('impulsos.chart.resumen', { dias, gasto: formatMoney(totalGasto, lang), canjes: formatInteger(totalCanjes, lang) })}
           className={cn('h-auto w-full', loading && 'opacity-60')}
         >
           {marcas.map((f) => (
             <g key={f}>
               <line x1={M.l} x2={W - M.r} y1={M.t + ph * (1 - f)} y2={M.t + ph * (1 - f)} className="stroke-line" strokeWidth="1" />
-              <text x={M.l - 8} y={M.t + ph * (1 - f) + 4} textAnchor="end" className="fill-ink-muted text-[10px]">{money(maxGasto * f, lang, maxGasto < 10 ? 2 : 0)}</text>
-              <text x={W - M.r + 8} y={M.t + ph * (1 - f) + 4} className="fill-ink-muted text-[10px]">{integer(Math.round(maxCanjes * f), lang)}</text>
+              <text x={M.l - 8} y={M.t + ph * (1 - f) + 4} textAnchor="end" className="fill-ink-muted text-[10px]">{formatMoney(maxGasto * f, lang, maxGasto < 10 ? 2 : 0)}</text>
+              <text x={W - M.r + 8} y={M.t + ph * (1 - f) + 4} className="fill-ink-muted text-[10px]">{formatInteger(Math.round(maxCanjes * f), lang)}</text>
             </g>
           ))}
           {serie.map((s, i) => (
@@ -81,7 +82,7 @@ export function GastoChart({ resumen, dias, onDias, loading }: { resumen: Impuls
           <path d={linea} fill="none" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" className="stroke-ink" />
           {etiquetas.map((i, n) => (
             <text key={i} x={x(i)} y={H - 8} textAnchor={n === 0 ? 'start' : n === etiquetas.length - 1 ? 'end' : 'middle'} className="fill-ink-muted text-[10px]">
-              {shortDate(serie[i]?.fecha ?? '', lang)}
+              {formatShortDate(serie[i]?.fecha ?? '', lang)}
             </text>
           ))}
         </svg>

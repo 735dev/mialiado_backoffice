@@ -13,7 +13,7 @@ import { FORMATOS_DISPONIBLES, FRECUENCIAS, TIPOS } from '../models/reporte';
 import { crearProgramado } from '../providers/reportesProvider';
 import { aCuerpoProgramado, programadoInicial, programadoSchema, type ProgramadoForm } from '../schemas/reporteSchemas';
 import { nombreDia } from '../utils/format';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface Props {
   open: boolean;
@@ -50,7 +50,7 @@ export function ProgramarModal({ open, onOpenChange, onCreated }: Props) {
       : Array.from({ length: 28 }, (_, i) => ({ value: String(i + 1), label: String(i + 1) }));
 
   return (
-    <Modal open={open} onOpenChange={onOpenChange} title={t('reportes.scheduleModal.title')} description={t('reportes.scheduleModal.description')}>
+    <Modal open={open} onClose={() => onOpenChange(false)} title={t('reportes.scheduleModal.title')} description={t('reportes.scheduleModal.description')}>
       <Form methods={methods} onSubmit={onSubmit} className="gap-4">
         <FormInput<ProgramadoForm> name="nombre" label="reportes.scheduleModal.name" />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

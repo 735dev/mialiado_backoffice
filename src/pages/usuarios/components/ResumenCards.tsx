@@ -3,7 +3,7 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { NivelCodigo, UsuariosResumen } from '@/providers/usuariosProvider';
-import { integer } from '../format';
+import { formatInteger } from '@/lib/utils/format';
 import { NIVEL_LABEL, NivelIcon } from './NivelBadge';
 
 const BAR: Record<NivelCodigo, string> = { aliado: 'bg-orange-700', aliadopro: 'bg-slate-600', aliadoplus: 'bg-amber-500' };
@@ -36,7 +36,7 @@ export function ResumenCards({ resumen }: { resumen: UsuariosResumen | null }) {
               <NivelIcon nivel={nivel} size={18} />
               {NIVEL_LABEL[nivel]}
             </div>
-            <p className="text-4xl font-extrabold tracking-tight">{n ? integer(n.usuarios, lang) : '-'}</p>
+            <p className="text-4xl font-extrabold tracking-tight">{n ? formatInteger(n.usuarios, lang) : '-'}</p>
             <Bar pct={n?.porcentaje ?? 0} tone={BAR[nivel]} />
             <p className="text-xs text-ink-muted">
               {n ? t('usuarios.resumen.deUsuarios', { pct: pct(n.porcentaje), desde: n.desde }) : t('common.loading')}
@@ -51,7 +51,7 @@ export function ResumenCards({ resumen }: { resumen: UsuariosResumen | null }) {
           </span>
           {t('usuarios.tabs.bloqueados')}
         </div>
-        <p className="text-4xl font-extrabold tracking-tight">{resumen ? integer(resumen.bloqueados.usuarios, lang) : '-'}</p>
+        <p className="text-4xl font-extrabold tracking-tight">{resumen ? formatInteger(resumen.bloqueados.usuarios, lang) : '-'}</p>
         <p className="text-xs text-ink-muted">{resumen ? t('usuarios.resumen.bloqueadosPct', { pct: pct(resumen.bloqueados.porcentaje) }) : t('common.loading')}</p>
       </Card>
     </ul>

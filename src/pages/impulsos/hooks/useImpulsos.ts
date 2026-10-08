@@ -11,7 +11,7 @@ import {
   type ImpulsoFila,
   type ImpulsosResumen,
 } from '@/providers/impulsosProvider';
-import { useDebouncedValue } from './useDebouncedValue';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 export type FiltroEstado = 'todas' | ImpulsoEstado;
 type Filtros = { estado?: ImpulsoEstado; q?: string };

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import { useAppSelector } from '@/lib/store/hooks';
-import { formatDateTime, formatMoney } from '../utils/format';
+import { formatDateTime, formatMoney } from '@/lib/utils/format';
 
 /** Formatos de dinero y fecha segun el idioma activo (una sola fuente para toda la pantalla). */
 export function useFormato() {

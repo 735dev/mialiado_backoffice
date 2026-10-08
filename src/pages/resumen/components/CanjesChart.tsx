@@ -3,7 +3,8 @@ import { useT } from '@/lib/hooks/useT';
 import type { Lang } from '@/lib/i18n';
 import { cn } from '@/lib/utils/cn';
 import type { DiasResumen, PuntoCanjes } from '@/providers/resumenProvider';
-import { formatDay, formatNumber, niceScale } from '../utils/format';
+import { formatDay, niceScale } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
 import { Card } from './Card';
 
 const RANGOS: DiasResumen[] = [7, 30, 90];
@@ -52,7 +53,7 @@ export function CanjesChart({ serie, total, dias, onDias, lang, loading }: Props
   return (
     <Card
       title={t('resumen.canjes.title')}
-      subtitle={t('resumen.canjes.subtitle', { dias, total: formatNumber(total, lang) })}
+      subtitle={t('resumen.canjes.subtitle', { dias, total: formatInteger(total, lang) })}
       action={
         <div role="group" aria-label={t('resumen.canjes.rango')} className="inline-flex flex-none items-center gap-0.5 rounded-pill bg-surface-2 p-1">
           {RANGOS.map((d) => (
@@ -103,7 +104,7 @@ export function CanjesChart({ serie, total, dias, onDias, lang, loading }: Props
               {serie.map((p) => (
                 <tr key={p.fecha} className="border-t border-line">
                   <td className="py-2">{formatDay(p.fecha, lang)}</td>
-                  <td className="py-2 text-right font-bold">{formatNumber(p.canjes, lang)}</td>
+                  <td className="py-2 text-right font-bold">{formatInteger(p.canjes, lang)}</td>
                   <td className="py-2 text-right text-ink-muted">
                     {p.media_7d == null ? '–' : p.media_7d.toLocaleString(lang === 'es' ? 'de-DE' : 'en-US', { maximumFractionDigits: 1 })}
                   </td>
@@ -114,12 +115,12 @@ export function CanjesChart({ serie, total, dias, onDias, lang, loading }: Props
         </div>
       ) : (
         <div className="relative mt-1" onMouseLeave={() => setHover(null)}>
-          <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={t('resumen.canjes.aria', { dias, total: formatNumber(total, lang) })} className="h-auto w-full">
+          <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={t('resumen.canjes.aria', { dias, total: formatInteger(total, lang) })} className="h-auto w-full">
             {geo.ticks.map((v) => (
               <g key={v}>
                 <line x1={LEFT} x2={RIGHT} y1={geo.y(v)} y2={geo.y(v)} className="stroke-line" strokeWidth="1" />
                 <text x={LEFT - 12} y={geo.y(v) + 4} textAnchor="end" fontSize="12" className="fill-ink-muted">
-                  {formatNumber(v, lang)}
+                  {formatInteger(v, lang)}
                 </text>
               </g>
             ))}
@@ -162,7 +163,7 @@ export function CanjesChart({ serie, total, dias, onDias, lang, loading }: Props
           {active && (
             <div role="tooltip" className="pointer-events-none absolute top-2 z-10 rounded-field bg-ink px-3 py-2 text-xs text-bg shadow-e2" style={{ left: `${tipLeft}%` }}>
               <p className="font-bold">{formatDay(active.fecha, lang)}</p>
-              <p>{t('resumen.canjes.tipCanjes', { n: formatNumber(active.canjes, lang) })}</p>
+              <p>{t('resumen.canjes.tipCanjes', { n: formatInteger(active.canjes, lang) })}</p>
               {active.media_7d != null && <p className="opacity-80">{t('resumen.canjes.tipMedia', { n: Math.round(active.media_7d) })}</p>}
             </div>
           )}

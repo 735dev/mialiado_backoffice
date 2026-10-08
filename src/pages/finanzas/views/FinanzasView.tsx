@@ -3,7 +3,7 @@ import { useAuth } from '@/lib/hooks/useAuth';
 import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 import { useT } from '@/lib/hooks/useT';
 import { PATHS } from '@/lib/routes/paths';
-import { ConfirmDialog } from '../components/ConfirmDialog';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { DetalleSheet } from '../components/DetalleSheet';
 import { DetallePanel } from '../components/DetallePanel';
 import { FinanzasHeader } from '../components/FinanzasHeader';

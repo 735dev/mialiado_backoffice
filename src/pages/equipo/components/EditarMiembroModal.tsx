@@ -10,7 +10,7 @@ import { notify } from '@/lib/utils/notify';
 import type { CambiosMiembro, Miembro } from '../models/equipo';
 import { actualizarMiembro } from '../providers/equipoProvider';
 import { editarSchema, type EditarForm } from '../schemas/equipoSchemas';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface Props {
   miembro: Miembro | null;
@@ -70,7 +70,7 @@ export function EditarMiembroModal({ miembro, onClose, onSaved }: Props) {
   return (
     <Modal
       open={miembro !== null}
-      onOpenChange={(abierto) => !abierto && onClose()}
+      onClose={onClose}
       title={t('equipo.edit.title')}
       description={miembro ? `${miembro.nombre} · ${miembro.correo}` : ''}
     >

@@ -3,7 +3,7 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { PromoDetalle } from '@/providers/promocionesProvider';
-import { money } from '../format';
+import { formatMoney } from '@/lib/utils/format';
 
 /** Titulos de cada regla automatica del backend (`clave`); si llega una desconocida se muestra la clave. */
 const TITULO: Record<string, string> = {
@@ -57,14 +57,14 @@ export function PreciosPorNivel({ p }: { p: PromoDetalle }) {
     <section aria-labelledby="precios-titulo" className="flex flex-col gap-3">
       <h3 id="precios-titulo" className="font-bold">
         {t('promociones.precios.titulo')}
-        {p.precio_normal !== null && <span className="ml-2 text-sm font-normal text-ink-muted">{t('promociones.precios.lista', { precio: money(p.precio_normal, lang) })}</span>}
+        {p.precio_normal !== null && <span className="ml-2 text-sm font-normal text-ink-muted">{t('promociones.precios.lista', { precio: formatMoney(p.precio_normal, lang) })}</span>}
       </h3>
       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {p.precios_por_nivel.map((n) => (
           <li key={n.nivel} className="rounded-card bg-surface-2 p-4">
             <p className="text-xs font-bold text-ink-soft">{ETIQUETA[n.nivel]}</p>
             <p className="flex items-baseline gap-2">
-              <span className="text-2xl font-extrabold tracking-tight">{money(n.precio, lang)}</span>
+              <span className="text-2xl font-extrabold tracking-tight">{formatMoney(n.precio, lang)}</span>
               <span className="text-sm font-bold text-primary-deep">-{n.descuento_pct}%</span>
             </p>
           </li>

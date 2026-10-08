@@ -6,7 +6,8 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { PromoFila, PromoRevision } from '@/providers/promocionesProvider';
-import { haceCuanto, initials } from '../format';
+import { haceCuanto } from '../format';
+import { initials } from '@/lib/utils/format';
 
 export function TipoPill({ tipo }: { tipo: PromoFila['tipo'] }) {
   const t = useT();

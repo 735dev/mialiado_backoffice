@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import type { Paginated } from '@/lib/api/types';
 import { usePagination } from '@/lib/hooks/usePagination';
 import { listarUsuarios, type UsuarioFila, type UsuariosQuery, type UsuarioTab, type UsuariosResumen } from '@/providers/usuariosProvider';
-import { useDebouncedValue } from './useDebouncedValue';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 type Filtros = Omit<UsuariosQuery, 'page' | 'limit'>;
 

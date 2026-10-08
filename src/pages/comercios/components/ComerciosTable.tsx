@@ -5,7 +5,7 @@ import { useT } from '@/lib/hooks/useT';
 import type { Lang } from '@/lib/i18n';
 import { buildPath, PATHS } from '@/lib/routes/paths';
 import type { ComercioItem } from '@/providers/comerciosProvider';
-import { formatDate } from '../utils/format';
+import { formatDate } from '@/lib/utils/format';
 import { ComercioAvatar, EstadoBadge } from './Badges';
 
 const TH = 'h-11 bg-bg px-3 text-left font-mono text-xs font-medium uppercase tracking-wider text-ink-muted';

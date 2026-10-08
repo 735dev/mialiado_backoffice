@@ -5,7 +5,7 @@ import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { ImpulsoEstado, ImpulsoFila } from '@/providers/impulsosProvider';
-import { initials, integer, money } from '../format';
+import { formatInteger, formatMoney, initials } from '@/lib/utils/format';
 
 const TONE: Record<ImpulsoEstado, string> = {
   en_curso: 'bg-primary-tint text-primary-deep',
@@ -86,12 +86,12 @@ export function CampanasTabla(props: Props) {
               <EstadoImpulso estado={i.estado} />
             </span>
             <dl className="grid grid-cols-3 gap-2 text-sm">
-              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.pujaDiaria')}</dt><dd className="font-semibold">{money(i.puja_diaria, lang)}</dd></div>
-              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.gasto')}</dt><dd className="font-bold">{money(i.gasto, lang)}</dd></div>
-              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.canjes')}</dt><dd className="font-bold">{integer(i.canjes, lang)}</dd></div>
+              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.pujaDiaria')}</dt><dd className="font-semibold">{formatMoney(i.puja_diaria, lang)}</dd></div>
+              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.gasto')}</dt><dd className="font-bold">{formatMoney(i.gasto, lang)}</dd></div>
+              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.canjes')}</dt><dd className="font-bold">{formatInteger(i.canjes, lang)}</dd></div>
               <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.dias')}</dt><dd>{i.dias}</dd></div>
-              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.vistas')}</dt><dd>{integer(i.vistas, lang)}</dd></div>
-              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.alcance')}</dt><dd>{integer(i.alcance_min, lang)} – {integer(i.alcance_max, lang)}</dd></div>
+              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.vistas')}</dt><dd>{formatInteger(i.vistas, lang)}</dd></div>
+              <div><dt className="text-xs text-ink-muted">{t('impulsos.tabla.alcance')}</dt><dd>{formatInteger(i.alcance_min, lang)} – {formatInteger(i.alcance_max, lang)}</dd></div>
             </dl>
             <Accion i={i} {...props} />
           </li>
@@ -120,12 +120,12 @@ export function CampanasTabla(props: Props) {
           {items.map((i) => (
             <tr key={i.id} className="border-t border-line hover:bg-surface-2">
               <td className="py-3 pl-5 pr-3"><Comercio i={i} /></td>
-              <td className="px-3 text-right">{money(i.puja_diaria, lang)}</td>
+              <td className="px-3 text-right">{formatMoney(i.puja_diaria, lang)}</td>
               <td className="px-3 text-right">{i.dias}</td>
-              <td className="whitespace-nowrap px-3 text-right">{integer(i.alcance_min, lang)} – {integer(i.alcance_max, lang)}</td>
-              <td className="px-3 text-right font-bold">{money(i.gasto, lang)}</td>
-              <td className="px-3 text-right">{integer(i.vistas, lang)}</td>
-              <td className="px-3 text-right font-bold">{integer(i.canjes, lang)}</td>
+              <td className="whitespace-nowrap px-3 text-right">{formatInteger(i.alcance_min, lang)} – {formatInteger(i.alcance_max, lang)}</td>
+              <td className="px-3 text-right font-bold">{formatMoney(i.gasto, lang)}</td>
+              <td className="px-3 text-right">{formatInteger(i.vistas, lang)}</td>
+              <td className="px-3 text-right font-bold">{formatInteger(i.canjes, lang)}</td>
               <td className="px-3"><EstadoImpulso estado={i.estado} /></td>
               <td className="py-2 pl-3 pr-5 text-right"><Accion i={i} {...props} /></td>
             </tr>

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils/cn';
 import { useFormato } from '../hooks/useFormato';
 import { ESTADOS, type Conteos, type FiltroEstado, type Recarga } from '../models/finanzas';
 import { metodoKey } from '../utils/format';
-import { Avatar } from './Avatar';
+import { Avatar } from '@/components/ui/Avatar';
 import { EstadoBadge } from './EstadoBadge';
 
 interface RecargasTableProps {
@@ -112,7 +112,7 @@ export function RecargasTable(p: RecargasTableProps) {
                   >
                     <td className="py-3 pr-3">
                       <button type="button" onClick={() => p.onSelect(r.id)} aria-pressed={p.selectedId === r.id} className="flex items-center gap-3 text-left">
-                        <Avatar name={r.comercio} logoUrl={r.logo_url} />
+                        <Avatar name={r.comercio} src={r.logo_url} tone="primary" />
                         <span className="flex flex-col">
                           <span className="font-bold">{r.comercio}</span>
                           <span className="font-mono text-xs text-ink-muted">{r.referencia}</span>
@@ -139,7 +139,7 @@ export function RecargasTable(p: RecargasTableProps) {
                     aria-pressed={p.selectedId === r.id}
                     className={cn('flex w-full items-center gap-3 rounded-card p-3 text-left', p.selectedId === r.id ? 'bg-primary-tint' : 'bg-bg')}
                   >
-                    <Avatar name={r.comercio} logoUrl={r.logo_url} />
+                    <Avatar name={r.comercio} src={r.logo_url} tone="primary" />
                     <span className="flex min-w-0 flex-1 flex-col">
                       <span className="truncate font-bold">{r.comercio}</span>
                       <span className="font-mono text-xs text-ink-muted">{r.referencia}</span>

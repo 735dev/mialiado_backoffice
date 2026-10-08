@@ -11,8 +11,9 @@ import { useT, type TFunction } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { useAuditoria } from '../hooks/useAuditoria';
 import type { Evento } from '../models/evento';
-import { fmtFecha, fmtNumero, tonoDeAccion } from '../utils/format';
-import { Avatar } from './Avatar';
+import { fmtFecha, tonoDeAccion } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
+import { Avatar } from '@/components/ui/Avatar';
 import { DetalleEvento } from './DetalleEvento';
 
 type Registro = ReturnType<typeof useAuditoria>;
@@ -52,7 +53,7 @@ export function RegistroEventos({ registro: r }: { registro: Registro }) {
         </div>
       )}
       <div className="flex flex-col items-center gap-3 border-t border-line px-5 py-4 sm:flex-row sm:justify-between md:px-7">
-        <span className="text-sm font-medium text-ink-muted">{t('auditoria.table.count', { shown: r.items.length, total: fmtNumero(r.total, lang) })}</span>
+        <span className="text-sm font-medium text-ink-muted">{t('auditoria.table.count', { shown: r.items.length, total: formatInteger(r.total, lang) })}</span>
         <PaginatedComplete page={r.page} limit={r.limit} total={r.total} links={r.links} onPageChange={r.setPage} />
       </div>
     </>
@@ -71,7 +72,7 @@ function Quien({ e }: { e: Evento }) {
   const nombre = e.persona ?? '—';
   return (
     <div className="flex min-w-0 items-center gap-3">
-      <Avatar nombre={nombre} />
+      <Avatar name={nombre} />
       <div className="min-w-0">
         <div className="truncate text-sm font-bold">{nombre}</div>
         {e.rol && <div className="truncate text-xs text-ink-muted">{e.rol}</div>}

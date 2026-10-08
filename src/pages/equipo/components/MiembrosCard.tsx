@@ -10,8 +10,8 @@ import { cn } from '@/lib/utils/cn';
 import type { useEquipo } from '../hooks/useEquipo';
 import type { EstadoVisible, FiltroEstado, Miembro } from '../models/equipo';
 import { estadoVisible, fmtUltimoAcceso, plural } from '../utils/format';
-import { Avatar } from './Avatar';
-import { Segmented } from './Segmented';
+import { Avatar } from '@/components/ui/Avatar';
+import { Segmented } from '@/components/ui/Segmented';
 
 const FILTROS: FiltroEstado[] = ['todos', 'activos', 'pendientes'];
 const TONO: Record<EstadoVisible, 'ok' | 'warn' | 'err' | 'neutral'> = { activo: 'ok', sin2fa: 'warn', pendiente: 'neutral', suspendido: 'err' };
@@ -130,7 +130,7 @@ function Botones({ m, yo, t, canEdit, onEdit, onToggleSuspension, onReset2fa, on
 function Persona({ m, yo, t }: { m: Miembro; yo: number | null; t: TFunction }) {
   return (
     <div className="flex min-w-0 items-center gap-3">
-      <Avatar nombre={m.nombre} />
+      <Avatar name={m.nombre} />
       <div className="min-w-0">
         <div className="truncate text-sm font-bold">
           {m.nombre} {yo === m.id && <span className="font-medium text-ink-muted">({t('equipo.members.you')})</span>}

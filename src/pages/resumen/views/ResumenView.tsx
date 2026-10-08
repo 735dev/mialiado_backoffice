@@ -15,7 +15,8 @@ import { KpiCard } from '../components/KpiCard';
 import { PendientesCard } from '../components/PendientesCard';
 import { ActividadCard, CategoriasCard, TopComerciosCard } from '../components/RankingCards';
 import { useResumen } from '../hooks/useResumen';
-import { formatMoney, formatNumber, formatToday, saludoDe } from '../utils/format';
+import { formatToday, saludoDe } from '../utils/format';
+import { formatInteger, formatMoney } from '@/lib/utils/format';
 
 export const routeName = PATHS.resumen;
 
@@ -95,9 +96,9 @@ export default function ResumenView() {
       {estado.status === 'ok' && (
         <>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            <KpiCard label={t('resumen.kpi.usuarios')} icon={Users} kpi={estado.data.kpis.usuarios_activos} value={formatNumber(estado.data.kpis.usuarios_activos.valor, lang)} />
-            <KpiCard label={t('resumen.kpi.canjes')} icon={ShoppingBag} kpi={estado.data.kpis.canjes_mes} value={formatNumber(estado.data.kpis.canjes_mes.valor, lang)} />
-            <KpiCard label={t('resumen.kpi.comercios')} icon={Store} kpi={estado.data.kpis.comercios_activos} value={formatNumber(estado.data.kpis.comercios_activos.valor, lang)} />
+            <KpiCard label={t('resumen.kpi.usuarios')} icon={Users} kpi={estado.data.kpis.usuarios_activos} value={formatInteger(estado.data.kpis.usuarios_activos.valor, lang)} />
+            <KpiCard label={t('resumen.kpi.canjes')} icon={ShoppingBag} kpi={estado.data.kpis.canjes_mes} value={formatInteger(estado.data.kpis.canjes_mes.valor, lang)} />
+            <KpiCard label={t('resumen.kpi.comercios')} icon={Store} kpi={estado.data.kpis.comercios_activos} value={formatInteger(estado.data.kpis.comercios_activos.valor, lang)} />
             <KpiCard label={t('resumen.kpi.ingresos')} icon={Percent} kpi={estado.data.kpis.ingresos_impulsos} value={formatMoney(estado.data.kpis.ingresos_impulsos.valor, lang)} />
           </div>
           <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,676fr)_minmax(0,380fr)]">

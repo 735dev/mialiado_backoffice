@@ -10,9 +10,9 @@ import { cn } from '@/lib/utils/cn';
 import type { useBandeja } from '../hooks/useBandeja';
 import { PRIORIDADES, type OrigenTicket, type Prioridad, type TabBandeja, type TicketResumen } from '../models/ticket';
 import { hace } from '../utils/format';
-import { Avatar } from './Avatar';
+import { Avatar } from '@/components/ui/Avatar';
 import { PrioridadBadge } from './PrioridadBadge';
-import { Segmented } from './Segmented';
+import { Segmented } from '@/components/ui/Segmented';
 
 const TABS: TabBandeja[] = ['abiertos', 'mios', 'resueltos'];
 
@@ -141,7 +141,7 @@ function Fila({ ticket: tk, activo, sinLeer, lang, onSelect }: FilaProps) {
         <span className="flex w-2.5 flex-none justify-center">
           {sinLeer && <span className="h-2.5 w-2.5 rounded-full bg-primary ring-[1.5px] ring-primary-deep" aria-label={t('soporte.inbox.unreadDot')} />}
         </span>
-        <Avatar nombre={nombre} />
+        <Avatar name={nombre} />
         <span className="min-w-0 flex-1">
           <span className="flex items-center justify-between gap-2">
             <span className={cn('truncate text-sm', sinLeer ? 'font-extrabold' : 'font-semibold')}>

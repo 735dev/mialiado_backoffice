@@ -10,30 +10,3 @@ export function hace(iso: string, lang: string, now: number = Date.now()): strin
   return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short' }).format(new Date(iso));
 }
 
-export function fmtFechaHora(iso: string, lang: string): string {
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit', hour12: true }).format(new Date(iso));
-}
-
-/** «$25,00» (es) o «$25.00» (en). */
-export function fmtDinero(n: number, lang: string): string {
-  return `$${new Intl.NumberFormat(lang === 'es' ? 'es-VE' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n)}`;
-}
-
-export function iniciales(nombre: string): string {
-  const partes = nombre.trim().split(/\s+/).filter(Boolean);
-  return ((partes[0]?.[0] ?? '') + (partes.length > 1 ? (partes[partes.length - 1]?.[0] ?? '') : (partes[0]?.[1] ?? ''))).toUpperCase();
-}
-
-const TONOS = [
-  'bg-primary-tint text-primary-deep',
-  'bg-warn-tint text-warn',
-  'bg-err-tint text-err-deep',
-  'bg-surface-2 text-ink-soft',
-] as const;
-
-/** Color estable por nombre (los avatares del prototipo usan una paleta de pasteles). */
-export function tonoAvatar(nombre: string): string {
-  let h = 0;
-  for (const ch of nombre) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-  return TONOS[h % TONOS.length] as string;
-}

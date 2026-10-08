@@ -2,7 +2,7 @@ import { useT } from '@/lib/hooks/useT';
 import { useAppSelector } from '@/lib/store/hooks';
 import type { Nivel } from '../models/reglas';
 import type { ReglasFormValues } from '../schemas/reglas';
-import { formatCount } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
 import { NumField } from './NumField';
 
 interface NivelesCardProps {
@@ -40,7 +40,7 @@ export function NivelesCard({ niveles, values, disabled }: NivelesCardProps) {
           <li key={n.codigo} className="grid grid-cols-2 items-center gap-3 py-4 md:grid-cols-[1.4fr_0.6fr_1fr_1fr]">
             <div className="col-span-2 md:col-span-1">
               <div className="font-extrabold">{n.nombre}</div>
-              <div className="text-xs text-ink-muted">{t(n.usuarios === 1 ? 'niveles.niveles.usuarios_one' : 'niveles.niveles.usuarios', { n: formatCount(n.usuarios, lang) })}</div>
+              <div className="text-xs text-ink-muted">{t(n.usuarios === 1 ? 'niveles.niveles.usuarios_one' : 'niveles.niveles.usuarios', { n: formatInteger(n.usuarios, lang) })}</div>
             </div>
             <div className="text-sm">
               <span className="mr-2 text-xs font-bold uppercase text-ink-muted md:hidden">{t('niveles.niveles.desde')}</span>

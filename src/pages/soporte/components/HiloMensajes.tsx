@@ -4,8 +4,8 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { MensajeTicket } from '../models/ticket';
-import { fmtFechaHora } from '../utils/format';
-import { Avatar } from './Avatar';
+import { formatDateTime } from '@/lib/utils/format';
+import { Avatar } from '@/components/ui/Avatar';
 
 /** Solo se enlazan adjuntos http(s); cualquier otro texto se muestra como nombre de archivo. */
 function esUrlSegura(valor: string): boolean {
@@ -52,7 +52,7 @@ export function HiloMensajes({ mensajes }: { mensajes: MensajeTicket[] }) {
             <div key={m.id} className="flex items-center gap-3 text-xs font-medium text-ink-muted">
               <span className="h-px flex-1 bg-line" />
               <span className="text-center">
-                {m.cuerpo} · {fmtFechaHora(m.created_at, lang)}
+                {m.cuerpo} · {formatDateTime(m.created_at, lang)}
               </span>
               <span className="h-px flex-1 bg-line" />
             </div>
@@ -63,7 +63,7 @@ export function HiloMensajes({ mensajes }: { mensajes: MensajeTicket[] }) {
             <div key={m.id} className="max-w-[620px] self-end rounded-[20px] bg-warn-tint px-[18px] py-3.5 text-warn md:ml-[52px]">
               <div className="mb-1 flex items-center gap-2 text-xs font-bold">
                 <Lock size={13} aria-hidden="true" />
-                {t('soporte.thread.note', { autor: m.autor, hora: fmtFechaHora(m.created_at, lang) })}
+                {t('soporte.thread.note', { autor: m.autor, hora: formatDateTime(m.created_at, lang) })}
               </div>
               <p className="whitespace-pre-wrap break-words text-[15px] leading-6 text-ink">{m.cuerpo}</p>
             </div>
@@ -71,11 +71,11 @@ export function HiloMensajes({ mensajes }: { mensajes: MensajeTicket[] }) {
         }
         return (
           <div key={m.id} className={cn('flex max-w-[680px] items-start gap-3', !m.es_solicitante && 'flex-row-reverse self-end')}>
-            <Avatar nombre={m.autor} />
+            <Avatar name={m.autor} />
             <div className="min-w-0">
               <div className={cn('mb-1.5 flex items-baseline gap-2', !m.es_solicitante && 'flex-row-reverse')}>
                 <span className="text-sm font-bold">{m.autor}</span>
-                <span className="text-xs text-ink-muted">{fmtFechaHora(m.created_at, lang)}</span>
+                <span className="text-xs text-ink-muted">{formatDateTime(m.created_at, lang)}</span>
               </div>
               <p
                 className={cn(

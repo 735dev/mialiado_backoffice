@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/Button';
 import { useT } from '@/lib/hooks/useT';
 import type { PlantillaRespuesta } from '../models/ticket';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface PlantillasModalProps {
   open: boolean;
@@ -15,7 +15,7 @@ interface PlantillasModalProps {
 export function PlantillasModal({ open, onOpenChange, plantillas, canUse, onUse }: PlantillasModalProps) {
   const t = useT();
   return (
-    <Modal open={open} onOpenChange={onOpenChange} title={t('soporte.templates.title')} description={canUse ? t('soporte.templates.description') : t('soporte.templates.pickTicket')}>
+    <Modal open={open} onClose={() => onOpenChange(false)} title={t('soporte.templates.title')} description={canUse ? t('soporte.templates.description') : t('soporte.templates.pickTicket')}>
       {plantillas.length === 0 ? (
         <p className="py-4 text-center text-sm text-ink-muted">{t('soporte.templates.empty')}</p>
       ) : (

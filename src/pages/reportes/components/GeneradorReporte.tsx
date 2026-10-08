@@ -12,9 +12,10 @@ import { useEstimacionReporte, type useCatalogos } from '../hooks/useReportes';
 import { FORMATOS, type Reporte } from '../models/reporte';
 import { generarReporte } from '../providers/reportesProvider';
 import { aCuerpoReporte, reporteInicial, reporteSchema, type ReporteForm } from '../schemas/reporteSchemas';
-import { fmtBytes, fmtNumero } from '../utils/format';
+import { fmtBytes } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
 import { PasoColumnas, PasoRango, PasoSegmento, PasoTipo, Paso } from './CamposReporte';
-import { Segmented } from './Segmented';
+import { Segmented } from '@/components/ui/Segmented';
 
 export interface PresetGenerador {
   tipo: Reporte['tipo'];
@@ -107,7 +108,7 @@ export function GeneradorReporte({ catalogos, canEdit, preset, onGenerated, onSc
           <p className="text-sm font-semibold">
             {estimacion.data
               ? t('reportes.generator.estimate', {
-                  filas: fmtNumero(estimacion.data.filas, lang),
+                  filas: formatInteger(estimacion.data.filas, lang),
                   columnas: estimacion.data.columnas,
                   peso: fmtBytes(estimacion.data.bytes_aprox, lang),
                 })

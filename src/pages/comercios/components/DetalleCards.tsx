@@ -5,7 +5,8 @@ import { useT } from '@/lib/hooks/useT';
 import type { Lang } from '@/lib/i18n';
 import { cn } from '@/lib/utils/cn';
 import type { ComercioDetalle, DocumentoComercio } from '@/providers/comerciosProvider';
-import { formatDateTime, osmEmbedUrl, osmLink, resumenHorario } from '../utils/format';
+import { osmEmbedUrl, osmLink, resumenHorario } from '../utils/format';
+import { formatDateTime } from '@/lib/utils/format';
 
 export function Panel({ title, subtitle, action, children }: { title: string; subtitle?: string; action?: ReactNode; children: ReactNode }) {
   return (

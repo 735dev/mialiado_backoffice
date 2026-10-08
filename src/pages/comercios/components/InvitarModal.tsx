@@ -7,7 +7,7 @@ import { useT } from '@/lib/hooks/useT';
 import { notify } from '@/lib/utils/notify';
 import { invitarComercio } from '@/providers/comerciosProvider';
 import { invitarSchema, type InvitarValues } from '../schemas/comercios';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 /** Invita a un comercio por correo (POST /comercios/invitar, requiere `editar`). */
 export function InvitarModal({ open, onClose }: { open: boolean; onClose: () => void }) {

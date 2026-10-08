@@ -7,13 +7,13 @@ import type { ConsultaAuditoria, DetalleEvento, Evento, Persona } from '../model
 import { listarEventos, listarPersonas, obtenerEvento } from '../providers/auditoriaProvider';
 import { aConsulta, filtrosIniciales, filtrosSchema, type FiltrosForm } from '../schemas/filtrosSchema';
 import { hoyCaracas } from '../utils/fechas';
-import { useDebounced } from './useDebounced';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 /** Registro paginado: los filtros viven en un formulario RHF+Zod y cada cambio vuelve a la pagina 1 (lo hace usePagination). */
 export function useAuditoria() {
   const methods = useZodForm<FiltrosForm>(filtrosSchema, filtrosIniciales);
   const v = useWatch({ control: methods.control }) as FiltrosForm;
-  const q = useDebounced(v.q);
+  const q = useDebouncedValue(v.q);
 
   const consulta = useMemo<ConsultaAuditoria>(
     () => aConsulta({ accion: v.accion, persona: v.persona, modulo: v.modulo, rango: v.rango, desde: v.desde, hasta: v.hasta, q }, hoyCaracas()),

@@ -10,7 +10,7 @@ import {
   type TabComercios,
   type ZonaOpcion,
 } from '@/providers/comerciosProvider';
-import { useDebounce } from './useDebounce';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 export interface FiltrosState {
   tab: TabComercios;
@@ -29,7 +29,7 @@ export function useComerciosLista() {
   const [conteos, setConteos] = useState<ConteosComercios | null>(null);
   const [categorias, setCategorias] = useState<CategoriaOpcion[]>([]);
   const [zonas, setZonas] = useState<ZonaOpcion[]>([]);
-  const q = useDebounce(filtros.q.trim(), 350);
+  const q = useDebouncedValue(filtros.q.trim(), 350);
 
   const fetcher = useCallback(async (p: Query & { page: number; limit: number }) => {
     const res = await listarComercios(p);

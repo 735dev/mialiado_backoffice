@@ -1,16 +1,5 @@
 import type { Lang } from '@/lib/i18n';
 
-const LOCALE: Record<Lang, string> = { es: 'de-DE', en: 'en-US' };
-
-/** 12480 -> "12.480" (es) / "12,480" (en). No se usa `es` porque omite el separador en 4 cifras. */
-export function formatNumber(n: number, lang: Lang): string {
-  return n.toLocaleString(LOCALE[lang], { maximumFractionDigits: 0 });
-}
-
-export function formatMoney(n: number, lang: Lang): string {
-  return `$${n.toLocaleString(LOCALE[lang], { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-}
-
 export function formatDay(iso: string, lang: Lang): string {
   const d = new Date(`${iso.slice(0, 10)}T12:00:00`);
   return d.toLocaleDateString(lang === 'es' ? 'es' : 'en-US', { day: 'numeric', month: 'short' });
@@ -37,22 +26,6 @@ export function relativo(iso: string, now: Date): { unit: 'now' | 'min' | 'h' | 
   if (min < 60) return { unit: 'min', n: min };
   if (min < 1440) return { unit: 'h', n: Math.floor(min / 60) };
   return { unit: 'd', n: Math.floor(min / 1440) };
-}
-
-const TONES = [
-  'bg-primary-tint text-primary-deep',
-  'bg-warn-tint text-warn',
-  'bg-err-tint text-err-deep',
-  'bg-surface-2 text-ink-soft',
-] as const;
-
-export function avatarTone(id: number): string {
-  return TONES[Math.abs(id) % TONES.length] ?? TONES[0];
-}
-
-export function initials(nombre: string): string {
-  const parts = nombre.trim().split(/\s+/).filter(Boolean);
-  return ((parts[0]?.[0] ?? '') + (parts[1]?.[0] ?? parts[0]?.[1] ?? '')).toUpperCase();
 }
 
 /** Tope "bonito" del eje Y y su paso para ~4 divisiones. */

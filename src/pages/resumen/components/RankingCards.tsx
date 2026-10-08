@@ -6,7 +6,8 @@ import type { Lang } from '@/lib/i18n';
 import { PATHS } from '@/lib/routes/paths';
 import { cn } from '@/lib/utils/cn';
 import type { Actividad, CanjesCategoria, TopComercio } from '@/providers/resumenProvider';
-import { avatarTone, formatNumber, initials, relativo } from '../utils/format';
+import { relativo } from '../utils/format';
+import { avatarTone, formatInteger, initials } from '@/lib/utils/format';
 import { Card } from './Card';
 
 export function TopComerciosCard({ items, lang }: { items: TopComercio[]; lang: Lang }) {
@@ -30,7 +31,7 @@ export function TopComerciosCard({ items, lang }: { items: TopComercio[]; lang: 
                   <div className="h-2 rounded-pill bg-primary" style={{ width: `${Math.round((c.canjes / max) * 100)}%` }} />
                 </div>
               </div>
-              <span className="min-w-[34px] text-right text-sm font-extrabold">{formatNumber(c.canjes, lang)}</span>
+              <span className="min-w-[34px] text-right text-sm font-extrabold">{formatInteger(c.canjes, lang)}</span>
             </li>
           ))}
         </ol>
@@ -46,7 +47,7 @@ export function CategoriasCard({ items, total, lang }: { items: CanjesCategoria[
   const t = useT();
   const sum = items.reduce((a, c) => a + c.canjes, 0);
   return (
-    <Card title={t('resumen.categorias.title')} subtitle={t('resumen.categorias.subtitle', { n: formatNumber(total, lang) })}>
+    <Card title={t('resumen.categorias.title')} subtitle={t('resumen.categorias.subtitle', { n: formatInteger(total, lang) })}>
       {items.length === 0 || sum === 0 ? (
         <p className="py-10 text-center text-sm text-ink-muted">{t('resumen.categorias.vacio')}</p>
       ) : (

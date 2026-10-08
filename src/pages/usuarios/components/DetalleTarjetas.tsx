@@ -4,7 +4,7 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { NivelCodigo, UsuarioDetalle } from '@/providers/usuariosProvider';
-import { dateOnly, dateTime, integer, money } from '../format';
+import { formatDate, formatDateTime, formatInteger, formatMoney } from '@/lib/utils/format';
 import { NIVEL_LABEL, NIVEL_TONE, NivelBadge, NivelIcon } from './NivelBadge';
 
 function Kpi({ icon: Icon, label, value, hint }: { icon: LucideIcon; label: string; value: string; hint: string }) {
@@ -32,14 +32,14 @@ export function KpisUsuario({ u }: { u: UsuarioDetalle }) {
       <Kpi
         icon={CreditCard}
         label={t('usuarios.detalle.compras')}
-        value={integer(u.compras, lang)}
-        hint={u.primera_compra ? t('usuarios.detalle.desde', { fecha: dateOnly(u.primera_compra, lang) }) : t('usuarios.detalle.sinCompras')}
+        value={formatInteger(u.compras, lang)}
+        hint={u.primera_compra ? t('usuarios.detalle.desde', { fecha: formatDate(u.primera_compra, lang) }) : t('usuarios.detalle.sinCompras')}
       />
-      <Kpi icon={Tag} label={t('usuarios.detalle.ahorro')} value={money(u.ahorro_total, lang)} hint={t(u.comercios_visitados === 1 ? 'usuarios.detalle.enComercioUno' : 'usuarios.detalle.enComercios', { n: u.comercios_visitados })} />
+      <Kpi icon={Tag} label={t('usuarios.detalle.ahorro')} value={formatMoney(u.ahorro_total, lang)} hint={t(u.comercios_visitados === 1 ? 'usuarios.detalle.enComercioUno' : 'usuarios.detalle.enComercios', { n: u.comercios_visitados })} />
       <Kpi
         icon={Star}
         label={t('usuarios.detalle.calificaciones')}
-        value={integer(u.calificaciones.total, lang)}
+        value={formatInteger(u.calificaciones.total, lang)}
         hint={t('usuarios.detalle.mediaN', { n: u.calificaciones.comercios, media: promedio })}
       />
     </ul>
@@ -133,8 +133,8 @@ export function PerfilCard({ u }: { u: UsuarioDetalle }) {
         <Dato icon={Phone} label={t('usuarios.detalle.telefono')}>{u.telefono ?? '-'}</Dato>
         <Dato icon={MapPin} label={t('usuarios.detalle.ciudad')}>{u.ciudad ?? '-'}</Dato>
         <Dato icon={IdCard} label={t('usuarios.detalle.cedula')}>{u.cedula ?? '-'}</Dato>
-        <Dato icon={Calendar} label={t('usuarios.detalle.miembroDesde')}>{dateOnly(u.registro, lang)}</Dato>
-        <Dato icon={Calendar} label={t('usuarios.detalle.ultimoAcceso')}>{dateTime(u.ultimo_acceso, lang)}</Dato>
+        <Dato icon={Calendar} label={t('usuarios.detalle.miembroDesde')}>{formatDate(u.registro, lang)}</Dato>
+        <Dato icon={Calendar} label={t('usuarios.detalle.ultimoAcceso')}>{formatDateTime(u.ultimo_acceso, lang)}</Dato>
         <Dato icon={CreditCard} label={t('usuarios.detalle.carnetPlus')}>{t(u.carnet_plus ? 'usuarios.detalle.carnetSi' : 'usuarios.detalle.carnetNo')}</Dato>
       </ul>
     </section>

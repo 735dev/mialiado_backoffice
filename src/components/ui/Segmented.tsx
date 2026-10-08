@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils/cn';
 
-interface Option<T extends string> {
+export interface SegmentedOption<T extends string> {
   value: T;
   label: string;
   disabled?: boolean;
@@ -9,14 +9,16 @@ interface Option<T extends string> {
 }
 
 interface SegmentedProps<T extends string> {
-  options: Option<T>[];
+  options: SegmentedOption<T>[];
   value: T;
   onChange: (value: T) => void;
   label: string;
+  /** `md` = 44 px (formularios), `sm` = 36 px (filtros de tabla). */
+  size?: 'sm' | 'md';
 }
 
-/** Selector en pastilla del prototipo (CSV / XLSX / PDF). */
-export function Segmented<T extends string>({ options, value, onChange, label }: SegmentedProps<T>) {
+/** Selector en pastilla del prototipo (Todos / Programados / Enviados, CSV / XLSX). */
+export function Segmented<T extends string>({ options, value, onChange, label, size = 'sm' }: SegmentedProps<T>) {
   return (
     <div role="group" aria-label={label} className="inline-flex max-w-full gap-0.5 overflow-x-auto rounded-pill bg-surface-2 p-1">
       {options.map((o) => {
@@ -30,7 +32,8 @@ export function Segmented<T extends string>({ options, value, onChange, label }:
             aria-describedby={o.disabled ? o.describedBy : undefined}
             onClick={() => onChange(o.value)}
             className={cn(
-              'h-9 whitespace-nowrap rounded-pill px-[18px] text-sm font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50',
+              'whitespace-nowrap rounded-pill px-4 text-sm font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50',
+              size === 'md' ? 'h-11 px-[18px]' : 'h-9',
               active ? 'bg-surface text-ink shadow-e1' : 'text-ink-muted enabled:hover:text-ink',
             )}
           >

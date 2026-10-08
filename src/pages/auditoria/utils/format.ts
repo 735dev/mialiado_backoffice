@@ -29,8 +29,6 @@ export function fmtFecha(iso: string, lang: string, et: Etiquetas, now: Date = n
   return `${new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short' }).format(d)}, ${hora(d, lang)}`;
 }
 
-export const fmtNumero = (n: number, lang: string): string => new Intl.NumberFormat(lang === 'es' ? 'es-VE' : 'en-US').format(n);
-
 /** Valor de un campo del antes/despues: texto, numero, booleano, objeto (JSON) o «—». */
 export function fmtValor(v: unknown): string {
   if (v === null || v === undefined || v === '') return '—';

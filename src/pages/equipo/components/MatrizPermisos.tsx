@@ -11,9 +11,10 @@ import { useT, type TFunction } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { usePermisos } from '../hooks/usePermisos';
 import type { RolResumen } from '../models/equipo';
-import { fmtFecha, plural } from '../utils/format';
+import { plural } from '../utils/format';
+import { formatDate } from '@/lib/utils/format';
 import { ACCIONES, permisoDe } from '../utils/permisos';
-import { Segmented } from './Segmented';
+import { Segmented } from '@/components/ui/Segmented';
 
 interface Props {
   permisos: ReturnType<typeof usePermisos>;
@@ -63,7 +64,7 @@ export function MatrizPermisos({ permisos: p, canEdit }: Props) {
 
       <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-5 py-4 md:px-7">
         <span className="text-sm text-ink-muted">
-          {ultima ? t('equipo.matrix.lastChange', { por: ultima.por, fecha: fmtFecha(ultima.fecha, lang) }) : t('equipo.matrix.noChanges')}
+          {ultima ? t('equipo.matrix.lastChange', { por: ultima.por, fecha: formatDate(ultima.fecha, lang) }) : t('equipo.matrix.noChanges')}
         </span>
         {canEdit && (
           <div className="flex gap-3">

@@ -1,7 +1,8 @@
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { EstadoComercio } from '@/providers/comerciosProvider';
-import { avatarTone, ESTADO_KEY, ESTADO_TONE, initials } from '../utils/format';
+import { ESTADO_KEY, ESTADO_TONE } from '../utils/format';
+import { avatarTone, initials } from '@/lib/utils/format';
 
 const TONE = {
   ok: { pill: 'bg-primary-tint text-primary-deep', dot: 'bg-primary-deep' },

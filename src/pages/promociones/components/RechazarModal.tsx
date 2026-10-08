@@ -9,7 +9,7 @@ import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { MotivoRechazo, PromoDetalle } from '@/providers/promocionesProvider';
 import { COMENTARIO_MAX, MOTIVOS, rechazoSchema, type RechazoValues } from '../schemas/moderacion';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface Props {
   promo: PromoDetalle;

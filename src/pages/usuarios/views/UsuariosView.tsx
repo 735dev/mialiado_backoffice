@@ -11,7 +11,7 @@ import type { UsuarioTab } from '@/providers/usuariosProvider';
 import { ResumenCards } from '../components/ResumenCards';
 import { UsuariosTabla } from '../components/UsuariosTabla';
 import { useUsuarios } from '../hooks/useUsuarios';
-import { integer } from '../format';
+import { formatInteger } from '@/lib/utils/format';
 
 export const routeName = PATHS.usuarios;
 
@@ -94,7 +94,7 @@ export default function UsuariosView() {
         )}
 
         <footer className="flex flex-col items-center justify-between gap-3 border-t border-line p-4 text-sm text-ink-muted sm:flex-row">
-          <p>{t('usuarios.mostrando', { desde: integer(from, lang), hasta: integer(to, lang), total: integer(u.total, lang) })}</p>
+          <p>{t('usuarios.mostrando', { desde: formatInteger(from, lang), hasta: formatInteger(to, lang), total: formatInteger(u.total, lang) })}</p>
           <PaginatedComplete page={u.page} limit={u.limit} total={u.total} links={u.links} onPageChange={u.setPage} />
         </footer>
       </div>

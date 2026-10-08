@@ -8,7 +8,7 @@ import { useAuth } from '@/lib/hooks/useAuth';
 import { useT } from '@/lib/hooks/useT';
 import { PATHS } from '@/lib/routes/paths';
 import { notify } from '@/lib/utils/notify';
-import { Avatar } from '../components/Avatar';
+import { Avatar } from '@/components/ui/Avatar';
 import { BloquearPanel } from '../components/BloquearPanel';
 import { CanjesCard } from '../components/CanjesCard';
 import { KpisUsuario, PerfilCard, ProgresoNivelCard } from '../components/DetalleTarjetas';
@@ -81,7 +81,7 @@ export default function UsuarioDetalleView() {
           >
             <ArrowLeft size={20} />
           </button>
-          <Avatar name={u.nombre} src={u.foto_url} size={72} />
+          <Avatar tone="warn" name={u.nombre} src={u.foto_url} size={72} />
           <div className="min-w-0">
             <h1 className="truncate text-3xl font-extrabold tracking-tight">{u.nombre}</h1>
             <p className="flex flex-wrap items-center gap-2 text-ink-muted">

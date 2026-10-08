@@ -6,7 +6,7 @@ import { Spinner } from '@/components/ui/Spinner';
 import { useAuth } from '@/lib/hooks/useAuth';
 import { useT } from '@/lib/hooks/useT';
 import { PATHS } from '@/lib/routes/paths';
-import { ConfirmDialog } from '../components/ConfirmDialog';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { NivelesCard } from '../components/NivelesCard';
 import { PreviaCard } from '../components/PreviaCard';
 import { PublishBar } from '../components/PublishBar';

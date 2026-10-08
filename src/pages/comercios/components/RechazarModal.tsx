@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import { COMENTARIO_MAX, MOTIVOS_RECHAZO, MOTIVO_TEXTO, rechazoSchema, type RechazoValues } from '../schemas/comercios';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface Props {
   open: boolean;

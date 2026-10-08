@@ -11,7 +11,7 @@ import { notify } from '@/lib/utils/notify';
 import type { PlantillaRespuesta, TicketDetalle } from '../models/ticket';
 import { actualizarTicket, responderTicket } from '../providers/soporteProvider';
 import { RESPUESTA_MAX, respuestaSchema, type RespuestaForm } from '../schemas/soporteSchemas';
-import { Segmented } from './Segmented';
+import { Segmented } from '@/components/ui/Segmented';
 
 interface ResponderBoxProps {
   ticket: TicketDetalle;

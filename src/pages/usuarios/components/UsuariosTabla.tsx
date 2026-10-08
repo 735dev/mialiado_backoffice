@@ -6,8 +6,8 @@ import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 import { useT } from '@/lib/hooks/useT';
 import { buildPath, PATHS } from '@/lib/routes/paths';
 import type { UsuarioFila } from '@/providers/usuariosProvider';
-import { dateTime, integer, money } from '../format';
-import { Avatar } from './Avatar';
+import { formatDateTime, formatInteger, formatMoney } from '@/lib/utils/format';
+import { Avatar } from '@/components/ui/Avatar';
 import { NivelBadge } from './NivelBadge';
 
 export function EstadoBadge({ estado }: { estado: UsuarioFila['estado'] }) {
@@ -20,7 +20,7 @@ const TH = 'px-3 py-3 text-left font-mono text-xs font-medium uppercase tracking
 function Persona({ u }: { u: UsuarioFila }) {
   return (
     <span className="flex min-w-0 items-center gap-3">
-      <Avatar name={u.nombre} src={u.foto_url} />
+      <Avatar tone="warn" name={u.nombre} src={u.foto_url} />
       <span className="min-w-0">
         <span className="block truncate font-bold leading-5">{u.nombre}</span>
         <span className="block truncate text-xs text-ink-muted">@{u.usuario}</span>
@@ -48,11 +48,11 @@ export function UsuariosTabla({ items, isLoading }: { items: UsuarioFila[]; isLo
               </span>
               <span className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
                 <NivelBadge nivel={u.nivel} />
-                <span>{t(u.compras === 1 ? 'usuarios.tabla.compraUna' : 'usuarios.tabla.comprasN', { n: integer(u.compras, lang) })}</span>
-                <span className="font-bold">{money(u.ahorro_total, lang)}</span>
+                <span>{t(u.compras === 1 ? 'usuarios.tabla.compraUna' : 'usuarios.tabla.comprasN', { n: formatInteger(u.compras, lang) })}</span>
+                <span className="font-bold">{formatMoney(u.ahorro_total, lang)}</span>
               </span>
               <span className="text-xs text-ink-muted">
-                {u.ciudad ?? '-'} · {dateTime(u.ultimo_acceso, lang)}
+                {u.ciudad ?? '-'} · {formatDateTime(u.ultimo_acceso, lang)}
               </span>
             </Link>
           </li>
@@ -81,11 +81,11 @@ export function UsuariosTabla({ items, isLoading }: { items: UsuarioFila[]; isLo
             <tr key={u.id} className="border-t border-line hover:bg-surface-2">
               <td className="py-3 pl-6 pr-3"><Persona u={u} /></td>
               <td className="px-3"><NivelBadge nivel={u.nivel} /></td>
-              <td className="px-3 text-right font-bold">{integer(u.compras, lang)}</td>
-              <td className="px-3 text-right font-bold">{money(u.ahorro_total, lang)}</td>
+              <td className="px-3 text-right font-bold">{formatInteger(u.compras, lang)}</td>
+              <td className="px-3 text-right font-bold">{formatMoney(u.ahorro_total, lang)}</td>
               <td className="px-3">{u.ciudad ?? '-'}</td>
               <td className="px-3"><EstadoBadge estado={u.estado} /></td>
-              <td className="px-3 text-ink-soft">{dateTime(u.ultimo_acceso, lang)}</td>
+              <td className="px-3 text-ink-soft">{formatDateTime(u.ultimo_acceso, lang)}</td>
               <td className="pr-4">
                 <Link to={href(u)} aria-label={t('usuarios.tabla.verDe', { nombre: u.nombre })} className="flex h-9 w-9 items-center justify-center rounded-full text-ink-muted hover:bg-surface">
                   <ChevronRight size={18} />

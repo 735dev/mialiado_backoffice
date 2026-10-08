@@ -10,8 +10,9 @@ import { notify } from '@/lib/utils/notify';
 import type { useHistorial } from '../hooks/useHistorial';
 import type { EstadoNotificacion, Notificacion, TabHistorial } from '../models/notificacion';
 import { cancelarNotificacion, enviarNotificacion } from '../providers/notificacionesProvider';
-import { fmtFechaHora, fmtNumero } from '../utils/format';
-import { Segmented } from './Segmented';
+import { fmtFechaHora } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
+import { Segmented } from '@/components/ui/Segmented';
 
 const TONO: Record<EstadoNotificacion, 'neutral' | 'ok' | 'warn' | 'err'> = {
   borrador: 'neutral',
@@ -36,7 +37,7 @@ export function HistorialNotificaciones({ historial: h, canEdit }: HistorialProp
     notify.confirm(t('notificaciones.history.confirmSend', { titulo: n.titulo }), () => {
       void enviarNotificacion(n.id).then((res) => {
         if (res.ok) {
-          notify.toast.success(t('notificaciones.toast.sent', { n: fmtNumero(res.data.enviados, lang) }));
+          notify.toast.success(t('notificaciones.toast.sent', { n: formatInteger(res.data.enviados, lang) }));
           h.reload();
         } else notify.fromApiError(res);
       });
@@ -165,7 +166,7 @@ function Tabla({ items, lang, t, canEdit, onSend, onCancel }: ListaProps) {
               <td className="h-16 px-3 text-ink-muted">{fmtFechaHora(fechaDe(n), lang)}</td>
               <td className="px-3 font-bold">{n.titulo}</td>
               <td className="px-3">{n.segmento_texto}</td>
-              <td className="px-3 text-right font-extrabold">{n.estado === 'programada' ? fmtNumero(n.destinatarios, lang) : fmtNumero(n.enviados, lang)}</td>
+              <td className="px-3 text-right font-extrabold">{n.estado === 'programada' ? formatInteger(n.destinatarios, lang) : formatInteger(n.enviados, lang)}</td>
               <td className="min-w-[150px] px-3">
                 <Apertura n={n} t={t} />
               </td>
@@ -197,7 +198,7 @@ function Tarjetas({ items, lang, t, canEdit, onSend, onCancel }: ListaProps) {
           </div>
           <div className="flex items-center justify-between gap-3 text-sm">
             <span>
-              <b className="font-extrabold">{fmtNumero(n.estado === 'programada' ? n.destinatarios : n.enviados, lang)}</b> {t('notificaciones.history.cols.sent').toLowerCase()}
+              <b className="font-extrabold">{formatInteger(n.estado === 'programada' ? n.destinatarios : n.enviados, lang)}</b> {t('notificaciones.history.cols.sent').toLowerCase()}
             </span>
             <div className="w-36">
               <Apertura n={n} t={t} />

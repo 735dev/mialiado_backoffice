@@ -12,8 +12,8 @@ import { useMiembros } from '../hooks/useCatalogos';
 import { useTicket } from '../hooks/useTicket';
 import { PRIORIDADES, type CambiosTicket, type EstadoTicket, type PlantillaRespuesta, type Prioridad, type TicketDetalle } from '../models/ticket';
 import { actualizarTicket } from '../providers/soporteProvider';
-import { fmtDinero, fmtFechaHora } from '../utils/format';
-import { Avatar } from './Avatar';
+import { formatDateTime, formatMoney } from '@/lib/utils/format';
+import { Avatar } from '@/components/ui/Avatar';
 import { HiloMensajes } from './HiloMensajes';
 import { PrioridadBadge } from './PrioridadBadge';
 import { ResponderBox } from './ResponderBox';
@@ -95,12 +95,12 @@ function CobroCard({ cobro }: { cobro: NonNullable<TicketDetalle['cobro']> }) {
       </span>
       <div className="min-w-0 flex-1">
         <div className="truncate text-sm font-bold">
-          {cobro.comercio} · {cobro.promocion} · {fmtFechaHora(cobro.fecha, lang)}
+          {cobro.comercio} · {cobro.promocion} · {formatDateTime(cobro.fecha, lang)}
         </div>
         <div className="text-sm text-ink-muted">
-          {t('soporte.cobro.folio')} <span className="font-mono text-[13px] text-ink-soft">{cobro.folio}</span> · {t('soporte.cobro.consumo')} {fmtDinero(cobro.consumo, lang)} ·{' '}
-          {t('soporte.cobro.cobrado')} {fmtDinero(cobro.cobrado, lang)}
-          {diferencia && ` · ${t('soporte.cobro.esperado')} ${fmtDinero(cobro.esperado, lang)} (−${cobro.esperado_pct}%)`}
+          {t('soporte.cobro.folio')} <span className="font-mono text-[13px] text-ink-soft">{cobro.folio}</span> · {t('soporte.cobro.consumo')} {formatMoney(cobro.consumo, lang)} ·{' '}
+          {t('soporte.cobro.cobrado')} {formatMoney(cobro.cobrado, lang)}
+          {diferencia && ` · ${t('soporte.cobro.esperado')} ${formatMoney(cobro.esperado, lang)} (−${cobro.esperado_pct}%)`}
         </div>
       </div>
     </div>
@@ -158,7 +158,7 @@ function CabeceraTicket({ ticket, canEdit, onBack, onChanged }: CabeceraProps) {
 
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex min-w-0 items-center gap-2.5">
-          <Avatar nombre={s.nombre} />
+          <Avatar name={s.nombre} />
           <div className="min-w-0">
             <div className="truncate text-sm font-bold">
               {s.nombre} {s.nivel && <span className="font-medium text-ink-muted">· {s.nivel}</span>}

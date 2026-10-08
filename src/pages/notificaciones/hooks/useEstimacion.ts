@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Estimacion, ParamsEstimar } from '../models/notificacion';
 import { estimarAlcance } from '../providers/notificacionesProvider';
-import { useDebounced } from './useDebounced';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 interface Snapshot {
   key: string;
@@ -11,7 +11,7 @@ interface Snapshot {
 /** Alcance estimado de un segmento (con espera de 350 ms al cambiar). `loading` mientras la consulta vigente no responde. */
 export function useEstimacion(params: ParamsEstimar, enabled = true) {
   const key = JSON.stringify(params);
-  const settled = useDebounced(key);
+  const settled = useDebouncedValue(key);
   const [snap, setSnap] = useState<Snapshot | null>(null);
 
   useEffect(() => {

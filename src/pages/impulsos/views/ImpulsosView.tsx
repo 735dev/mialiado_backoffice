@@ -15,7 +15,7 @@ import { CampanasTabla } from '../components/CampanasTabla';
 import { EstadoCampanasCard } from '../components/EstadoCampanasCard';
 import { GastoChart } from '../components/GastoChart';
 import { KpiCards } from '../components/KpiCards';
-import { integer } from '../format';
+import { formatInteger } from '@/lib/utils/format';
 import { useImpulsos, type FiltroEstado } from '../hooks/useImpulsos';
 
 export const routeName = PATHS.impulsos;
@@ -121,7 +121,7 @@ export default function ImpulsosView() {
 
         {!puedeEditar && m.items.length > 0 && <p className="border-t border-line px-5 py-3 text-sm text-ink-soft">{t('impulsos.soloLectura')}</p>}
         <footer className="flex flex-col items-center justify-between gap-3 border-t border-line p-4 text-sm text-ink-muted sm:flex-row">
-          <p>{t('impulsos.lista.mostrando', { desde: integer(from, lang), hasta: integer(to, lang), total: integer(m.total, lang) })}</p>
+          <p>{t('impulsos.lista.mostrando', { desde: formatInteger(from, lang), hasta: formatInteger(to, lang), total: formatInteger(m.total, lang) })}</p>
           <PaginatedComplete page={m.page} limit={m.limit} total={m.total} links={m.links} onPageChange={m.setPage} />
         </footer>
       </section>

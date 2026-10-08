@@ -12,7 +12,7 @@ import {
   obtenerColumnas,
 } from '../providers/reportesProvider';
 import { guardarArchivo, nombreSeguro } from '../utils/descarga';
-import { useDebounced } from './useDebounced';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 /** Columnas por tipo, categorias y zonas para armar el reporte. Si alguna falla, el selector queda sin opciones. */
 export function useCatalogos() {
@@ -49,7 +49,7 @@ interface Snapshot {
 /** Filas, columnas y tamano aproximado del reporte que se esta armando (con espera de 350 ms). */
 export function useEstimacionReporte(body: CuerpoReporte | null) {
   const key = JSON.stringify(body);
-  const settled = useDebounced(key);
+  const settled = useDebouncedValue(key);
   const [snap, setSnap] = useState<Snapshot | null>(null);
 
   useEffect(() => {

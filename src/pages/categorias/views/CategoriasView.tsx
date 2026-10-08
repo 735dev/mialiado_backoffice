@@ -8,7 +8,7 @@ import { useMediaQuery } from '@/lib/hooks/useMediaQuery';
 import { useT } from '@/lib/hooks/useT';
 import { PATHS } from '@/lib/routes/paths';
 import { CategoriaTree } from '../components/CategoriaTree';
-import { ConfirmDialog } from '../components/ConfirmDialog';
+import { ConfirmDialog } from '@/components/ui/ConfirmDialog';
 import { EditorPanel } from '../components/EditorPanel';
 import { HojaEditor } from '../components/HojaEditor';
 import { NuevaDialog } from '../components/NuevaDialog';
@@ -182,6 +182,7 @@ function Gestor({ arbol, reload }: { arbol: Arbol; reload: () => void }) {
 
       <NuevaDialog open={nueva} padres={tops} busy={acciones.busy} onClose={() => setNueva(false)} onCreate={acciones.crear} />
       <ConfirmDialog
+        danger
         open={eliminar && nodo !== null}
         title={t('categorias.eliminar.titulo', { nombre: nodo?.nombre ?? '' })}
         description={t('categorias.eliminar.texto')}

@@ -2,7 +2,8 @@ import { Bell } from 'lucide-react';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { Estimacion } from '../models/notificacion';
-import { fmtCompacto, fmtFechaLarga, fmtNumero } from '../utils/format';
+import { fmtCompacto, fmtFechaLarga } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
 
 interface VistaPreviaProps {
   titulo: string;
@@ -35,7 +36,7 @@ export function VistaPrevia({ titulo, mensaje, segmentoTexto, saleTexto, hora, f
           <div className="flex flex-wrap items-baseline gap-x-2.5">
             <span className="text-3xl font-extrabold tracking-tight">{estimacion ? fmtCompacto(estimacion.alcance, lang) : '—'}</span>
             {estimacion && (
-              <span className="text-sm font-semibold">{t('notificaciones.preview.of', { n: fmtNumero(estimacion.total_usuarios, lang) })}</span>
+              <span className="text-sm font-semibold">{t('notificaciones.preview.of', { n: formatInteger(estimacion.total_usuarios, lang) })}</span>
             )}
           </div>
         </div>

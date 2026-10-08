@@ -3,7 +3,7 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { ImpulsosResumen, Kpi } from '@/providers/impulsosProvider';
-import { decimal, integer, money } from '../format';
+import { formatDecimal, formatInteger, formatMoney } from '@/lib/utils/format';
 
 function Sparkline({ values }: { values: number[] }) {
   if (values.length < 2) return null;
@@ -26,7 +26,7 @@ function Variacion({ kpi, lang }: { kpi: Kpi; lang: 'es' | 'en' }) {
   if (value === null || value === undefined) return <span className="text-xs text-ink-muted">{t('impulsos.kpis.sinComparacion')}</span>;
   const up = value >= 0;
   const Icon = up ? ArrowUpRight : ArrowDownRight;
-  const texto = pts !== null && pts !== undefined ? `${decimal(Math.abs(value), lang)} ${t('impulsos.kpis.pts')}` : `${decimal(Math.abs(value), lang, 0)}%`;
+  const texto = pts !== null && pts !== undefined ? `${formatDecimal(Math.abs(value), lang)} ${t('impulsos.kpis.pts')}` : `${formatDecimal(Math.abs(value), lang, 0)}%`;
   return (
     <span className={cn('inline-flex h-6 items-center gap-1 rounded-pill px-2 text-xs font-bold', up ? 'bg-primary-tint text-primary-deep' : 'bg-err-tint text-err-deep')}>
       <Icon size={12} aria-hidden="true" />
@@ -69,10 +69,10 @@ export function KpiCards({ resumen, loading }: { resumen: ImpulsosResumen | null
   }
   return (
     <ul aria-label={t('impulsos.kpis.label')} className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-      <KpiCard icon={Banknote} label={t('impulsos.kpis.gasto')} value={money(k.gasto_total.valor, lang)} kpi={k.gasto_total} serie={resumen.serie.map((s) => s.gasto)} lang={lang} />
-      <KpiCard icon={Eye} label={t('impulsos.kpis.vistas')} value={integer(k.vistas.valor, lang)} kpi={k.vistas} lang={lang} />
-      <KpiCard icon={Percent} label={t('impulsos.kpis.ctr')} value={`${decimal(k.ctr.valor, lang)}%`} kpi={k.ctr} lang={lang} />
-      <KpiCard icon={Ticket} label={t('impulsos.kpis.canjes')} value={integer(k.canjes_atribuidos.valor, lang)} kpi={k.canjes_atribuidos} serie={resumen.serie.map((s) => s.canjes)} lang={lang} />
+      <KpiCard icon={Banknote} label={t('impulsos.kpis.gasto')} value={formatMoney(k.gasto_total.valor, lang)} kpi={k.gasto_total} serie={resumen.serie.map((s) => s.gasto)} lang={lang} />
+      <KpiCard icon={Eye} label={t('impulsos.kpis.vistas')} value={formatInteger(k.vistas.valor, lang)} kpi={k.vistas} lang={lang} />
+      <KpiCard icon={Percent} label={t('impulsos.kpis.ctr')} value={`${formatDecimal(k.ctr.valor, lang)}%`} kpi={k.ctr} lang={lang} />
+      <KpiCard icon={Ticket} label={t('impulsos.kpis.canjes')} value={formatInteger(k.canjes_atribuidos.valor, lang)} kpi={k.canjes_atribuidos} serie={resumen.serie.map((s) => s.canjes)} lang={lang} />
     </ul>
   );
 }

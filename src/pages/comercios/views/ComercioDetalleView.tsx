@@ -15,7 +15,7 @@ import { DecisionPanel, type ChecklistState } from '../components/DecisionPanel'
 import { DatosCard, DocumentosCard, TimelineCard, UbicacionCard } from '../components/DetalleCards';
 import { RechazarModal } from '../components/RechazarModal';
 import { useComercioDetalle } from '../hooks/useComercioDetalle';
-import { formatDate } from '../utils/format';
+import { formatDate } from '@/lib/utils/format';
 
 export const routeName = PATHS.comercio;
 

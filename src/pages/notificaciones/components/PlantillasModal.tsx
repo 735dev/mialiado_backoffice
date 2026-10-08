@@ -12,7 +12,7 @@ import { usePlantillas } from '../hooks/useCatalogos';
 import type { Plantilla } from '../models/notificacion';
 import { borrarPlantilla, crearPlantilla } from '../providers/notificacionesProvider';
 import { plantillaSchema, type PlantillaForm } from '../schemas/notificacionSchema';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface PlantillasModalProps {
   open: boolean;
@@ -53,7 +53,7 @@ export function PlantillasModal({ open, onOpenChange, canEdit, actual, onUse }: 
     });
 
   return (
-    <Modal open={open} onOpenChange={onOpenChange} title={t('notificaciones.templates.title')} description={t('notificaciones.templates.description')}>
+    <Modal open={open} onClose={() => onOpenChange(false)} title={t('notificaciones.templates.title')} description={t('notificaciones.templates.description')}>
       {plantillas.isLoading ? (
         <div className="flex justify-center py-8" aria-busy="true">
           <Spinner size={28} className="text-primary-deep" />

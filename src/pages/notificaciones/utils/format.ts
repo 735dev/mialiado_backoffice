@@ -3,8 +3,6 @@ const TZ = 'America/Caracas';
 /** Español de Venezuela: «12.480» y decimal con coma. */
 const loc = (lang: string): string => (lang === 'es' ? 'es-VE' : 'en-US');
 
-export const fmtNumero = (n: number, lang: string): string => new Intl.NumberFormat(loc(lang)).format(n);
-
 /** 3200 -> «3,2k»; por debajo de mil, el numero tal cual. */
 export function fmtCompacto(n: number, lang: string): string {
   if (n < 1000) return String(n);

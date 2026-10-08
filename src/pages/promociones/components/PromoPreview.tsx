@@ -4,7 +4,8 @@ import { useLang } from '@/lib/hooks/useLang';
 import { useT } from '@/lib/hooks/useT';
 import { cn } from '@/lib/utils/cn';
 import type { PromoDetalle, PromoNivel } from '@/providers/promocionesProvider';
-import { diasRestantes, money, shortDate } from '../format';
+import { diasRestantes } from '../format';
+import { formatMoney, formatShortDate } from '@/lib/utils/format';
 import { TipoPill } from './ColaRevision';
 
 const NIVELES: { codigo: PromoNivel; label: string }[] = [
@@ -44,8 +45,8 @@ export function PromoPreview({ p }: { p: PromoDetalle }) {
         {precio && (
           <p className="flex flex-wrap items-center gap-3">
             <span className="rounded-pill bg-primary px-3 py-1 text-lg font-extrabold text-primary-on">-{precio.descuento_pct}%</span>
-            {p.precio_normal !== null && <span className="text-sm line-through opacity-60">{money(p.precio_normal, lang)}</span>}
-            <span className="text-xl font-extrabold">{money(precio.precio, lang)}</span>
+            {p.precio_normal !== null && <span className="text-sm line-through opacity-60">{formatMoney(p.precio_normal, lang)}</span>}
+            <span className="text-xl font-extrabold">{formatMoney(precio.precio, lang)}</span>
           </p>
         )}
         <div className="flex flex-col gap-2 border-t border-dashed border-bg/30 pt-3 text-sm">
@@ -56,7 +57,7 @@ export function PromoPreview({ p }: { p: PromoDetalle }) {
             </p>
           )}
           <p className="flex justify-between gap-2 text-xs opacity-80">
-            <span>{t('promociones.preview.vigente', { desde: shortDate(p.inicio, lang), hasta: shortDate(p.fin, lang) })}</span>
+            <span>{t('promociones.preview.vigente', { desde: formatShortDate(p.inicio, lang), hasta: formatShortDate(p.fin, lang) })}</span>
             {resto !== null && <span>{t(resto === 1 ? 'promociones.preview.quedaUno' : 'promociones.preview.quedan', { n: resto })}</span>}
           </p>
         </div>

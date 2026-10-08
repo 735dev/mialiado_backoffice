@@ -7,7 +7,7 @@ import { notify } from '@/lib/utils/notify';
 import type { ModoEnvio, Plantilla } from '../models/notificacion';
 import { crearNotificacion, enviarPrueba, estimarAlcance } from '../providers/notificacionesProvider';
 import { borradorSchema, MENSAJE_MAX, notificacionSchema, TITULO_MAX, valoresIniciales, type NotificacionForm } from '../schemas/notificacionSchema';
-import { fmtNumero } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
 import { aCuerpo } from '../utils/payload';
 
 export type AccionEnCurso = 'send' | 'draft' | 'test' | null;
@@ -36,7 +36,7 @@ export function useComposer({ onDone }: Args) {
     if (res.data.reprogramada) notify.warning(t('notificaciones.reprogramada'));
     else if (modo === 'borrador') notify.toast.success(t('notificaciones.toast.draft'));
     else if (modo === 'programar') notify.toast.success(t('notificaciones.toast.scheduled'));
-    else notify.toast.success(t('notificaciones.toast.sent', { n: fmtNumero(res.data.enviados, lang) }));
+    else notify.toast.success(t('notificaciones.toast.sent', { n: formatInteger(res.data.enviados, lang) }));
     methods.reset(valoresIniciales);
     onDone();
   };
@@ -48,7 +48,7 @@ export function useComposer({ onDone }: Args) {
     }
     // El aviso dice a cuantas personas llega: se consulta el alcance justo antes de confirmar.
     const est = await estimarAlcance({ segmento: v.segmento, niveles: v.niveles, zonas: v.zonas });
-    notify.confirm(t('notificaciones.confirmSend', { n: est.ok ? fmtNumero(est.data.alcance, lang) : '—' }), () => void ejecutar(v, 'ahora'));
+    notify.confirm(t('notificaciones.confirmSend', { n: est.ok ? formatInteger(est.data.alcance, lang) : '—' }), () => void ejecutar(v, 'ahora'));
   };
 
   const guardarBorrador = () => {

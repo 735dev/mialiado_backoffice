@@ -3,8 +3,6 @@ const TZ = 'America/Caracas';
 /** Español de Venezuela: «3.912» (el «es» generico no separa los miles de 4 cifras) y decimal con coma. */
 const loc = (lang: string): string => (lang === 'es' ? 'es-VE' : 'en-US');
 
-export const fmtNumero = (n: number, lang: string): string => new Intl.NumberFormat(loc(lang)).format(n);
-
 /** 1.4 MB, 38 KB. */
 export function fmtBytes(bytes: number | null, lang: string): string {
   if (bytes === null) return '';

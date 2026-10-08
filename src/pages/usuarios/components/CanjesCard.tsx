@@ -7,8 +7,8 @@ import { useLang } from '@/lib/hooks/useLang';
 import { usePagination } from '@/lib/hooks/usePagination';
 import { useT } from '@/lib/hooks/useT';
 import { listarCanjesUsuario, type CanjeFila, type CanjeResumen, type UsuarioDetalle } from '@/providers/usuariosProvider';
-import { dateOnly, money } from '../format';
-import { Avatar } from './Avatar';
+import { formatDate, formatMoney } from '@/lib/utils/format';
+import { Avatar } from '@/components/ui/Avatar';
 
 interface Fila {
   id: number;
@@ -42,16 +42,16 @@ function Filas({ filas }: { filas: Fila[] }) {
       <ul>
         {filas.map((c) => (
           <li key={c.id} className={`flex flex-col gap-1 border-t border-line px-5 py-3 text-sm ${GRID}`}>
-            <span className="text-ink-soft">{dateOnly(c.fecha, lang)}</span>
+            <span className="text-ink-soft">{formatDate(c.fecha, lang)}</span>
             <span className="flex min-w-0 items-center gap-2 font-bold">
-              <Avatar name={c.comercio} size={28} />
+              <Avatar tone="warn" name={c.comercio} size={28} />
               <span className="truncate">{c.comercio}</span>
             </span>
             <span className="flex min-w-0 items-center gap-2">
               <span className="truncate">{c.promocion ?? t('usuarios.canjes.sinPromocion')}</span>
               {c.pct > 0 && <Badge tone="ok">-{c.pct}%</Badge>}
             </span>
-            <span className="font-bold md:text-right">{money(c.ahorro, lang)}</span>
+            <span className="font-bold md:text-right">{formatMoney(c.ahorro, lang)}</span>
             <span className="md:text-right">
               <Badge tone={c.anulado ? 'neutral' : 'ok'}>{t(c.anulado ? 'usuarios.canjes.anulado' : 'usuarios.canjes.canjeado')}</Badge>
             </span>

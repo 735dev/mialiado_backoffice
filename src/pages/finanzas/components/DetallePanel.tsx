@@ -7,7 +7,7 @@ import { useFormato } from '../hooks/useFormato';
 import type { Accion } from '../hooks/useAccionesFinanzas';
 import type { EventoLinea, RecargaDetalle } from '../models/finanzas';
 import { formatMinutes, metodoKey } from '../utils/format';
-import { Avatar } from './Avatar';
+import { Avatar } from '@/components/ui/Avatar';
 import { EstadoBadge } from './EstadoBadge';
 
 interface DetallePanelProps {
@@ -93,7 +93,7 @@ export function DetallePanel({ detalle, isLoading, hasError, canApprove, busy, o
       </div>
 
       <div className="flex items-center gap-3">
-        <Avatar name={detalle.comercio.nombre} logoUrl={detalle.comercio.logo_url} size={44} />
+        <Avatar name={detalle.comercio.nombre} src={detalle.comercio.logo_url} tone="primary" size={44} />
         <div className="min-w-0">
           <div className="truncate font-extrabold">{detalle.comercio.nombre}</div>
           <div className="font-mono text-xs text-ink-muted">{detalle.referencia}</div>

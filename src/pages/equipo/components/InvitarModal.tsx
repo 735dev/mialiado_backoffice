@@ -10,7 +10,7 @@ import { applyServerErrors } from '@/lib/utils/applyServerErrors';
 import { notify } from '@/lib/utils/notify';
 import { invitarMiembro } from '../providers/equipoProvider';
 import { invitarSchema, type InvitarForm } from '../schemas/equipoSchemas';
-import { Modal } from './Modal';
+import { Modal } from '@/components/ui/Modal';
 
 interface Props {
   open: boolean;
@@ -50,7 +50,7 @@ export function InvitarModal({ open, onOpenChange, onInvited }: Props) {
   };
 
   return (
-    <Modal open={open} onOpenChange={cerrar} title={t('equipo.invite.title')} description={t('equipo.invite.description')}>
+    <Modal open={open} onClose={() => cerrar(false)} title={t('equipo.invite.title')} description={t('equipo.invite.description')}>
       {token ? (
         <div className="flex flex-col gap-3">
           <p className="text-sm text-ink-soft">{t('equipo.invite.devToken')}</p>

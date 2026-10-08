@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { usePagination } from '@/lib/hooks/usePagination';
 import type { ConsultaBandeja, ConteosBandeja, OrigenTicket, Prioridad, TabBandeja, TicketResumen } from '../models/ticket';
 import { listarTickets } from '../providers/soporteProvider';
-import { useDebounced } from './useDebounced';
+import { useDebouncedValue } from '@/lib/hooks/useDebouncedValue';
 
 /** Bandeja paginada: pestana, busqueda (con espera), filtros y los conteos que devuelve el servidor. */
 export function useBandeja() {
@@ -11,7 +11,7 @@ export function useBandeja() {
   const [prioridad, setPrioridad] = useState<Prioridad | ''>('');
   const [origen, setOrigen] = useState<OrigenTicket | ''>('');
   const [conteos, setConteos] = useState<ConteosBandeja | null>(null);
-  const q = useDebounced(busqueda);
+  const q = useDebouncedValue(busqueda);
 
   const fetcher = useCallback(async (p: ConsultaBandeja & { page: number; limit: number }) => {
     const res = await listarTickets(p);

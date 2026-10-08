@@ -26,10 +26,6 @@ export function fmtUltimoAcceso(iso: string | null, lang: string, et: Etiquetas,
   return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short' }).format(d);
 }
 
-export function fmtFecha(iso: string, lang: string): string {
-  return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(iso));
-}
-
 /** Singular/plural por convencion de claves: `<clave>One` y `<clave>Other`, con {n}. */
 export function plural(t: (clave: string, vars?: Record<string, string | number>) => string, clave: string, n: number): string {
   return t(`${clave}${n === 1 ? 'One' : 'Other'}`, { n });

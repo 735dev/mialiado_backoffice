@@ -10,10 +10,11 @@ import { MENSAJE_MAX, TITULO_MAX, type NotificacionForm } from '../schemas/notif
 import { useZonas } from '../hooks/useCatalogos';
 import type { useComposer } from '../hooks/useComposer';
 import { useEstimacion } from '../hooks/useEstimacion';
-import { fmtFechaHora, fmtNumero } from '../utils/format';
+import { fmtFechaHora } from '../utils/format';
+import { formatInteger } from '@/lib/utils/format';
 import { aIsoCaracas, enHorarioSilencioso, horaActualCaracas } from '../utils/horario';
 import { CampoContador } from './CampoContador';
-import { Segmented } from './Segmented';
+import { Segmented } from '@/components/ui/Segmented';
 import { SegmentoPicker } from './SegmentoPicker';
 import { VistaPrevia } from './VistaPrevia';
 
@@ -32,8 +33,8 @@ export function EditorNotificacion({ composer }: { composer: ReturnType<typeof u
   const todos = useEstimacion(TODOS);
   const inactivos = useEstimacion(INACTIVOS);
   const conteos: Partial<Record<Segmento, string>> = {
-    todos: todos.data ? t('notificaciones.segmento.usuarios', { n: fmtNumero(todos.data.alcance, lang) }) : undefined,
-    inactivos: inactivos.data ? t('notificaciones.segmento.usuarios', { n: fmtNumero(inactivos.data.alcance, lang) }) : undefined,
+    todos: todos.data ? t('notificaciones.segmento.usuarios', { n: formatInteger(todos.data.alcance, lang) }) : undefined,
+    inactivos: inactivos.data ? t('notificaciones.segmento.usuarios', { n: formatInteger(inactivos.data.alcance, lang) }) : undefined,
   };
 
   const programar = v.cuando === 'programar';
