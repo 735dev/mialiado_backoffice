@@ -1,25 +1,35 @@
 // Secciones del panel, en el orden del prototipo (aliado_prototipos/backoffice).
-// `pantalla` es el código del prototipo que la diseña.
+// Cada seccion es un modulo de permisos del backend: el menu solo muestra las que el rol puede ver.
+import type { Modulo } from '@/lib/constants/modules';
+import { PATHS } from '@/lib/routes/paths';
+
+export type GrupoSeccion = 'general' | 'operacion' | 'negocio' | 'comunidad' | 'configuracion';
 
 export interface Seccion {
+  /** Modulo de permisos (tambien clave nav.<id> en i18n). */
+  id: Modulo;
   ruta: string;
-  nombre: string;
-  grupo: string;
+  grupo: GrupoSeccion;
+  /** Codigo del prototipo que la disena. */
   pantalla: string;
+  /** Nombre de icono en components/shell/icons.tsx. */
+  icono: string;
 }
 
 export const SECCIONES: Seccion[] = [
-  { ruta: '/resumen', nombre: 'Resumen', grupo: 'General', pantalla: 'B02' },
-  { ruta: '/comercios', nombre: 'Comercios', grupo: 'Operación', pantalla: 'B03' },
-  { ruta: '/usuarios', nombre: 'Usuarios', grupo: 'Operación', pantalla: 'B05' },
-  { ruta: '/promociones', nombre: 'Promociones', grupo: 'Operación', pantalla: 'B07' },
-  { ruta: '/impulsos', nombre: 'Impulsos', grupo: 'Operación', pantalla: 'B08' },
-  { ruta: '/finanzas', nombre: 'Finanzas', grupo: 'Negocio', pantalla: 'B09' },
-  { ruta: '/reportes', nombre: 'Reportes', grupo: 'Negocio', pantalla: 'B14' },
-  { ruta: '/notificaciones', nombre: 'Notificaciones', grupo: 'Comunidad', pantalla: 'B12' },
-  { ruta: '/soporte', nombre: 'Soporte', grupo: 'Comunidad', pantalla: 'B13' },
-  { ruta: '/niveles', nombre: 'Niveles y reglas', grupo: 'Configuración', pantalla: 'B10' },
-  { ruta: '/categorias', nombre: 'Categorías', grupo: 'Configuración', pantalla: 'B11' },
-  { ruta: '/equipo', nombre: 'Equipo y roles', grupo: 'Configuración', pantalla: 'B15' },
-  { ruta: '/auditoria', nombre: 'Auditoría', grupo: 'Configuración', pantalla: 'B16' },
+  { id: 'resumen', ruta: PATHS.resumen, grupo: 'general', pantalla: 'B02', icono: 'home' },
+  { id: 'comercios', ruta: PATHS.comercios, grupo: 'operacion', pantalla: 'B03', icono: 'store' },
+  { id: 'usuarios', ruta: PATHS.usuarios, grupo: 'operacion', pantalla: 'B05', icono: 'users' },
+  { id: 'promociones', ruta: PATHS.promociones, grupo: 'operacion', pantalla: 'B07', icono: 'tag' },
+  { id: 'impulsos', ruta: PATHS.impulsos, grupo: 'operacion', pantalla: 'B08', icono: 'bolt' },
+  { id: 'finanzas', ruta: PATHS.finanzas, grupo: 'negocio', pantalla: 'B09', icono: 'wallet' },
+  { id: 'reportes', ruta: PATHS.reportes, grupo: 'negocio', pantalla: 'B14', icono: 'chart' },
+  { id: 'notificaciones', ruta: PATHS.notificaciones, grupo: 'comunidad', pantalla: 'B12', icono: 'bell' },
+  { id: 'soporte', ruta: PATHS.soporte, grupo: 'comunidad', pantalla: 'B13', icono: 'life' },
+  { id: 'niveles_reglas', ruta: PATHS.niveles, grupo: 'configuracion', pantalla: 'B10', icono: 'sliders' },
+  { id: 'categorias', ruta: PATHS.categorias, grupo: 'configuracion', pantalla: 'B11', icono: 'grid' },
+  { id: 'equipo', ruta: PATHS.equipo, grupo: 'configuracion', pantalla: 'B15', icono: 'shield' },
+  { id: 'auditoria', ruta: PATHS.auditoria, grupo: 'configuracion', pantalla: 'B16', icono: 'scroll' },
 ];
+
+export const GRUPOS: GrupoSeccion[] = ['general', 'operacion', 'negocio', 'comunidad', 'configuracion'];

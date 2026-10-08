@@ -1,0 +1,112 @@
+{
+  "common": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "continue": "Continuar",
+    "back": "Volver",
+    "close": "Cerrar",
+    "retry": "Reintentar",
+    "accept": "Aceptar",
+    "loading": "Cargando",
+    "search": "Buscar",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "empty": "No hay nada por aquí todavía",
+    "menu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "signOut": "Cerrar sesión",
+    "skipToContent": "Saltar al contenido",
+    "adminBadge": "ADMIN"
+  },
+  "nav": {
+    "label": "Secciones del panel",
+    "group": {
+      "general": "General",
+      "operacion": "Operación",
+      "negocio": "Negocio",
+      "comunidad": "Comunidad",
+      "configuracion": "Configuración"
+    },
+    "resumen": "Resumen",
+    "comercios": "Comercios",
+    "usuarios": "Usuarios",
+    "promociones": "Promociones",
+    "impulsos": "Impulsos",
+    "finanzas": "Finanzas",
+    "reportes": "Reportes",
+    "notificaciones": "Notificaciones",
+    "soporte": "Soporte",
+    "niveles_reglas": "Niveles y reglas",
+    "categorias": "Categorías",
+    "equipo": "Equipo y roles",
+    "auditoria": "Auditoría"
+  },
+  "roles": {
+    "admin": "Administrador",
+    "moderador": "Operaciones",
+    "soporte": "Soporte",
+    "finanzas": "Finanzas"
+  },
+  "pagination": {
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "page": "Página {page} de {total}",
+    "loadMore": "Ver más"
+  },
+  "placeholder": {
+    "title": "Pantalla en construcción",
+    "description": "Esta vista aún no está implementada. Sigue el prototipo {code}.",
+    "route": "Ruta"
+  },
+  "errors": {
+    "network": "Sin conexión. Revisa tu internet e inténtalo de nuevo.",
+    "minLength": "Debe tener al menos {n} caracteres",
+    "maxLength": "Debe tener como máximo {n} caracteres",
+    "email": "Correo inválido",
+    "required": "Este campo es obligatorio",
+    "invalid": "Formato inválido",
+    "passwordRule": "Usa 8 caracteres, una mayúscula y un número",
+    "code6": "El código tiene 6 dígitos",
+    "unauthorizedTitle": "Sesión expirada",
+    "unauthorizedDetail": "Inicia sesión nuevamente.",
+    "forbiddenTitle": "Sin permiso",
+    "forbiddenDetail": "No tienes permiso para hacer esto.",
+    "notFoundTitle": "No encontrado",
+    "notFoundDetail": "El recurso solicitado no existe.",
+    "validationTitle": "Datos inválidos",
+    "validationDetail": "Revisa los campos marcados.",
+    "serverTitle": "Error del servidor",
+    "serverDetail": "Inténtalo nuevamente en unos minutos.",
+    "serverGeneric": "No pudimos conectar con el servidor. Inténtalo de nuevo en unos minutos.",
+    "genericTitle": "Algo salió mal",
+    "genericDetail": "No se pudo completar la operación.",
+    "title": {
+      "0": "Sin conexión",
+      "200": "Listo",
+      "201": "Creado correctamente",
+      "204": "Eliminado correctamente",
+      "400": "Aviso",
+      "401": "Sesión expirada",
+      "403": "Sin permiso",
+      "404": "No encontrado",
+      "409": "Conflicto",
+      "422": "Datos inválidos",
+      "429": "Demasiados intentos",
+      "500": "Error del servidor",
+      "generic": "Aviso"
+    }
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Automático"
+  },
+  "lang": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "English"
+  }
+}

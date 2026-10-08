@@ -24,3 +24,23 @@ if (!Element.prototype.scrollIntoView) {
   Element.prototype.scrollIntoView = () => {};
 }
 
+
+// jsdom no implementa matchMedia (useTheme/useMediaQuery).
+if (!window.matchMedia) {
+  window.matchMedia = (query: string) =>
+    ({
+      matches: false,
+      media: query,
+      onchange: null,
+      addEventListener: () => undefined,
+      removeEventListener: () => undefined,
+      addListener: () => undefined,
+      removeListener: () => undefined,
+      dispatchEvent: () => false,
+    }) as MediaQueryList;
+}
+
+// redux-persist guarda en localStorage: se limpia entre pruebas para que ninguna herede la sesion de otra.
+afterEach(() => {
+  localStorage.clear();
+});

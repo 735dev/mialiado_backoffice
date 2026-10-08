@@ -1,0 +1,112 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "continue": "Continue",
+    "back": "Back",
+    "close": "Close",
+    "retry": "Retry",
+    "accept": "OK",
+    "loading": "Loading",
+    "search": "Search",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "empty": "Nothing here yet",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
+    "signOut": "Sign out",
+    "skipToContent": "Skip to content",
+    "adminBadge": "ADMIN"
+  },
+  "nav": {
+    "label": "Panel sections",
+    "group": {
+      "general": "General",
+      "operacion": "Operations",
+      "negocio": "Business",
+      "comunidad": "Community",
+      "configuracion": "Settings"
+    },
+    "resumen": "Overview",
+    "comercios": "Merchants",
+    "usuarios": "Users",
+    "promociones": "Promotions",
+    "impulsos": "Boosts",
+    "finanzas": "Finance",
+    "reportes": "Reports",
+    "notificaciones": "Notifications",
+    "soporte": "Support",
+    "niveles_reglas": "Levels and rules",
+    "categorias": "Categories",
+    "equipo": "Team and roles",
+    "auditoria": "Audit log"
+  },
+  "roles": {
+    "admin": "Administrator",
+    "moderador": "Operations",
+    "soporte": "Support",
+    "finanzas": "Finance"
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {page} of {total}",
+    "loadMore": "Load more"
+  },
+  "placeholder": {
+    "title": "Screen under construction",
+    "description": "This view is not implemented yet. Follow prototype {code}.",
+    "route": "Route"
+  },
+  "errors": {
+    "network": "No connection. Check your internet and try again.",
+    "minLength": "Must be at least {n} characters",
+    "maxLength": "Must be at most {n} characters",
+    "email": "Invalid email",
+    "required": "This field is required",
+    "invalid": "Invalid format",
+    "passwordRule": "Use 8 characters, one uppercase letter and one number",
+    "code6": "The code has 6 digits",
+    "unauthorizedTitle": "Session expired",
+    "unauthorizedDetail": "Please sign in again.",
+    "forbiddenTitle": "No permission",
+    "forbiddenDetail": "You do not have permission to do this.",
+    "notFoundTitle": "Not found",
+    "notFoundDetail": "The requested resource does not exist.",
+    "validationTitle": "Invalid data",
+    "validationDetail": "Check the highlighted fields.",
+    "serverTitle": "Server error",
+    "serverDetail": "Please try again in a few minutes.",
+    "serverGeneric": "We could not reach the server. Please try again in a few minutes.",
+    "genericTitle": "Something went wrong",
+    "genericDetail": "The operation could not be completed.",
+    "title": {
+      "0": "No connection",
+      "200": "Done",
+      "201": "Created",
+      "204": "Deleted",
+      "400": "Notice",
+      "401": "Session expired",
+      "403": "No permission",
+      "404": "Not found",
+      "409": "Conflict",
+      "422": "Invalid data",
+      "429": "Too many attempts",
+      "500": "Server error",
+      "generic": "Notice"
+    }
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "Automatic"
+  },
+  "lang": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  }
+}

@@ -18,6 +18,9 @@
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
 
+    "baseUrl": ".",
+    "paths": { "@/*": ["src/*"] },
+
     "types": ["vite/client", "vitest/globals"]
   },
   "include": ["src"]
