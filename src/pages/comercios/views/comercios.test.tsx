@@ -13,6 +13,9 @@ const aprobarComercio = vi.fn();
 const rechazarComercio = vi.fn();
 const revisarDocumento = vi.fn();
 const iniciarRevision = vi.fn();
+const editarComercio = vi.fn();
+const suspenderComercio = vi.fn();
+const activarComercio = vi.fn();
 vi.mock('@/providers/comerciosProvider', () => ({
   listarComercios: (...a: unknown[]) => listarComercios(...a),
   obtenerComercio: (...a: unknown[]) => obtenerComercio(...a),
@@ -20,6 +23,9 @@ vi.mock('@/providers/comerciosProvider', () => ({
   rechazarComercio: (...a: unknown[]) => rechazarComercio(...a),
   revisarDocumento: (...a: unknown[]) => revisarDocumento(...a),
   iniciarRevision: (...a: unknown[]) => iniciarRevision(...a),
+  editarComercio: (...a: unknown[]) => editarComercio(...a),
+  suspenderComercio: (...a: unknown[]) => suspenderComercio(...a),
+  activarComercio: (...a: unknown[]) => activarComercio(...a),
   invitarComercio: vi.fn(),
   listarCategorias: async () => ({ ok: true, data: [{ id: 1, nombre: 'Restaurantes' }] }),
   listarZonas: async () => ({ ok: true, data: [{ id: 1, nombre: 'Guasimos' }] }),
@@ -117,7 +123,7 @@ function setViewport(desktop: boolean) {
 beforeEach(() => {
   setViewport(true);
   resetStore();
-  [listarComercios, obtenerComercio, aprobarComercio, rechazarComercio, revisarDocumento, iniciarRevision].forEach((m) => m.mockReset());
+  [listarComercios, obtenerComercio, aprobarComercio, rechazarComercio, revisarDocumento, iniciarRevision, editarComercio, suspenderComercio, activarComercio].forEach((m) => m.mockReset());
   signInAs('moderador', { comercios: full });
 });
 
@@ -244,6 +250,45 @@ describe('B04 verificacion de comercio', () => {
     await waitFor(() => expect(rechazarComercio).toHaveBeenCalledWith(1, { motivo: 'RIF no válido o no coincide', comentario: 'Sube el vigente' }));
     await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
     expect(screen.getByText(/Comercio rechazado/)).toBeInTheDocument();
+  });
+
+  it('editar datos envia solo los campos que cambiaron (PATCH)', async () => {
+    obtenerComercio.mockResolvedValue({ ok: true, data: detalle() });
+    editarComercio.mockResolvedValue({ ok: true, data: detalle({ whatsapp: '+58 414 000 0000' }) });
+    renderApp('/comercios/1');
+    await userEvent.click(await screen.findByRole('button', { name: 'Editar datos' }));
+    const dialog = await screen.findByRole('dialog');
+    const wa = within(dialog).getByLabelText('WhatsApp');
+    await userEvent.clear(wa);
+    await userEvent.type(wa, '+58 414 000 0000');
+    await userEvent.click(within(dialog).getByRole('button', { name: 'Guardar cambios' }));
+    await waitFor(() => expect(editarComercio).toHaveBeenCalledWith(1, { whatsapp: '+58 414 000 0000' }));
+    await waitFor(() => expect(screen.queryByRole('dialog')).not.toBeInTheDocument());
+  });
+
+  it('suspender exige motivo y solo se ofrece en un comercio activo; activar pide confirmacion', async () => {
+    obtenerComercio.mockResolvedValue({ ok: true, data: detalle({ estado: 'Activo', verificacion: 'verificado' }) });
+    suspenderComercio.mockResolvedValue({ ok: true, data: detalle({ estado: 'Suspendido', verificacion: 'verificado' }) });
+    activarComercio.mockResolvedValue({ ok: true, data: detalle({ estado: 'Activo', verificacion: 'verificado' }) });
+    renderApp('/comercios/1');
+    await userEvent.click(await screen.findByRole('button', { name: 'Suspender' }));
+    const dialog = await screen.findByRole('dialog');
+    await userEvent.click(within(dialog).getByRole('button', { name: 'Suspender comercio' }));
+    expect(suspenderComercio).not.toHaveBeenCalled();
+    await userEvent.type(within(dialog).getByLabelText('Motivo de la suspensión'), 'Reclamos repetidos');
+    await userEvent.click(within(dialog).getByRole('button', { name: 'Suspender comercio' }));
+    await waitFor(() => expect(suspenderComercio).toHaveBeenCalledWith(1, 'Reclamos repetidos'));
+    await userEvent.click(await screen.findByRole('button', { name: 'Activar comercio' }));
+    await waitFor(() => expect(activarComercio).toHaveBeenCalledWith(1));
+  });
+
+  it('sin permiso editar no hay botones de editar ni suspender', async () => {
+    signInAs('soporte', { comercios: soloVer });
+    obtenerComercio.mockResolvedValue({ ok: true, data: detalle({ estado: 'Activo', verificacion: 'verificado' }) });
+    renderApp('/comercios/1');
+    await screen.findByText('Inversiones Don Nino 2026, C.A.');
+    expect(screen.queryByRole('button', { name: 'Editar datos' })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: 'Suspender' })).not.toBeInTheDocument();
   });
 
   it('"Otro motivo" exige comentario', async () => {

@@ -137,5 +137,36 @@
     "errorMotivo": "Choose a reason",
     "errorOtro": "Tell us the reason in the comment",
     "hecho": "{nombre} was rejected"
+  },
+  "editar": {
+    "boton": "Edit details",
+    "title": "Edit business details",
+    "descripcion": "Fix contact and location details. Changes are saved in the audit log.",
+    "nombre": "Business name",
+    "razon_social": "Legal name",
+    "direccion": "Address",
+    "zona": "Area",
+    "ciudad": "City",
+    "categoria": "Category",
+    "categoriaPlaceholder": "No change",
+    "whatsapp": "WhatsApp",
+    "correo": "Contact email",
+    "guardar": "Save changes",
+    "sinCambios": "There are no changes to save.",
+    "hecho": "{nombre} details updated."
+  },
+  "suspender": {
+    "boton": "Suspend",
+    "title": "Suspend business",
+    "motivo": "Reason for the suspension",
+    "placeholder": "E.g.: repeated complaints from users",
+    "aviso": "The business disappears from the users app until you activate it again.",
+    "confirmar": "Suspend business",
+    "hecho": "{nombre} was suspended."
+  },
+  "activar": {
+    "boton": "Activate business",
+    "confirmar": "Activate {nombre}? It will show up in the users app again.",
+    "hecho": "{nombre} is active again."
   }
 }

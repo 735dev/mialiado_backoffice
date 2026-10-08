@@ -16,6 +16,18 @@ body {
   outline-offset: 2px;
 }
 
+/* Sombras de desplazamiento: avisan que una lista corta (menu lateral en pantallas bajas) sigue mas arriba o mas abajo. */
+.scroll-shadow {
+  background:
+    linear-gradient(var(--surface) 30%, transparent) center top,
+    linear-gradient(transparent, var(--surface) 70%) center bottom,
+    radial-gradient(farthest-side at 50% 0, rgb(0 0 0 / 0.22), transparent) center top,
+    radial-gradient(farthest-side at 50% 100%, rgb(0 0 0 / 0.22), transparent) center bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 28px, 100% 28px, 100% 10px, 100% 10px;
+  background-attachment: local, local, scroll, scroll;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;

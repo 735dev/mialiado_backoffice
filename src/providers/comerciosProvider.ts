@@ -130,6 +130,23 @@ export const iniciarRevision = (id: number) => run<ComercioDetalle>(() => apiAxi
 export const revisarDocumento = (id: number, docId: number, revisado: boolean) =>
   run<ComercioDetalle>(() => apiAxios.post({ url: `/comercios/${id}/documentos/${docId}/revisar?revisado=${revisado}` }));
 export const aprobarComercio = (id: number) => run<ComercioDetalle>(() => apiAxios.post({ url: `/comercios/${id}/aprobar` }));
+export interface EdicionComercio {
+  nombre?: string;
+  razon_social?: string;
+  direccion?: string;
+  zona?: string;
+  ciudad?: string;
+  categoria_id?: number;
+  whatsapp?: string;
+  correo_contacto?: string;
+}
+
+/** PATCH /comercios/{id} (editar): solo viajan los campos que cambiaron. */
+export const editarComercio = (id: number, body: EdicionComercio) => run<ComercioDetalle>(() => apiAxios.patch({ url: `/comercios/${id}`, data: body }));
+/** POST /comercios/{id}/suspender (editar): el comercio desaparece de la app de usuarios. 409 si ya esta suspendido. */
+export const suspenderComercio = (id: number, motivo: string) => run<ComercioDetalle>(() => apiAxios.post({ url: `/comercios/${id}/suspender`, data: { motivo } }));
+/** POST /comercios/{id}/activar (editar). */
+export const activarComercio = (id: number) => run<ComercioDetalle>(() => apiAxios.post({ url: `/comercios/${id}/activar` }));
 export const rechazarComercio = (id: number, body: { motivo: string; comentario?: string }) =>
   run<ComercioDetalle>(() => apiAxios.post({ url: `/comercios/${id}/rechazar`, data: body }));
 

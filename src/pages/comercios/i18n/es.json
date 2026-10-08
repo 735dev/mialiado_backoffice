@@ -137,5 +137,36 @@
     "errorMotivo": "Elige un motivo",
     "errorOtro": "Cuéntanos el motivo en el comentario",
     "hecho": "{nombre} fue rechazado"
+  },
+  "editar": {
+    "boton": "Editar datos",
+    "title": "Editar datos del comercio",
+    "descripcion": "Corrige los datos de contacto y ubicación. Los cambios quedan en el registro de auditoría.",
+    "nombre": "Nombre comercial",
+    "razon_social": "Razón social",
+    "direccion": "Dirección",
+    "zona": "Zona",
+    "ciudad": "Ciudad",
+    "categoria": "Categoría",
+    "categoriaPlaceholder": "Sin cambios",
+    "whatsapp": "WhatsApp",
+    "correo": "Correo de contacto",
+    "guardar": "Guardar cambios",
+    "sinCambios": "No hay cambios que guardar.",
+    "hecho": "Datos de {nombre} actualizados."
+  },
+  "suspender": {
+    "boton": "Suspender",
+    "title": "Suspender comercio",
+    "motivo": "Motivo de la suspensión",
+    "placeholder": "Ej.: reclamos repetidos de usuarios",
+    "aviso": "El comercio desaparece de la app de usuarios hasta que lo actives de nuevo.",
+    "confirmar": "Suspender comercio",
+    "hecho": "{nombre} quedó suspendido."
+  },
+  "activar": {
+    "boton": "Activar comercio",
+    "confirmar": "¿Activar {nombre}? Volverá a aparecer en la app de usuarios.",
+    "hecho": "{nombre} está activo de nuevo."
   }
 }

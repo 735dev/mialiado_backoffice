@@ -1,4 +1,4 @@
-import { ArrowLeft, SearchX } from 'lucide-react';
+import { ArrowLeft, PauseCircle, Pencil, Play, SearchX } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/Button';
@@ -9,11 +9,23 @@ import { useT } from '@/lib/hooks/useT';
 import { PATHS } from '@/lib/routes/paths';
 import { useAppSelector } from '@/lib/store/hooks';
 import { notify } from '@/lib/utils/notify';
-import { aprobarComercio, iniciarRevision, rechazarComercio, revisarDocumento, type DocumentoComercio } from '@/providers/comerciosProvider';
+import {
+  activarComercio,
+  aprobarComercio,
+  editarComercio,
+  iniciarRevision,
+  rechazarComercio,
+  revisarDocumento,
+  suspenderComercio,
+  type DocumentoComercio,
+  type EdicionComercio,
+} from '@/providers/comerciosProvider';
 import { ComercioAvatar, EstadoBadge } from '../components/Badges';
 import { DecisionPanel, type ChecklistState } from '../components/DecisionPanel';
 import { DatosCard, DocumentosCard, TimelineCard, UbicacionCard } from '../components/DetalleCards';
+import { EditarComercioModal } from '../components/EditarComercioModal';
 import { RechazarModal } from '../components/RechazarModal';
+import { SuspenderModal } from '../components/SuspenderModal';
 import { useComercioDetalle } from '../hooks/useComercioDetalle';
 import { formatDate } from '@/lib/utils/format';
 
@@ -29,6 +41,8 @@ export default function ComercioDetalleView() {
   const { estado, retry, run, busy } = useComercioDetalle(id);
   const [checklist, setChecklist] = useState<ChecklistState>({ direccion: false, contacto: false });
   const [rechazando, setRechazando] = useState(false);
+  const [editando, setEditando] = useState(false);
+  const [suspendiendo, setSuspendiendo] = useState(false);
   const puedeEditar = puede('comercios', 'editar');
   const puedeAprobar = puede('comercios', 'aprobar');
 
@@ -93,6 +107,14 @@ export default function ComercioDetalleView() {
     if (ok) setRechazando(false);
   };
 
+  const editar = (body: EdicionComercio) => run(() => editarComercio(c.id, body), t('comercios.editar.hecho', { nombre: c.nombre }));
+  const suspender = async (motivo: string) => {
+    const ok = await run(() => suspenderComercio(c.id, motivo), t('comercios.suspender.hecho', { nombre: c.nombre }));
+    if (ok) setSuspendiendo(false);
+  };
+  const activar = () => notify.confirm(t('comercios.activar.confirmar', { nombre: c.nombre }), () => void run(() => activarComercio(c.id), t('comercios.activar.hecho', { nombre: c.nombre })));
+  const BTN = 'inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded-pill bg-surface px-5 text-sm font-bold text-ink ring-1 ring-inset ring-line-strong disabled:cursor-not-allowed disabled:opacity-50';
+
   return (
     <div data-screen="B04" className="flex flex-col gap-5">
       <h2 className="sr-only">{t('comercios.detailTitle')}</h2>
@@ -110,6 +132,26 @@ export default function ComercioDetalleView() {
         </div>
         <EstadoBadge estado={c.estado} />
       </div>
+
+      {puedeEditar && (
+        <div className="flex flex-wrap gap-3">
+          <button type="button" className={BTN} disabled={busy} onClick={() => setEditando(true)}>
+            <Pencil size={16} aria-hidden="true" />
+            {t('comercios.editar.boton')}
+          </button>
+          {c.estado === 'Suspendido' ? (
+            <button type="button" className={BTN} disabled={busy} onClick={activar}>
+              <Play size={16} aria-hidden="true" />
+              {t('comercios.activar.boton')}
+            </button>
+          ) : c.estado === 'Activo' ? (
+            <button type="button" className={`${BTN} !text-err-deep`} disabled={busy} onClick={() => setSuspendiendo(true)}>
+              <PauseCircle size={16} aria-hidden="true" />
+              {t('comercios.suspender.boton')}
+            </button>
+          ) : null}
+        </div>
+      )}
 
       <div className="grid grid-cols-1 gap-5 xl:grid-cols-[minmax(0,1fr)_340px]">
         <div className="flex min-w-0 flex-col gap-5">
@@ -133,6 +175,8 @@ export default function ComercioDetalleView() {
         />
       </div>
 
+      {puedeEditar && <EditarComercioModal open={editando} c={c} busy={busy} onClose={() => setEditando(false)} onSubmit={editar} />}
+      {puedeEditar && <SuspenderModal open={suspendiendo} objeto={`${c.nombre} · ${c.rif}`} busy={busy} onClose={() => setSuspendiendo(false)} onSubmit={suspender} />}
       {puedeAprobar && <RechazarModal open={rechazando} objeto={`${c.nombre} · ${c.rif}`} busy={busy} onClose={() => setRechazando(false)} onSubmit={rechazar} />}
     </div>
   );

@@ -25,7 +25,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
   const visibles = SECCIONES.filter((s) => puede(s.id));
 
   return (
-    <div className="flex h-full flex-col gap-5">
+    <div className="flex h-full flex-col gap-5 [@media(max-height:1100px)]:gap-3">
       <div className="flex h-10 items-center gap-2.5 px-1.5">
         <AliLogo />
         <span className="text-xl font-extrabold tracking-tight">aliado</span>
@@ -34,13 +34,13 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
         </span>
       </div>
 
-      <nav aria-label={t('nav.label')} className="flex min-h-0 flex-1 flex-col gap-3.5 overflow-y-auto">
+      <nav aria-label={t('nav.label')} className="scroll-shadow flex min-h-0 flex-1 flex-col gap-3.5 overflow-y-auto [@media(max-height:1100px)]:gap-2">
         {GRUPOS.map((grupo) => {
           const items = visibles.filter((s) => s.grupo === grupo);
           if (items.length === 0) return null;
           return (
             <div key={grupo} className="flex flex-col gap-0.5">
-              <p className="px-3.5 pb-1.5 font-mono text-xs font-medium uppercase tracking-widest text-ink-muted">{t(`nav.group.${grupo}`)}</p>
+              <p className="px-3.5 pb-1.5 font-mono [@media(max-height:1100px)]:pb-0.5 text-xs font-medium uppercase tracking-widest text-ink-muted">{t(`nav.group.${grupo}`)}</p>
               {items.map((s) => {
                 const Icono = NAV_ICONS[s.icono];
                 const count = pendientes[s.id];
@@ -51,7 +51,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
                     onClick={onNavigate}
                     className={({ isActive }) =>
                       cn(
-                        'flex h-11 items-center gap-3 rounded-pill px-3.5 text-sm',
+                        'flex h-11 items-center gap-3 rounded-pill px-3.5 text-sm [@media(max-height:1100px)]:h-9',
                         isActive ? 'bg-primary-tint font-bold text-primary-deep' : 'font-semibold text-ink-muted hover:bg-surface-2',
                       )
                     }
@@ -69,7 +69,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
         })}
       </nav>
 
-      <div className="flex flex-col gap-3 border-t border-line pt-4">
+      <div className="flex flex-col gap-3 border-t border-line pt-4 [@media(max-height:1100px)]:gap-1.5 [@media(max-height:1100px)]:pt-2">
         <div className="flex items-center justify-between gap-2">
           <button
             type="button"
