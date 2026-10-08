@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // Una sola entrada (index.html): el panel ocupa la raíz de su dominio.
-// En desarrollo, /api se envía a aliado_backend (uvicorn en el puerto 5010),
+// En desarrollo, /api se envía a aliado_backend (uvicorn en el puerto 5010; 127.0.0.1 y no localhost, que en Windows resuelve a ::1),
 // así VITE_API_BASE puede quedarse en '/api/admin' sin problemas de CORS.
 export default defineConfig({
   plugins: [react()],
@@ -15,7 +15,7 @@ export default defineConfig({
     port: 5173,
     strictPort: false,
     proxy: {
-      '/api': 'http://localhost:5010',
+      '/api': 'http://127.0.0.1:5010',
     },
   },
   preview: {
