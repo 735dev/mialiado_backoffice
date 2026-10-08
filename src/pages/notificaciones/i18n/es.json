@@ -1,3 +1,116 @@
 {
-  "title": "Notificaciones"
+  "title": "Notificaciones",
+  "subtitle": "Redacta un push, elige a quién llega y programa el envío.",
+  "newNotification": "Nueva notificación",
+  "readOnly": "Tu rol puede consultar el historial, pero no crear ni enviar notificaciones.",
+  "saveDraft": "Guardar borrador",
+  "sendTest": "Enviar prueba",
+  "schedule": "Programar envío",
+  "sendNow": "Enviar notificación",
+  "confirmSend": "Se enviará ahora a {n} personas. ¿Continuar?",
+  "reprogramada": "Es horario silencioso (10:00 pm a 7:00 am). La notificación quedó programada para las 7:00 am.",
+  "toast": {
+    "draft": "Borrador guardado",
+    "scheduled": "Notificación programada",
+    "sent": "Notificación enviada a {n} personas",
+    "test": "Prueba enviada a tu cuenta",
+    "cancelled": "Notificación cancelada"
+  },
+  "composer": {
+    "aria": "Redactar notificación",
+    "title": "Nueva notificación push",
+    "who": "¿A quién se la enviamos?",
+    "titulo": "Título",
+    "mensaje": "Mensaje"
+  },
+  "segmento": {
+    "todos": "Todos",
+    "nivel": "Por nivel",
+    "zona": "Por zona",
+    "inactivos": "Inactivos 30 d",
+    "usuarios": "{n} usuarios",
+    "niveles": "{n} niveles",
+    "zonas": "{n} zonas",
+    "elegirNiveles": "Niveles que la reciben",
+    "elegirZonas": "Zonas que la reciben",
+    "sinZonas": "No pudimos cargar las zonas."
+  },
+  "niveles": {
+    "aliado": "Aliado",
+    "aliadopro": "AliadoPro",
+    "aliadoplus": "AliadoPlus"
+  },
+  "cuando": {
+    "label": "¿Cuándo sale?",
+    "ahora": "Enviar ahora",
+    "programar": "Programar",
+    "fecha": "Fecha",
+    "hora": "Hora",
+    "silencio": "Hora de San Cristóbal. No se envían push entre 10:00 pm y 7:00 am.",
+    "ahoraSilencio": "Ahora es horario silencioso: si la envías, saldrá a las 7:00 am."
+  },
+  "errors": {
+    "elegirNivel": "Elige al menos un nivel",
+    "elegirZona": "Elige al menos una zona",
+    "silencio": "No se envían push entre 10:00 pm y 7:00 am",
+    "pasado": "Elige una fecha y hora futuras"
+  },
+  "preview": {
+    "aria": "Vista previa en el teléfono",
+    "title": "Vista previa",
+    "lock": "Pantalla bloqueada",
+    "reach": "Alcance estimado",
+    "of": "de {n} usuarios",
+    "segment": "Segmento",
+    "sale": "Sale",
+    "openRate": "Tasa de apertura típica",
+    "now": "ahora",
+    "emptyTitle": "Título de la notificación",
+    "emptyMessage": "Aquí verás el mensaje tal como llega al teléfono."
+  },
+  "history": {
+    "title": "Historial de envíos",
+    "filter": "Filtrar historial",
+    "tabs": {
+      "todos": "Todos",
+      "programados": "Programados",
+      "enviados": "Enviados"
+    },
+    "emptyTitle": "Aún no hay envíos",
+    "emptyText": "Cuando envíes o programes una notificación, aparecerá aquí.",
+    "count": "{shown} de {total} envíos",
+    "pending": "Pendiente",
+    "confirmSend": "¿Enviar ahora «{titulo}»?",
+    "confirmCancel": "¿Cancelar «{titulo}»? No se enviará.",
+    "sendNow": "Enviar ahora {titulo}",
+    "cancel": "Cancelar {titulo}",
+    "cols": {
+      "date": "Fecha",
+      "title": "Título",
+      "segment": "Segmento",
+      "sent": "Enviados",
+      "opening": "Apertura",
+      "state": "Estado",
+      "actions": "Acciones"
+    }
+  },
+  "estado": {
+    "borrador": "Borrador",
+    "programada": "Programada",
+    "enviada": "Enviada",
+    "parcial": "Parcial"
+  },
+  "templates": {
+    "open": "Plantillas",
+    "title": "Plantillas de notificación",
+    "description": "Reutiliza un texto guardado o guarda el que estás escribiendo.",
+    "empty": "Aún no hay plantillas.",
+    "use": "Usar",
+    "delete": "Eliminar plantilla {nombre}",
+    "confirmDelete": "¿Eliminar la plantilla «{nombre}»?",
+    "saved": "Plantilla guardada",
+    "nameLabel": "Guardar el texto actual como plantilla",
+    "namePlaceholder": "Nombre de la plantilla",
+    "saveCurrent": "Guardar plantilla"
+  }
 }

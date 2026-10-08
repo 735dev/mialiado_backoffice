@@ -1,3 +1,116 @@
 {
-  "title": "Notifications"
+  "title": "Notifications",
+  "subtitle": "Write a push, choose who gets it and schedule the send.",
+  "newNotification": "New notification",
+  "readOnly": "Your role can view the history but cannot create or send notifications.",
+  "saveDraft": "Save draft",
+  "sendTest": "Send test",
+  "schedule": "Schedule send",
+  "sendNow": "Send notification",
+  "confirmSend": "This will be sent now to {n} people. Continue?",
+  "reprogramada": "It is quiet time (10:00 pm to 7:00 am). The notification was scheduled for 7:00 am.",
+  "toast": {
+    "draft": "Draft saved",
+    "scheduled": "Notification scheduled",
+    "sent": "Notification sent to {n} people",
+    "test": "Test sent to your account",
+    "cancelled": "Notification cancelled"
+  },
+  "composer": {
+    "aria": "Write notification",
+    "title": "New push notification",
+    "who": "Who do we send it to?",
+    "titulo": "Title",
+    "mensaje": "Message"
+  },
+  "segmento": {
+    "todos": "Everyone",
+    "nivel": "By level",
+    "zona": "By zone",
+    "inactivos": "Inactive 30 d",
+    "usuarios": "{n} users",
+    "niveles": "{n} levels",
+    "zonas": "{n} zones",
+    "elegirNiveles": "Levels that receive it",
+    "elegirZonas": "Zones that receive it",
+    "sinZonas": "We could not load the zones."
+  },
+  "niveles": {
+    "aliado": "Aliado",
+    "aliadopro": "AliadoPro",
+    "aliadoplus": "AliadoPlus"
+  },
+  "cuando": {
+    "label": "When does it go out?",
+    "ahora": "Send now",
+    "programar": "Schedule",
+    "fecha": "Date",
+    "hora": "Time",
+    "silencio": "San Cristóbal time. Push notifications are not sent between 10:00 pm and 7:00 am.",
+    "ahoraSilencio": "It is quiet time now: if you send it, it will go out at 7:00 am."
+  },
+  "errors": {
+    "elegirNivel": "Choose at least one level",
+    "elegirZona": "Choose at least one zone",
+    "silencio": "Push notifications are not sent between 10:00 pm and 7:00 am",
+    "pasado": "Choose a future date and time"
+  },
+  "preview": {
+    "aria": "Phone preview",
+    "title": "Preview",
+    "lock": "Lock screen",
+    "reach": "Estimated reach",
+    "of": "of {n} users",
+    "segment": "Segment",
+    "sale": "Goes out",
+    "openRate": "Typical open rate",
+    "now": "now",
+    "emptyTitle": "Notification title",
+    "emptyMessage": "You will see the message here as it reaches the phone."
+  },
+  "history": {
+    "title": "Send history",
+    "filter": "Filter history",
+    "tabs": {
+      "todos": "All",
+      "programados": "Scheduled",
+      "enviados": "Sent"
+    },
+    "emptyTitle": "No sends yet",
+    "emptyText": "When you send or schedule a notification, it will show up here.",
+    "count": "{shown} of {total} sends",
+    "pending": "Pending",
+    "confirmSend": "Send “{titulo}” now?",
+    "confirmCancel": "Cancel “{titulo}”? It will not be sent.",
+    "sendNow": "Send {titulo} now",
+    "cancel": "Cancel {titulo}",
+    "cols": {
+      "date": "Date",
+      "title": "Title",
+      "segment": "Segment",
+      "sent": "Sent",
+      "opening": "Opened",
+      "state": "Status",
+      "actions": "Actions"
+    }
+  },
+  "estado": {
+    "borrador": "Draft",
+    "programada": "Scheduled",
+    "enviada": "Sent",
+    "parcial": "Partial"
+  },
+  "templates": {
+    "open": "Templates",
+    "title": "Notification templates",
+    "description": "Reuse a saved text or save the one you are writing.",
+    "empty": "There are no templates yet.",
+    "use": "Use",
+    "delete": "Delete template {nombre}",
+    "confirmDelete": "Delete the template “{nombre}”?",
+    "saved": "Template saved",
+    "nameLabel": "Save the current text as a template",
+    "namePlaceholder": "Template name",
+    "saveCurrent": "Save template"
+  }
 }
