@@ -1,4 +1,139 @@
 {
   "title": "Merchants",
-  "detailTitle": "Merchant verification"
+  "detailTitle": "Merchant verification",
+  "subtitulo": "Verify, activate and follow up on partner merchants.",
+  "exportar": "Export",
+  "sinPermisoEditar": "Your role cannot edit merchants.",
+  "sinPermisoAprobar": "Your role cannot approve or reject merchants.",
+  "estado": {
+    "activo": "Active",
+    "porVerificar": "To verify",
+    "suspendido": "Suspended",
+    "rechazado": "Rejected"
+  },
+  "tabs": {
+    "label": "Merchant status",
+    "todos": "All",
+    "por_verificar": "To verify",
+    "activos": "Active",
+    "suspendidos": "Suspended"
+  },
+  "filtros": {
+    "buscar": "Search by name or tax ID",
+    "categoria": "Category",
+    "zona": "Area"
+  },
+  "col": {
+    "comercio": "Merchant",
+    "categoria": "Category",
+    "zona": "Area",
+    "estado": "Status",
+    "promos": "Promos",
+    "canjes": "Redemptions 30 d",
+    "registro": "Registered",
+    "acciones": "Actions"
+  },
+  "lista": {
+    "ver": "View {nombre}",
+    "mostrando": "Showing {desde}–{hasta} of {total} merchants"
+  },
+  "vacio": {
+    "title": "No merchants yet",
+    "descripcion": "Merchants appear here once they finish signing up.",
+    "filtrosTitle": "No results",
+    "filtrosDescripcion": "No merchant matches the search or filters.",
+    "limpiar": "Clear filters"
+  },
+  "invitar": {
+    "boton": "Invite merchant",
+    "title": "Invite merchant",
+    "descripcion": "We email them so they can register their business in Mi Aliado.",
+    "correo": "Merchant email",
+    "correoPlaceholder": "contact@merchant.com",
+    "nombre": "Merchant name (optional)",
+    "enviar": "Send invitation",
+    "enviada": "Invitation sent to {correo}"
+  },
+  "detalle": {
+    "volver": "Back to merchants",
+    "noEncontrado": "We could not find this merchant",
+    "errorTitle": "We could not load the merchant",
+    "registrado": "Registered on {fecha}",
+    "datos": "Merchant details",
+    "datosSub": "Sent by the merchant when signing up",
+    "rif": "Tax ID (RIF)",
+    "razonSocial": "Legal name",
+    "nombreComercial": "Trade name",
+    "categoria": "Category",
+    "direccion": "Address",
+    "horario": "Hours",
+    "contacto": "Contact",
+    "whatsapp": "WhatsApp",
+    "correo": "Email",
+    "instagram": "Instagram",
+    "documentos": "Documents",
+    "documentosSub": "{n} files received",
+    "sinDocumentos": "The merchant has not uploaded documents yet.",
+    "revisado": "Reviewed",
+    "pendiente": "Pending",
+    "abrirDoc": "Open {tipo}",
+    "marcarRevisado": "Mark {tipo} as reviewed",
+    "quitarRevisado": "Remove review from {tipo}",
+    "ubicacion": "Location",
+    "confirmada": "Confirmed",
+    "sinConfirmar": "Unconfirmed",
+    "mapa": "Map of the merchant location",
+    "mapaCoords": "MAP · {lat}, {lng}",
+    "abrirMapa": "Open in OpenStreetMap",
+    "sinCoordenadas": "The merchant did not register coordinates.",
+    "timeline": "Registration timeline",
+    "pendienteDecision": "Awaiting decision"
+  },
+  "doc": {
+    "rif": "Tax ID (RIF)",
+    "registro": "Business registration",
+    "fachada": "Storefront photo"
+  },
+  "check": {
+    "rif": "Tax ID valid and current",
+    "registro": "Business registration legible",
+    "fachada": "Storefront photo matches",
+    "direccion": "Address confirmed on the map",
+    "contacto": "Contact verified by WhatsApp"
+  },
+  "decision": {
+    "eyebrow": "Decision",
+    "progreso": "Verification {n} of {total}",
+    "faltan": "Complete the {n} pending points to approve safely.",
+    "completo": "All points are reviewed.",
+    "verificado": "This merchant is already verified.",
+    "rechazado": "Merchant rejected",
+    "iniciarRevision": "Start review",
+    "revisionIniciada": "Review started",
+    "aprobar": "Approve and activate",
+    "rechazar": "Reject",
+    "confirmarAprobar": "{nombre} will be approved and the owner will be notified.",
+    "confirmarAprobarFaltan": "{n} points are still unreviewed. Approve anyway?",
+    "aprobado": "{nombre} was approved",
+    "aviso": "When you decide, {nombre} is notified in the app and by email."
+  },
+  "rechazo": {
+    "title": "Reject merchant",
+    "motivo": "Reason for rejection",
+    "motivos": {
+      "rif": "Tax ID invalid or does not match",
+      "documentos": "Documents illegible or expired",
+      "fachada": "Storefront photo does not match",
+      "direccion": "Address could not be confirmed",
+      "incompleto": "Incomplete or inconsistent information",
+      "otro": "Other reason"
+    },
+    "comentario": "Comment for the merchant (optional)",
+    "comentarioPlaceholder": "Explain what they must fix to submit again.",
+    "aviso": "The owner will be notified in the app and by email. They can fix the registration and send it again.",
+    "confirmar": "Reject merchant",
+    "errorMotivo": "Choose a reason",
+    "errorOtro": "Tell us the reason in the comment",
+    "hecho": "{nombre} was rejected"
+  }
 }

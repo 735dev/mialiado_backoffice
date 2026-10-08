@@ -1,4 +1,139 @@
 {
   "title": "Comercios",
-  "detailTitle": "Verificación de comercio"
+  "detailTitle": "Verificación de comercio",
+  "subtitulo": "Verifica, activa y da seguimiento a los comercios aliados.",
+  "exportar": "Exportar",
+  "sinPermisoEditar": "Tu rol no puede editar comercios.",
+  "sinPermisoAprobar": "Tu rol no puede aprobar ni rechazar comercios.",
+  "estado": {
+    "activo": "Activo",
+    "porVerificar": "Por verificar",
+    "suspendido": "Suspendido",
+    "rechazado": "Rechazado"
+  },
+  "tabs": {
+    "label": "Estado del comercio",
+    "todos": "Todos",
+    "por_verificar": "Por verificar",
+    "activos": "Activos",
+    "suspendidos": "Suspendidos"
+  },
+  "filtros": {
+    "buscar": "Buscar por nombre o RIF",
+    "categoria": "Categoría",
+    "zona": "Zona"
+  },
+  "col": {
+    "comercio": "Comercio",
+    "categoria": "Categoría",
+    "zona": "Zona",
+    "estado": "Estado",
+    "promos": "Promos",
+    "canjes": "Canjes 30 d",
+    "registro": "Registro",
+    "acciones": "Acciones"
+  },
+  "lista": {
+    "ver": "Ver {nombre}",
+    "mostrando": "Mostrando {desde}–{hasta} de {total} comercios"
+  },
+  "vacio": {
+    "title": "Aún no hay comercios",
+    "descripcion": "Cuando un comercio termine su registro aparecerá aquí.",
+    "filtrosTitle": "Sin resultados",
+    "filtrosDescripcion": "Ningún comercio coincide con la búsqueda o los filtros.",
+    "limpiar": "Limpiar filtros"
+  },
+  "invitar": {
+    "boton": "Invitar comercio",
+    "title": "Invitar comercio",
+    "descripcion": "Enviamos un correo para que registre su comercio en Mi Aliado.",
+    "correo": "Correo del comercio",
+    "correoPlaceholder": "contacto@comercio.com",
+    "nombre": "Nombre del comercio (opcional)",
+    "enviar": "Enviar invitación",
+    "enviada": "Invitación enviada a {correo}"
+  },
+  "detalle": {
+    "volver": "Volver a comercios",
+    "noEncontrado": "No encontramos este comercio",
+    "errorTitle": "No pudimos cargar el comercio",
+    "registrado": "Registrado el {fecha}",
+    "datos": "Datos del comercio",
+    "datosSub": "Enviados por el comercio al registrarse",
+    "rif": "RIF",
+    "razonSocial": "Razón social",
+    "nombreComercial": "Nombre comercial",
+    "categoria": "Categoría",
+    "direccion": "Dirección",
+    "horario": "Horario",
+    "contacto": "Contacto",
+    "whatsapp": "WhatsApp",
+    "correo": "Correo",
+    "instagram": "Instagram",
+    "documentos": "Documentos",
+    "documentosSub": "{n} archivos recibidos",
+    "sinDocumentos": "El comercio aún no subió documentos.",
+    "revisado": "Revisado",
+    "pendiente": "Pendiente",
+    "abrirDoc": "Abrir {tipo}",
+    "marcarRevisado": "Marcar {tipo} como revisado",
+    "quitarRevisado": "Quitar revisión de {tipo}",
+    "ubicacion": "Ubicación",
+    "confirmada": "Confirmada",
+    "sinConfirmar": "Sin confirmar",
+    "mapa": "Mapa de la ubicación del comercio",
+    "mapaCoords": "MAPA · {lat}, {lng}",
+    "abrirMapa": "Abrir en OpenStreetMap",
+    "sinCoordenadas": "El comercio no registró coordenadas.",
+    "timeline": "Línea de tiempo del registro",
+    "pendienteDecision": "Pendiente de decisión"
+  },
+  "doc": {
+    "rif": "RIF",
+    "registro": "Registro mercantil",
+    "fachada": "Foto de fachada"
+  },
+  "check": {
+    "rif": "RIF válido y vigente",
+    "registro": "Registro mercantil legible",
+    "fachada": "Foto de fachada coincide",
+    "direccion": "Dirección confirmada en el mapa",
+    "contacto": "Contacto verificado por WhatsApp"
+  },
+  "decision": {
+    "eyebrow": "Decisión",
+    "progreso": "Verificación {n} de {total}",
+    "faltan": "Completa los {n} puntos pendientes para aprobar con seguridad.",
+    "completo": "Todos los puntos están revisados.",
+    "verificado": "Este comercio ya está verificado.",
+    "rechazado": "Comercio rechazado",
+    "iniciarRevision": "Iniciar revisión",
+    "revisionIniciada": "Revisión iniciada",
+    "aprobar": "Aprobar y activar",
+    "rechazar": "Rechazar",
+    "confirmarAprobar": "Se aprobará a {nombre} y se avisará al dueño.",
+    "confirmarAprobarFaltan": "Aún hay {n} puntos sin revisar. ¿Aprobar de todos modos?",
+    "aprobado": "{nombre} fue aprobado",
+    "aviso": "Al decidir, se avisa a {nombre} por notificación y correo."
+  },
+  "rechazo": {
+    "title": "Rechazar comercio",
+    "motivo": "Motivo del rechazo",
+    "motivos": {
+      "rif": "RIF no válido o no coincide",
+      "documentos": "Documentos ilegibles o vencidos",
+      "fachada": "La foto de fachada no coincide",
+      "direccion": "No se pudo confirmar la dirección",
+      "incompleto": "Información incompleta o inconsistente",
+      "otro": "Otro motivo"
+    },
+    "comentario": "Comentario para el comercio (opcional)",
+    "comentarioPlaceholder": "Explica qué debe corregir para volver a enviarlo.",
+    "aviso": "Se notificará al dueño por la app y por correo. Podrá corregir su registro y enviarlo de nuevo.",
+    "confirmar": "Rechazar comercio",
+    "errorMotivo": "Elige un motivo",
+    "errorOtro": "Cuéntanos el motivo en el comentario",
+    "hecho": "{nombre} fue rechazado"
+  }
 }
