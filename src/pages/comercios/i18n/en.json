@@ -107,6 +107,7 @@
     "eyebrow": "Decision",
     "progreso": "Verification {n} of {total}",
     "faltan": "Complete the {n} pending points to approve safely.",
+    "faltaUno": "Complete the pending point to approve safely.",
     "completo": "All points are reviewed.",
     "verificado": "This merchant is already verified.",
     "rechazado": "Merchant rejected",
@@ -116,6 +117,7 @@
     "rechazar": "Reject",
     "confirmarAprobar": "{nombre} will be approved and the owner will be notified.",
     "confirmarAprobarFaltan": "{n} points are still unreviewed. Approve anyway?",
+    "confirmarAprobarFaltaUno": "1 point is still unreviewed. Approve anyway?",
     "aprobado": "{nombre} was approved",
     "aviso": "When you decide, {nombre} is notified in the app and by email."
   },

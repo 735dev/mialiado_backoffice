@@ -91,7 +91,7 @@ export function DecisionPanel(p: Props) {
       <div>
         <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">{t('comercios.decision.eyebrow')}</p>
         <h2 className="mt-1 text-[19px] font-extrabold leading-6 tracking-tight">{t('comercios.decision.progreso', { n: hechos, total: items.length })}</h2>
-        <p className="mt-0.5 text-sm text-ink-muted">{faltan > 0 ? t('comercios.decision.faltan', { n: faltan }) : t('comercios.decision.completo')}</p>
+        <p className="mt-0.5 text-sm text-ink-muted">{faltan > 1 ? t('comercios.decision.faltan', { n: faltan }) : faltan === 1 ? t('comercios.decision.faltaUno') : t('comercios.decision.completo')}</p>
         <div className="mt-3 h-2 rounded-pill bg-surface-2" role="progressbar" aria-valuemin={0} aria-valuemax={items.length} aria-valuenow={hechos}>
           <div className="h-2 rounded-pill bg-primary" style={{ width: `${(hechos / items.length) * 100}%` }} />
         </div>

@@ -107,6 +107,7 @@
     "eyebrow": "Decisión",
     "progreso": "Verificación {n} de {total}",
     "faltan": "Completa los {n} puntos pendientes para aprobar con seguridad.",
+    "faltaUno": "Completa el punto pendiente para aprobar con seguridad.",
     "completo": "Todos los puntos están revisados.",
     "verificado": "Este comercio ya está verificado.",
     "rechazado": "Comercio rechazado",
@@ -116,6 +117,7 @@
     "rechazar": "Rechazar",
     "confirmarAprobar": "Se aprobará a {nombre} y se avisará al dueño.",
     "confirmarAprobarFaltan": "Aún hay {n} puntos sin revisar. ¿Aprobar de todos modos?",
+    "confirmarAprobarFaltaUno": "Aún hay 1 punto sin revisar. ¿Aprobar de todos modos?",
     "aprobado": "{nombre} fue aprobado",
     "aviso": "Al decidir, se avisa a {nombre} por notificación y correo."
   },

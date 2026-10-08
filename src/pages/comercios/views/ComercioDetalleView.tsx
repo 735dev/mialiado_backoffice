@@ -99,7 +99,7 @@ export default function ComercioDetalleView() {
   };
   const aprobar = () => {
     const faltan = 5 - (c.documentos.filter((d) => d.revisado).length + Number(checklist.direccion) + Number(checklist.contacto));
-    const msg = faltan > 0 ? t('comercios.decision.confirmarAprobarFaltan', { n: faltan }) : t('comercios.decision.confirmarAprobar', { nombre: c.nombre });
+    const msg = faltan > 0 ? t(faltan === 1 ? 'comercios.decision.confirmarAprobarFaltaUno' : 'comercios.decision.confirmarAprobarFaltan', { n: faltan }) : t('comercios.decision.confirmarAprobar', { nombre: c.nombre });
     notify.confirm(msg, () => void run(() => aprobarComercio(c.id), t('comercios.decision.aprobado', { nombre: c.nombre })));
   };
   const rechazar = async (body: { motivo: string; comentario?: string }) => {

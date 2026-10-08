@@ -211,6 +211,17 @@ describe('B04 verificacion de comercio', () => {
     await userEvent.click(screen.getByRole('checkbox', { name: 'Dirección confirmada en el mapa' }));
     expect(screen.getByText('Confirmada')).toBeInTheDocument();
     expect(screen.getByText('Verificación 2 de 5')).toBeInTheDocument();
+    expect(screen.getByText('Completa los 3 puntos pendientes para aprobar con seguridad.')).toBeInTheDocument();
+  });
+
+  it('con un solo punto pendiente el aviso va en singular', async () => {
+    const d = detalle();
+    obtenerComercio.mockResolvedValue({ ok: true, data: { ...d, documentos: d.documentos.map((x) => ({ ...x, revisado: true })) } });
+    renderApp('/comercios/1');
+    await screen.findByText('Verificación 3 de 5');
+    await userEvent.click(screen.getByRole('checkbox', { name: 'Dirección confirmada en el mapa' }));
+    expect(screen.getByText('Verificación 4 de 5')).toBeInTheDocument();
+    expect(screen.getByText('Completa el punto pendiente para aprobar con seguridad.')).toBeInTheDocument();
   });
 
   it('marcar un documento como revisado actualiza con la respuesta del backend', async () => {
