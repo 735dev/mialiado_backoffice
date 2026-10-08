@@ -58,7 +58,7 @@ export function DescargasRecientes({ descargas: d, descarga, canEdit, onRepeat }
                     aria-label={t('reportes.downloads.download', { nombre: r.nombre })}
                     disabled={descarga.enCurso !== null}
                     onClick={() => void descarga.descargar(r)}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-bg text-ink-soft hover:bg-primary-tint hover:text-primary-deep disabled:opacity-50"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-bg text-ink-soft hover:bg-primary-tint hover:text-primary-deep disabled:opacity-50"
                   >
                     {descarga.enCurso === r.id ? <Spinner size={16} /> : <Download size={18} />}
                   </button>
@@ -68,7 +68,7 @@ export function DescargasRecientes({ descargas: d, descarga, canEdit, onRepeat }
                       type="button"
                       aria-label={t('reportes.downloads.again', { nombre: r.nombre })}
                       onClick={() => onRepeat(r)}
-                      className="flex h-10 w-10 items-center justify-center rounded-full bg-bg text-ink-soft hover:bg-primary-tint hover:text-primary-deep"
+                      className="flex h-11 w-11 items-center justify-center rounded-full bg-bg text-ink-soft hover:bg-primary-tint hover:text-primary-deep"
                     >
                       <RotateCcw size={18} />
                     </button>

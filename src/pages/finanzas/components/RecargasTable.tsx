@@ -71,7 +71,7 @@ export function RecargasTable(p: RecargasTableProps) {
               aria-selected={active}
               onClick={() => p.onEstado(tab)}
               className={cn(
-                'inline-flex h-9 items-center gap-1.5 rounded-pill px-4 text-sm font-bold',
+                'inline-flex h-11 md:h-9 items-center gap-1.5 rounded-pill px-4 text-sm font-bold',
                 active ? 'bg-ink text-bg' : 'bg-surface-2 text-ink-soft hover:text-ink',
               )}
             >

@@ -127,7 +127,7 @@ function Acciones({ n, t, canEdit, onSend, onCancel }: Omit<ListaProps, 'items' 
         type="button"
         aria-label={t('notificaciones.history.sendNow', { titulo: n.titulo })}
         onClick={() => onSend(n)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-tint text-primary-deep"
+        className="flex h-11 w-11 items-center justify-center rounded-full bg-primary-tint text-primary-deep"
       >
         <Send size={16} />
       </button>
@@ -135,7 +135,7 @@ function Acciones({ n, t, canEdit, onSend, onCancel }: Omit<ListaProps, 'items' 
         type="button"
         aria-label={t('notificaciones.history.cancel', { titulo: n.titulo })}
         onClick={() => onCancel(n)}
-        className="flex h-10 w-10 items-center justify-center rounded-full bg-err-tint text-err-deep"
+        className="flex h-11 w-11 items-center justify-center rounded-full bg-err-tint text-err-deep"
       >
         <Trash2 size={16} />
       </button>

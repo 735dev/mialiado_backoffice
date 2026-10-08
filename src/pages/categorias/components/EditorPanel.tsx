@@ -165,7 +165,7 @@ export function EditorPanel({ nodo, lugar, hermanos, padre, canEdit, busy, onSav
         <h2 className="text-sm font-bold uppercase tracking-wider text-ink-muted">
           {nodo.parentId === null ? t('categorias.editor.editandoCategoria') : t('categorias.editor.editandoSub')}
         </h2>
-        <button type="button" aria-label={t('categorias.editor.cerrar')} onClick={onClose} className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-surface-2">
+        <button type="button" aria-label={t('categorias.editor.cerrar')} onClick={onClose} className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-surface-2">
           <X size={18} />
         </button>
       </div>

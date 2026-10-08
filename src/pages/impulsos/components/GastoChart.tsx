@@ -45,7 +45,7 @@ export function GastoChart({ resumen, dias, onDias, loading }: { resumen: Impuls
               role="tab"
               aria-selected={dias === d}
               onClick={() => onDias(d)}
-              className={cn('h-9 rounded-pill px-4 text-sm font-semibold', dias === d ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted')}
+              className={cn('h-11 md:h-9 rounded-pill px-4 text-sm font-semibold', dias === d ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted')}
             >
               {d} d
             </button>

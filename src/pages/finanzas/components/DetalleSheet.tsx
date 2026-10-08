@@ -20,7 +20,7 @@ export function DetalleSheet({ open, onOpenChange, children }: DetalleSheetProps
           <Dialog.Title className="sr-only">{t('finanzas.detalle.titulo')}</Dialog.Title>
           <Dialog.Description className="sr-only">{t('finanzas.detalle.titulo')}</Dialog.Description>
           <div className="mb-2 flex justify-end">
-            <Dialog.Close aria-label={t('common.close')} className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-2">
+            <Dialog.Close aria-label={t('common.close')} className="flex h-11 w-11 items-center justify-center rounded-full bg-surface-2">
               <X size={18} />
             </Dialog.Close>
           </div>

@@ -84,7 +84,7 @@ export function PlantillasModal({ open, onOpenChange, canEdit, actual, onUse }: 
                   type="button"
                   aria-label={t('notificaciones.templates.delete', { nombre: p.nombre })}
                   onClick={() => borrar(p)}
-                  className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-err-tint text-err-deep"
+                  className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-err-tint text-err-deep"
                 >
                   <Trash2 size={16} />
                 </button>

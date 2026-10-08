@@ -61,7 +61,7 @@ function Accion({ i, puedeEditar, busyId, onPausar, onReanudar }: Omit<Props, 'i
       isLoading={busyId === i.id}
       aria-label={t(pausar ? 'impulsos.acciones.pausarDe' : 'impulsos.acciones.reanudarDe', { nombre: i.comercio })}
       onClick={() => (pausar ? onPausar(i) : onReanudar(i))}
-      className="h-9 px-4"
+      className="h-11 px-4 md:h-9"
     >
       {pausar ? <Pause size={14} aria-hidden="true" /> : <Play size={14} aria-hidden="true" />}
       {t(pausar ? 'impulsos.acciones.pausar' : 'impulsos.acciones.reanudar')}

@@ -80,7 +80,7 @@ export default function ImpulsosView() {
                 role="tab"
                 aria-selected={m.estado === tab}
                 onClick={() => m.setEstado(tab)}
-                className={cn('h-10 flex-none rounded-pill px-4 text-sm font-semibold', m.estado === tab ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted hover:text-ink')}
+                className={cn('h-11 flex-none rounded-pill px-4 text-sm font-semibold', m.estado === tab ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted hover:text-ink')}
               >
                 {t(`impulsos.lista.tabs.${tab}`)}
               </button>

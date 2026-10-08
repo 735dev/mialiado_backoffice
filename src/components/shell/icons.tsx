@@ -14,6 +14,7 @@ import {
   Zap,
   type LucideIcon,
 } from 'lucide-react';
+import { useId } from 'react';
 
 /** Iconos del menu por nombre (campo `icono` de src/lib/secciones.ts). */
 export const NAV_ICONS: Record<string, LucideIcon> = {
@@ -34,16 +35,18 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
 
 /** Mascota Ali del prototipo (logo del menu). */
 export function AliLogo({ size = 32 }: { size?: number }) {
+  // Id unico por instancia: con ids repetidos el degradado se resuelve contra un SVG oculto (menu movil) y el rostro queda sin relleno.
+  const gradientId = `ali-g-${useId().replace(/:/g, '')}`;
   return (
     <svg width={size} height={size} viewBox="0 0 120 120" aria-hidden="true" className="flex-none">
       <defs>
-        <radialGradient id="aliG" cx="35%" cy="28%" r="80%">
+        <radialGradient id={gradientId} cx="35%" cy="28%" r="80%">
           <stop offset="0" stopColor="#6BFFBA" />
           <stop offset=".55" stopColor="#22F797" />
           <stop offset="1" stopColor="#12D985" />
         </radialGradient>
       </defs>
-      <circle cx="60" cy="60" r="58" fill="url(#aliG)" />
+      <circle cx="60" cy="60" r="58" fill={`url(#${gradientId})`} />
       <ellipse cx="38" cy="52" rx="16" ry="17.5" fill="#fff" stroke="#10243A" strokeWidth="3.5" />
       <ellipse cx="39" cy="49" rx="10.5" ry="12" fill="#10243A" />
       <ellipse cx="82" cy="52" rx="16" ry="17.5" fill="#fff" stroke="#10243A" strokeWidth="3.5" />

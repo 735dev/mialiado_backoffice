@@ -14,7 +14,7 @@
   --primary-tint: #ddfbeb;
   --warn: #7a5309;
   --warn-tint: #f8ebc8;
-  --err: #d2503b;
+  --err: #b83d29; /* AA sobre blanco y sobre err-tint (el prototipo usaba #d2503b: 4.2:1 y 3.5:1) */
   --err-deep: #b03a26;
   --err-tint: #fbe4df;
   color-scheme: light;
@@ -25,7 +25,7 @@
   --surface: #15211c;
   --surface-2: #1c2b25;
   --line: #24352e;
-  --line-strong: #4f645b;
+  --line-strong: #6f867b; /* 3:1 minimo contra surface para bordes de campos (antes #4f645b: 2.6:1) */
   --text: #e9f3ee;
   --text-soft: #c3d3cb;
   --text-muted: #93a89e;

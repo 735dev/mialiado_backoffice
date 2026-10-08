@@ -144,7 +144,7 @@ function CabeceraTicket({ ticket, canEdit, onBack, onChanged }: CabeceraProps) {
     <div className="flex flex-col gap-4 border-b border-line px-4 pb-5 pt-5 md:px-7 md:pt-6">
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">
-          <button type="button" onClick={onBack} className="mb-2 inline-flex h-9 items-center gap-1.5 rounded-pill text-sm font-bold text-primary-deep md:hidden">
+          <button type="button" onClick={onBack} className="mb-2 inline-flex h-11 items-center gap-1.5 rounded-pill text-sm font-bold text-primary-deep md:hidden">
             <ArrowLeft size={16} aria-hidden="true" />
             {t('soporte.detail.back')}
           </button>

@@ -79,7 +79,7 @@ export function VersionesCard({ versiones, actual, borrador, canRestore, onResto
               <Badge tone="ok">{t('niveles.versiones.vigente')}</Badge>
             ) : (
               canRestore && (
-                <Button size="md" variant="secondary" className="h-9 px-4" onClick={() => onRestore(v)}>
+                <Button size="md" variant="secondary" className="h-11 px-4 md:h-9" onClick={() => onRestore(v)}>
                   {t('niveles.versiones.restaurar')}
                 </Button>
               )

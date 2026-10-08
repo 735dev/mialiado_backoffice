@@ -77,7 +77,7 @@ export function PasoRango() {
               setValue('desde', rango.desde, { shouldValidate: true });
               setValue('hasta', rango.hasta, { shouldValidate: true });
             }}
-            className="inline-flex h-9 items-center rounded-pill border-[1.5px] border-line-strong px-[18px] text-sm font-semibold text-ink-soft hover:bg-surface-2"
+            className="inline-flex h-11 md:h-9 items-center rounded-pill border-[1.5px] border-line-strong px-[18px] text-sm font-semibold text-ink-soft hover:bg-surface-2"
           >
             {t(`reportes.quick.${r}`)}
           </button>

@@ -73,7 +73,7 @@ export function ProgramadosCard({ programados: p, canEdit, onNew }: Props) {
                   type="button"
                   aria-label={t('reportes.scheduled.delete', { nombre: r.nombre })}
                   onClick={() => borrar(r)}
-                  className="flex h-10 w-10 flex-none items-center justify-center rounded-full bg-err-tint text-err-deep"
+                  className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-err-tint text-err-deep"
                 >
                   <Trash2 size={16} />
                 </button>

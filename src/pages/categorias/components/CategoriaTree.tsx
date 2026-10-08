@@ -50,7 +50,7 @@ function Flechas({ nodo, index, total, busy, onMove }: FlechasProps) {
         aria-label={t('categorias.arbol.subir', { nombre: nodo.nombre })}
         disabled={index === 0 || busy}
         onClick={() => onMove(nodo, -1)}
-        className="flex h-10 w-9 sm:h-5 sm:w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
+        className="flex h-11 w-11 sm:h-5 sm:w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
       >
         <ChevronUp size={14} />
       </button>
@@ -59,7 +59,7 @@ function Flechas({ nodo, index, total, busy, onMove }: FlechasProps) {
         aria-label={t('categorias.arbol.bajar', { nombre: nodo.nombre })}
         disabled={index === total - 1 || busy}
         onClick={() => onMove(nodo, 1)}
-        className="flex h-10 w-9 sm:h-5 sm:w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
+        className="flex h-11 w-11 sm:h-5 sm:w-7 items-center justify-center rounded text-ink-soft hover:bg-surface disabled:opacity-30"
       >
         <ChevronDown size={14} />
       </button>
@@ -118,7 +118,7 @@ function Fila({ nodo, index, total, open, dragging, setDragging, selectedId, can
           aria-expanded={open}
           aria-label={t(open ? 'categorias.arbol.contraerUna' : 'categorias.arbol.expandirUna', { nombre: nodo.nombre })}
           disabled={nodo.hijos === 0}
-          className="flex h-10 w-10 sm:h-8 sm:w-8 flex-none items-center justify-center rounded-full hover:bg-surface disabled:opacity-30"
+          className="flex h-11 w-11 sm:h-8 sm:w-8 flex-none items-center justify-center rounded-full hover:bg-surface disabled:opacity-30"
         >
           {open ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
         </button>

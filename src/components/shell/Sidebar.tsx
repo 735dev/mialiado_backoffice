@@ -108,7 +108,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
               onClick={onSignOut}
               aria-label={t('common.signOut')}
               title={t('common.signOut')}
-              className="flex h-10 w-10 flex-none items-center justify-center rounded-full text-ink-soft hover:bg-surface-2"
+              className="flex h-11 w-11 flex-none items-center justify-center rounded-full text-ink-soft hover:bg-surface-2"
             >
               <LogOut size={18} />
             </button>

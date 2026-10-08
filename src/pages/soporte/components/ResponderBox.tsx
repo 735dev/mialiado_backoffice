@@ -101,7 +101,7 @@ export function ResponderBox({ ticket, plantillas, insertar, onChanged }: Respon
               key={p.id}
               type="button"
               onClick={() => methods.setValue('cuerpo', p.cuerpo.slice(0, RESPUESTA_MAX), { shouldValidate: true, shouldDirty: true })}
-              className="inline-flex h-9 items-center rounded-pill bg-surface-2 px-4 text-sm font-semibold text-ink-soft hover:bg-primary-tint hover:text-primary-deep"
+              className="inline-flex h-11 md:h-9 items-center rounded-pill bg-surface-2 px-4 text-sm font-semibold text-ink-soft hover:bg-primary-tint hover:text-primary-deep"
             >
               {p.nombre}
             </button>

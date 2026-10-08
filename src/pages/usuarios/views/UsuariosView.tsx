@@ -67,7 +67,7 @@ export default function UsuariosView() {
                 aria-selected={u.tab === tab}
                 onClick={() => u.setTab(tab)}
                 className={cn(
-                  'h-10 flex-none rounded-pill px-4 text-sm font-semibold',
+                  'h-11 flex-none rounded-pill px-4 text-sm font-semibold',
                   u.tab === tab ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted hover:text-ink',
                 )}
               >

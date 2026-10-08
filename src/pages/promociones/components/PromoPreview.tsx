@@ -74,7 +74,7 @@ export function PromoPreview({ p }: { p: PromoDetalle }) {
             role="tab"
             aria-selected={nivel === n.codigo}
             onClick={() => setNivel(n.codigo)}
-            className={cn('h-9 rounded-pill px-3 text-sm font-semibold', nivel === n.codigo ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted')}
+            className={cn('h-11 md:h-9 rounded-pill px-3 text-sm font-semibold', nivel === n.codigo ? 'bg-surface font-bold text-ink shadow-e1' : 'text-ink-muted')}
           >
             {n.label}
           </button>

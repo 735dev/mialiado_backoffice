@@ -87,7 +87,7 @@ export function UsuariosTabla({ items, isLoading }: { items: UsuarioFila[]; isLo
               <td className="px-3"><EstadoBadge estado={u.estado} /></td>
               <td className="px-3 text-ink-soft">{formatDateTime(u.ultimo_acceso, lang)}</td>
               <td className="pr-4">
-                <Link to={href(u)} aria-label={t('usuarios.tabla.verDe', { nombre: u.nombre })} className="flex h-9 w-9 items-center justify-center rounded-full text-ink-muted hover:bg-surface">
+                <Link to={href(u)} aria-label={t('usuarios.tabla.verDe', { nombre: u.nombre })} className="flex h-11 w-11 items-center justify-center rounded-full text-ink-muted hover:bg-surface">
                   <ChevronRight size={18} />
                 </Link>
               </td>

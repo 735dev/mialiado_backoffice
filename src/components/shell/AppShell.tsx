@@ -41,7 +41,7 @@ export default function AppShell() {
           onClick={() => setOpen(true)}
           aria-label={t('common.menu')}
           aria-expanded={open}
-          className="flex h-10 w-10 items-center justify-center rounded-full hover:bg-surface-2"
+          className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-surface-2"
         >
           <Menu size={22} />
         </button>

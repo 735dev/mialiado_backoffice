@@ -87,7 +87,7 @@ export function NuevoTicketModal({ open, onOpenChange, onCreated }: NuevoTicketM
                 <div className="truncate text-sm font-bold">{elegido.nombre}</div>
                 <div className="truncate text-xs text-ink-muted">@{elegido.usuario}</div>
               </div>
-              <button type="button" aria-label={t('soporte.newTicket.change')} onClick={quitar} className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-2">
+              <button type="button" aria-label={t('soporte.newTicket.change')} onClick={quitar} className="flex h-11 w-11 items-center justify-center rounded-full bg-surface-2">
                 <X size={16} />
               </button>
             </div>

@@ -65,7 +65,7 @@ export function BandejaTickets({ bandeja: b, selectedId, leidos, onSelect, class
             aria-label={t('soporte.inbox.priorityFilter')}
             value={b.prioridad}
             onChange={(e) => b.setPrioridad(e.target.value as Prioridad | '')}
-            className="h-10 rounded-pill px-4 text-sm"
+            className="h-11 rounded-pill px-4 text-sm"
           >
             <option value="">{t('soporte.inbox.allPriorities')}</option>
             {PRIORIDADES.map((p) => (
@@ -78,7 +78,7 @@ export function BandejaTickets({ bandeja: b, selectedId, leidos, onSelect, class
             aria-label={t('soporte.inbox.originFilter')}
             value={b.origen}
             onChange={(e) => b.setOrigen(e.target.value as OrigenTicket | '')}
-            className="h-10 rounded-pill px-4 text-sm"
+            className="h-11 rounded-pill px-4 text-sm"
           >
             <option value="">{t('soporte.inbox.allOrigins')}</option>
             <option value="usuario">{t('soporte.origen.usuario')}</option>

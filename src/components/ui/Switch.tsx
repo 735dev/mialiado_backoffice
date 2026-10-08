@@ -18,7 +18,7 @@ export function Switch({ checked, onCheckedChange, label, disabled, className }:
       disabled={disabled}
       onClick={() => onCheckedChange(!checked)}
       className={cn(
-        'relative h-8 w-[52px] flex-none rounded-pill transition-colors duration-150 disabled:opacity-50',
+        'relative h-8 w-[52px] flex-none before:absolute before:-inset-x-1 before:-inset-y-1.5 before:content-[""] rounded-pill transition-colors duration-150 disabled:opacity-50',
         checked ? 'bg-primary' : 'bg-line-strong',
         className,
       )}
