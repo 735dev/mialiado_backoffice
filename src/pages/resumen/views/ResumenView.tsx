@@ -50,6 +50,7 @@ export default function ResumenView() {
 
   return (
     <div data-screen="B02" className="flex flex-col gap-5">
+      <h2 className="sr-only">{t('resumen.title')}</h2>
       <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">
         {t('nav.group.general')} · {t('nav.resumen')}
       </p>

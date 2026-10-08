@@ -43,6 +43,7 @@ export default function ComercioDetalleView() {
     const status = estado.status === 'error' ? estado.error.status : 404;
     return (
       <div data-screen="B04" className="flex flex-col gap-5">
+      <h2 className="sr-only">{t('comercios.detailTitle')}</h2>
         {back}
         <div className="rounded-card bg-surface shadow-e1">
           <EmptyState
@@ -65,6 +66,7 @@ export default function ComercioDetalleView() {
   if (estado.status === 'loading') {
     return (
       <div data-screen="B04" className="flex flex-col gap-5">
+      <h2 className="sr-only">{t('comercios.detailTitle')}</h2>
         {back}
         <div className="flex justify-center py-24 text-primary-deep" aria-live="polite">
           <Spinner size={36} />
@@ -93,6 +95,7 @@ export default function ComercioDetalleView() {
 
   return (
     <div data-screen="B04" className="flex flex-col gap-5">
+      <h2 className="sr-only">{t('comercios.detailTitle')}</h2>
       <p className="font-mono text-xs uppercase tracking-widest text-ink-muted">
         {t('nav.group.operacion')} · {t('nav.comercios')}
       </p>
