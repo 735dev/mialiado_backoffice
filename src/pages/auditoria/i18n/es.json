@@ -1,3 +1,65 @@
 {
-  "title": "Auditoría"
+  "title": "Auditoría",
+  "subtitle": "Cada acción del equipo queda registrada. Los eventos no se pueden editar ni borrar.",
+  "export": "Exportar registro",
+  "exported": "Registro exportado",
+  "errors": {
+    "rango": "La fecha final no puede ser anterior a la inicial"
+  },
+  "filters": {
+    "aria": "Filtros del registro",
+    "action": "Filtrar por acción",
+    "person": "Filtrar por persona",
+    "module": "Filtrar por módulo",
+    "range": "Rango de fechas",
+    "allActions": "Acción",
+    "allPeople": "Persona",
+    "allModules": "Módulo",
+    "ranges": {
+      "hoy": "Hoy",
+      "ultimos7": "Últimos 7 días",
+      "ultimos30": "Últimos 30 días",
+      "ultimos90": "Últimos 90 días",
+      "personalizado": "Personalizado"
+    },
+    "from": "Desde",
+    "to": "Hasta",
+    "searchLabel": "Buscar en el registro",
+    "search": "Buscar objeto o acción"
+  },
+  "table": {
+    "aria": "Registro de acciones",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "cols": {
+      "date": "Fecha",
+      "who": "Quién",
+      "action": "Acción",
+      "object": "Objeto",
+      "ip": "IP",
+      "detail": "Detalle"
+    },
+    "detail": "Ver detalle del evento {codigo}",
+    "count": "Mostrando {shown} de {total} eventos",
+    "emptyTitle": "No hay eventos con estos filtros",
+    "emptyText": "Prueba con otro rango de fechas o quita algún filtro."
+  },
+  "detail": {
+    "title": "Detalle del evento",
+    "error": "No pudimos cargar el detalle de este evento.",
+    "changesIn": "Cambios en «{modulo}»",
+    "noChanges": "Este evento no registró cambios de campos.",
+    "field": "Campo",
+    "before": "Antes",
+    "after": "Después",
+    "id": "ID del evento",
+    "version": "Versión de reglas",
+    "reason": "Motivo",
+    "device": "Dispositivo",
+    "session": "Sesión",
+    "copyId": "Copiar ID",
+    "copied": "ID copiado",
+    "copyFailed": "No se pudo copiar el ID",
+    "viewVersion": "Ver versión"
+  }
 }

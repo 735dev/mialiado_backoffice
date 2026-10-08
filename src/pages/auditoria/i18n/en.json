@@ -1,3 +1,65 @@
 {
-  "title": "Audit log"
+  "title": "Audit log",
+  "subtitle": "Every team action is recorded. Events cannot be edited or deleted.",
+  "export": "Export log",
+  "exported": "Log exported",
+  "errors": {
+    "rango": "The end date cannot be before the start date"
+  },
+  "filters": {
+    "aria": "Log filters",
+    "action": "Filter by action",
+    "person": "Filter by person",
+    "module": "Filter by module",
+    "range": "Date range",
+    "allActions": "Action",
+    "allPeople": "Person",
+    "allModules": "Module",
+    "ranges": {
+      "hoy": "Today",
+      "ultimos7": "Last 7 days",
+      "ultimos30": "Last 30 days",
+      "ultimos90": "Last 90 days",
+      "personalizado": "Custom"
+    },
+    "from": "From",
+    "to": "To",
+    "searchLabel": "Search the log",
+    "search": "Search object or action"
+  },
+  "table": {
+    "aria": "Action log",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "cols": {
+      "date": "Date",
+      "who": "Who",
+      "action": "Action",
+      "object": "Object",
+      "ip": "IP",
+      "detail": "Details"
+    },
+    "detail": "View details of event {codigo}",
+    "count": "Showing {shown} of {total} events",
+    "emptyTitle": "No events with these filters",
+    "emptyText": "Try another date range or remove a filter."
+  },
+  "detail": {
+    "title": "Event details",
+    "error": "We could not load the details of this event.",
+    "changesIn": "Changes in “{modulo}”",
+    "noChanges": "This event did not record any field changes.",
+    "field": "Field",
+    "before": "Before",
+    "after": "After",
+    "id": "Event ID",
+    "version": "Rules version",
+    "reason": "Reason",
+    "device": "Device",
+    "session": "Session",
+    "copyId": "Copy ID",
+    "copied": "ID copied",
+    "copyFailed": "The ID could not be copied",
+    "viewVersion": "View version"
+  }
 }
