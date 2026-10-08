@@ -5,6 +5,10 @@
 import '@testing-library/jest-dom/vitest';
 import { afterEach } from 'vitest';
 import { cleanup } from '@testing-library/react';
+import { configure } from '@testing-library/dom';
+
+// Con 4 hilos de vitest compitiendo, el 1 s por defecto de findBy/waitFor da fallos intermitentes por carga.
+configure({ asyncUtilTimeout: 10_000 });
 
 // Sin esto, el arbol de un test sigue montado en el siguiente y un
 // `getByRole` encuentra dos botones iguales. Falla de forma confusa: el test
