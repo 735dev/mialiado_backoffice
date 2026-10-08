@@ -1,3 +1,108 @@
 {
-  "title": "Team and roles"
+  "title": "Team and roles",
+  "subtitle": "Who gets into the panel and what they can do in each module.",
+  "rol": {
+    "admin": "Admin",
+    "moderador": "Operations",
+    "finanzas": "Finance",
+    "soporte": "Support"
+  },
+  "estado": {
+    "activo": "Active",
+    "sin2fa": "No 2FA access",
+    "pendiente": "Invitation sent",
+    "suspendido": "Suspended"
+  },
+  "members": {
+    "aria": "Team members",
+    "title": "Members",
+    "peopleOne": "{n} person",
+    "peopleOther": "{n} people",
+    "activeOne": "{n} active",
+    "activeOther": "{n} active",
+    "pendingOne": "{n} pending invitation",
+    "pendingOther": "{n} pending invitations",
+    "filter": "Filter members",
+    "tabs": {
+      "todos": "All",
+      "activos": "Active",
+      "pendientes": "Pending"
+    },
+    "cols": {
+      "member": "Member",
+      "role": "Role",
+      "status": "Status",
+      "lastAccess": "Last access",
+      "actions": "Actions"
+    },
+    "you": "you",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "now": "Now",
+    "emptyTitle": "No members here",
+    "emptyText": "Invite someone so they can get into the panel.",
+    "errorTitle": "We could not load the team",
+    "errorText": "Check your connection and try again."
+  },
+  "actions": {
+    "edit": "Edit {nombre}",
+    "reset2fa": "Reset second factor for {nombre}",
+    "suspend": "Suspend {nombre}",
+    "reactivate": "Reactivate {nombre}",
+    "delete": "Remove {nombre} from the team"
+  },
+  "confirm": {
+    "suspend": "Suspend {nombre}? Their sessions will be closed and they will not be able to sign in.",
+    "reactivate": "Reactivate access for {nombre}?",
+    "reset2fa": "Reset the second factor for {nombre}? They will have to set it up again when they sign in.",
+    "delete": "Remove {nombre} from the team? They will lose access to the panel."
+  },
+  "toast": {
+    "suspended": "Access suspended",
+    "reactivated": "Access reactivated",
+    "reset2fa": "Second factor reset",
+    "deleted": "Person removed from the team"
+  },
+  "invite": {
+    "open": "Invite member",
+    "title": "Invite member",
+    "description": "They will get an email to create their password and set up the second factor.",
+    "firstName": "First names",
+    "lastName": "Last names",
+    "email": "Email",
+    "role": "Role",
+    "submit": "Send invitation",
+    "sent": "Invitation sent to {correo}",
+    "devToken": "Development mode: this is the invitation code (in production it only arrives by email)."
+  },
+  "edit": {
+    "title": "Edit member",
+    "role": "Role",
+    "access": "Access",
+    "accessActive": "Active",
+    "accessSuspended": "Suspended",
+    "saved": "Changes saved"
+  },
+  "matrix": {
+    "aria": "Permission matrix",
+    "title": "Permissions by role",
+    "description": "Each role defines which modules it can view, edit and approve. Changes apply when you save.",
+    "adminAlways": "Admin always has full access",
+    "module": "Module",
+    "pickRole": "Choose role",
+    "membersOne": "{n} member",
+    "membersOther": "{n} members",
+    "acciones": {
+      "ver": "View",
+      "editar": "Edit",
+      "aprobar": "Approve"
+    },
+    "lastChange": "Last change: {por}, {fecha}",
+    "noChanges": "No changes yet",
+    "discard": "Discard",
+    "save": "Save permissions",
+    "saved": "Permissions saved",
+    "errorTitle": "We could not load the permissions",
+    "errorText": "Check your connection and try again."
+  }
 }

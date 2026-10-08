@@ -1,3 +1,108 @@
 {
-  "title": "Equipo y roles"
+  "title": "Equipo y roles",
+  "subtitle": "Quién entra al panel y qué puede hacer dentro de cada módulo.",
+  "rol": {
+    "admin": "Admin",
+    "moderador": "Operaciones",
+    "finanzas": "Finanzas",
+    "soporte": "Soporte"
+  },
+  "estado": {
+    "activo": "Activo",
+    "sin2fa": "Sin acceso 2FA",
+    "pendiente": "Invitación enviada",
+    "suspendido": "Suspendido"
+  },
+  "members": {
+    "aria": "Miembros del equipo",
+    "title": "Miembros",
+    "peopleOne": "{n} persona",
+    "peopleOther": "{n} personas",
+    "activeOne": "{n} activa",
+    "activeOther": "{n} activas",
+    "pendingOne": "{n} invitación pendiente",
+    "pendingOther": "{n} invitaciones pendientes",
+    "filter": "Filtrar miembros",
+    "tabs": {
+      "todos": "Todos",
+      "activos": "Activos",
+      "pendientes": "Pendientes"
+    },
+    "cols": {
+      "member": "Miembro",
+      "role": "Rol",
+      "status": "Estado",
+      "lastAccess": "Último acceso",
+      "actions": "Acciones"
+    },
+    "you": "tú",
+    "today": "Hoy",
+    "yesterday": "Ayer",
+    "now": "Ahora",
+    "emptyTitle": "No hay miembros aquí",
+    "emptyText": "Invita a una persona para que entre al panel.",
+    "errorTitle": "No pudimos cargar el equipo",
+    "errorText": "Revisa tu conexión e inténtalo de nuevo."
+  },
+  "actions": {
+    "edit": "Editar a {nombre}",
+    "reset2fa": "Restablecer el segundo factor de {nombre}",
+    "suspend": "Suspender a {nombre}",
+    "reactivate": "Reactivar a {nombre}",
+    "delete": "Quitar a {nombre} del equipo"
+  },
+  "confirm": {
+    "suspend": "¿Suspender a {nombre}? Se cerrarán sus sesiones y no podrá entrar.",
+    "reactivate": "¿Reactivar el acceso de {nombre}?",
+    "reset2fa": "¿Restablecer el segundo factor de {nombre}? Tendrá que configurarlo de nuevo al entrar.",
+    "delete": "¿Quitar a {nombre} del equipo? Perderá el acceso al panel."
+  },
+  "toast": {
+    "suspended": "Acceso suspendido",
+    "reactivated": "Acceso reactivado",
+    "reset2fa": "Segundo factor restablecido",
+    "deleted": "Persona quitada del equipo"
+  },
+  "invite": {
+    "open": "Invitar miembro",
+    "title": "Invitar miembro",
+    "description": "Le llegará un correo para crear su contraseña y configurar el segundo factor.",
+    "firstName": "Nombres",
+    "lastName": "Apellidos",
+    "email": "Correo",
+    "role": "Rol",
+    "submit": "Enviar invitación",
+    "sent": "Invitación enviada a {correo}",
+    "devToken": "Modo desarrollo: este es el código de la invitación (en producción solo llega por correo)."
+  },
+  "edit": {
+    "title": "Editar miembro",
+    "role": "Rol",
+    "access": "Acceso",
+    "accessActive": "Activo",
+    "accessSuspended": "Suspendido",
+    "saved": "Cambios guardados"
+  },
+  "matrix": {
+    "aria": "Matriz de permisos",
+    "title": "Permisos por rol",
+    "description": "Cada rol define qué módulos puede ver, editar y aprobar. Los cambios se aplican al guardar.",
+    "adminAlways": "Admin siempre tiene acceso total",
+    "module": "Módulo",
+    "pickRole": "Elegir rol",
+    "membersOne": "{n} miembro",
+    "membersOther": "{n} miembros",
+    "acciones": {
+      "ver": "Ver",
+      "editar": "Editar",
+      "aprobar": "Aprobar"
+    },
+    "lastChange": "Última modificación: {por}, {fecha}",
+    "noChanges": "Sin modificaciones todavía",
+    "discard": "Descartar",
+    "save": "Guardar permisos",
+    "saved": "Permisos guardados",
+    "errorTitle": "No pudimos cargar los permisos",
+    "errorText": "Revisa tu conexión e inténtalo de nuevo."
+  }
 }
