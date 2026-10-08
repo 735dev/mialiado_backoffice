@@ -1,3 +1,77 @@
 {
-  "title": "Boosts"
+  "title": "Boosts",
+  "subtitle": "Campaigns that businesses pay for to show up first on the map.",
+  "verReportes": "View reports",
+  "resumenError": "We could not load the boosts summary",
+  "soloLectura": "Your role can only view boosts: pause and resume are disabled.",
+  "estado": {
+    "en_curso": "Running",
+    "finalizada": "Finished",
+    "pausada": "Paused"
+  },
+  "kpis": {
+    "label": "Period indicators",
+    "gasto": "Total spend",
+    "vistas": "Views",
+    "ctr": "CTR",
+    "canjes": "Attributed redemptions",
+    "pts": "pts",
+    "vsAnterior": "versus the previous period",
+    "sinComparacion": "No comparison"
+  },
+  "chart": {
+    "titulo": "Spend vs. redemptions",
+    "subtitulo": "Last {dias} days, all campaigns",
+    "periodo": "Chart period",
+    "gastoDiario": "Daily spend (USD)",
+    "canjes": "Attributed redemptions",
+    "vacio": "There is no data in this period yet.",
+    "resumen": "Spend of {gasto} and {canjes} attributed redemptions in the last {dias} days"
+  },
+  "campanas": {
+    "titulo": "Campaigns by status",
+    "total": "{n} campaigns in total",
+    "pujaPromedio": "Average daily bid",
+    "minimo": "Minimum allowed: {monto} per day"
+  },
+  "lista": {
+    "titulo": "Campaigns",
+    "filtrar": "Filter by status",
+    "tabs": {
+      "todas": "All",
+      "en_curso": "Running",
+      "finalizada": "Finished",
+      "pausada": "Paused"
+    },
+    "buscar": "Search business or campaign",
+    "mostrando": "Showing {desde}–{hasta} of {total} campaigns"
+  },
+  "tabla": {
+    "comercio": "Business",
+    "pujaDiaria": "Daily bid",
+    "dias": "Days",
+    "alcance": "Reach / day",
+    "gasto": "Spend",
+    "vistas": "Views",
+    "canjes": "Redemptions",
+    "estado": "Status",
+    "acciones": "Actions"
+  },
+  "acciones": {
+    "pausar": "Pause",
+    "reanudar": "Resume",
+    "pausarDe": "Pause the campaign of {nombre}",
+    "reanudarDe": "Resume the campaign of {nombre}",
+    "confirmarPausar": "Pause the campaign of {nombre}? It will stop showing first on the map.",
+    "confirmarReanudar": "Resume the campaign of {nombre}?",
+    "pausada": "Campaign paused",
+    "reanudada": "Campaign resumed"
+  },
+  "vacio": {
+    "titulo": "No campaigns yet",
+    "texto": "When a business boosts a promotion it will show up here.",
+    "filtrosTitulo": "No results",
+    "filtrosTexto": "No campaign matches the search or the selected status.",
+    "limpiar": "Clear filters"
+  }
 }

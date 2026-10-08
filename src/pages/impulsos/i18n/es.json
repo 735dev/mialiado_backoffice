@@ -1,3 +1,77 @@
 {
-  "title": "Impulsos"
+  "title": "Impulsos",
+  "subtitle": "Campañas que los comercios pagan para aparecer primero en el mapa.",
+  "verReportes": "Ver reportes",
+  "resumenError": "No pudimos cargar el resumen de impulsos",
+  "soloLectura": "Tu rol solo puede consultar impulsos: pausar y reanudar están desactivados.",
+  "estado": {
+    "en_curso": "En curso",
+    "finalizada": "Finalizada",
+    "pausada": "Pausada"
+  },
+  "kpis": {
+    "label": "Indicadores del periodo",
+    "gasto": "Gasto total",
+    "vistas": "Vistas",
+    "ctr": "CTR",
+    "canjes": "Canjes atribuidos",
+    "pts": "pts",
+    "vsAnterior": "frente al periodo anterior",
+    "sinComparacion": "Sin comparación"
+  },
+  "chart": {
+    "titulo": "Gasto vs. canjes",
+    "subtitulo": "Últimos {dias} días, todas las campañas",
+    "periodo": "Periodo del gráfico",
+    "gastoDiario": "Gasto diario (USD)",
+    "canjes": "Canjes atribuidos",
+    "vacio": "Aún no hay datos en este periodo.",
+    "resumen": "Gasto de {gasto} y {canjes} canjes atribuidos en los últimos {dias} días"
+  },
+  "campanas": {
+    "titulo": "Campañas por estado",
+    "total": "{n} campañas en total",
+    "pujaPromedio": "Puja diaria promedio",
+    "minimo": "Mínimo permitido: {monto} por día"
+  },
+  "lista": {
+    "titulo": "Campañas",
+    "filtrar": "Filtrar por estado",
+    "tabs": {
+      "todas": "Todas",
+      "en_curso": "En curso",
+      "finalizada": "Finalizadas",
+      "pausada": "Pausadas"
+    },
+    "buscar": "Buscar comercio o campaña",
+    "mostrando": "Mostrando {desde}–{hasta} de {total} campañas"
+  },
+  "tabla": {
+    "comercio": "Comercio",
+    "pujaDiaria": "Puja diaria",
+    "dias": "Días",
+    "alcance": "Alcance / día",
+    "gasto": "Gasto",
+    "vistas": "Vistas",
+    "canjes": "Canjes",
+    "estado": "Estado",
+    "acciones": "Acciones"
+  },
+  "acciones": {
+    "pausar": "Pausar",
+    "reanudar": "Reanudar",
+    "pausarDe": "Pausar la campaña de {nombre}",
+    "reanudarDe": "Reanudar la campaña de {nombre}",
+    "confirmarPausar": "¿Pausar la campaña de {nombre}? Dejará de aparecer primero en el mapa.",
+    "confirmarReanudar": "¿Reanudar la campaña de {nombre}?",
+    "pausada": "Campaña pausada",
+    "reanudada": "Campaña reanudada"
+  },
+  "vacio": {
+    "titulo": "Aún no hay campañas",
+    "texto": "Cuando un comercio impulse una promoción aparecerá aquí.",
+    "filtrosTitulo": "Sin resultados",
+    "filtrosTexto": "Ninguna campaña coincide con la búsqueda o el estado elegido.",
+    "limpiar": "Quitar filtros"
+  }
 }
