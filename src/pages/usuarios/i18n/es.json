@@ -1,4 +1,136 @@
 {
   "title": "Usuarios",
-  "detailTitle": "Detalle del usuario"
+  "detailTitle": "Detalle del usuario",
+  "subtitle": "Consulta niveles, ahorro y actividad de la comunidad.",
+  "buscar": "Buscar por nombre, @usuario o correo",
+  "ciudad": "Ciudad",
+  "mostrando": "Mostrando {desde}–{hasta} de {total} usuarios",
+  "resumen": {
+    "label": "Resumen de la comunidad",
+    "deUsuarios": "{pct} de los usuarios · desde {desde} compras",
+    "bloqueadosPct": "{pct} de los usuarios"
+  },
+  "tabs": {
+    "label": "Filtrar por nivel o estado",
+    "todos": "Todos",
+    "aliado": "Aliado",
+    "aliadopro": "AliadoPro",
+    "aliadoplus": "AliadoPlus",
+    "bloqueados": "Bloqueados"
+  },
+  "estado": {
+    "activo": "Activo",
+    "bloqueado": "Bloqueado"
+  },
+  "tabla": {
+    "usuario": "Usuario",
+    "nivel": "Nivel",
+    "compras": "Compras",
+    "ahorro": "Ahorro total",
+    "ciudad": "Ciudad",
+    "estado": "Estado",
+    "ultimoAcceso": "Último acceso",
+    "ver": "Ver detalle",
+    "verDe": "Ver detalle de {nombre}",
+    "comprasN": "{n} compras"
+  },
+  "vacio": {
+    "titulo": "Aún no hay usuarios",
+    "texto": "Cuando alguien se registre en la app aparecerá aquí.",
+    "filtrosTitulo": "Sin resultados",
+    "filtrosTexto": "Ningún usuario coincide con la búsqueda o los filtros.",
+    "limpiar": "Quitar filtros"
+  },
+  "detalle": {
+    "kpis": "Resumen del usuario",
+    "compras": "Compras",
+    "desde": "desde el {fecha}",
+    "sinCompras": "aún sin compras",
+    "ahorro": "Ahorro total",
+    "enComercios": "en {n} comercios",
+    "calificaciones": "Calificaciones",
+    "mediaN": "comercios · media {media}",
+    "nivelProgreso": "Nivel y progreso",
+    "esMaximo": "{nivel} es el nivel máximo",
+    "faltanParaSiguiente": "Le faltan {n} compras para llegar a {nivel}",
+    "rangoCompras": "{rango} compras",
+    "nivelActual": "Nivel actual",
+    "nivelForzado": "Nivel ajustado manualmente a {nivel}. Se mantiene hasta volver al cálculo automático.",
+    "bajoInactividad": "Su nivel bajó por inactividad.",
+    "mantenimiento": "Mantenimiento del mes",
+    "mantenimientoN": "{hechas} de {requeridas} compras",
+    "mantenimientoFaltan": "Le faltan {n} compras este mes para mantener {nivel}.",
+    "mantenimientoOk": "Ya cumplió las compras del mes para mantener {nivel}.",
+    "perfil": "Perfil",
+    "correo": "Correo",
+    "telefono": "Teléfono",
+    "ciudad": "Ciudad",
+    "cedula": "Cédula",
+    "miembroDesde": "Miembro desde",
+    "ultimoAcceso": "Último acceso",
+    "carnetPlus": "Carnet Plus",
+    "carnetSi": "Activo",
+    "carnetNo": "Sin carnet",
+    "noEncontrado": "Usuario no encontrado",
+    "errorTitulo": "No pudimos cargar el usuario",
+    "volver": "Volver a usuarios",
+    "ajustarNivel": "Ajustar nivel",
+    "enviarMensaje": "Enviar mensaje",
+    "soloLectura": "Tu rol solo puede consultar usuarios: las acciones están desactivadas."
+  },
+  "canjes": {
+    "titulo": "Historial de canjes",
+    "ultimos": "Últimos {n} de {total}",
+    "todos": "{total} canjes",
+    "verTodos": "Ver todos",
+    "verUltimos": "Ver últimos",
+    "vacio": "Este usuario aún no tiene canjes.",
+    "fecha": "Fecha",
+    "comercio": "Comercio",
+    "promocion": "Promoción",
+    "ahorro": "Ahorro",
+    "estado": "Estado",
+    "sinPromocion": "Sin promoción",
+    "canjeado": "Canjeado",
+    "anulado": "Anulado"
+  },
+  "bloqueo": {
+    "titulo": "Bloquear usuario",
+    "tituloBloqueado": "Usuario bloqueado",
+    "ayuda": "Indica un motivo; queda en auditoría.",
+    "motivoVigente": "Motivo: {motivo}",
+    "desbloquear": "Desbloquear usuario",
+    "motivo": "Motivo del bloqueo",
+    "motivos": {
+      "abuso_cupones": "Abuso de cupones",
+      "cuenta_duplicada": "Cuenta duplicada",
+      "fraude": "Fraude",
+      "otro": "Otro"
+    },
+    "detalle": "Describe el motivo",
+    "bloquear": "Bloquear con motivo",
+    "confirmarBloquear": "¿Bloquear a {nombre}? Se cerrarán sus sesiones y no podrá entrar a la app.",
+    "confirmarDesbloquear": "¿Desbloquear a {nombre}? Podrá volver a entrar a la app.",
+    "bloqueado": "Usuario bloqueado",
+    "desbloqueado": "Usuario desbloqueado"
+  },
+  "nivel": {
+    "titulo": "Ajustar nivel",
+    "campo": "Nivel",
+    "auto": "Automático (por compras)",
+    "ayuda": "El ajuste manual reemplaza el cálculo por compras. Se avisa al usuario.",
+    "motivo": "Motivo del ajuste",
+    "motivoEjemplo": "Ej.: cortesía por un incidente con un comercio",
+    "guardar": "Guardar nivel",
+    "guardado": "Nivel actualizado"
+  },
+  "mensaje": {
+    "titulo": "Enviar mensaje",
+    "campoTitulo": "Título (máx. 40)",
+    "tituloEjemplo": "Ej.: Tu crédito de cortesía",
+    "campoMensaje": "Mensaje (máx. 120)",
+    "mensajeEjemplo": "Llega como notificación y push a su celular",
+    "enviar": "Enviar mensaje",
+    "enviado": "Mensaje enviado"
+  }
 }

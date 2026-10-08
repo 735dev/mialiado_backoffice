@@ -1,4 +1,136 @@
 {
   "title": "Users",
-  "detailTitle": "User detail"
+  "detailTitle": "User detail",
+  "subtitle": "Review levels, savings and activity of the community.",
+  "buscar": "Search by name, @username or email",
+  "ciudad": "City",
+  "mostrando": "Showing {desde}–{hasta} of {total} users",
+  "resumen": {
+    "label": "Community summary",
+    "deUsuarios": "{pct} of users · from {desde} purchases",
+    "bloqueadosPct": "{pct} of users"
+  },
+  "tabs": {
+    "label": "Filter by level or status",
+    "todos": "All",
+    "aliado": "Aliado",
+    "aliadopro": "AliadoPro",
+    "aliadoplus": "AliadoPlus",
+    "bloqueados": "Blocked"
+  },
+  "estado": {
+    "activo": "Active",
+    "bloqueado": "Blocked"
+  },
+  "tabla": {
+    "usuario": "User",
+    "nivel": "Level",
+    "compras": "Purchases",
+    "ahorro": "Total savings",
+    "ciudad": "City",
+    "estado": "Status",
+    "ultimoAcceso": "Last access",
+    "ver": "View detail",
+    "verDe": "View details for {nombre}",
+    "comprasN": "{n} purchases"
+  },
+  "vacio": {
+    "titulo": "No users yet",
+    "texto": "When someone signs up in the app they will show up here.",
+    "filtrosTitulo": "No results",
+    "filtrosTexto": "No user matches the search or the filters.",
+    "limpiar": "Clear filters"
+  },
+  "detalle": {
+    "kpis": "User summary",
+    "compras": "Purchases",
+    "desde": "since {fecha}",
+    "sinCompras": "no purchases yet",
+    "ahorro": "Total savings",
+    "enComercios": "at {n} businesses",
+    "calificaciones": "Ratings",
+    "mediaN": "businesses · average {media}",
+    "nivelProgreso": "Level and progress",
+    "esMaximo": "{nivel} is the top level",
+    "faltanParaSiguiente": "{n} more purchases to reach {nivel}",
+    "rangoCompras": "{rango} purchases",
+    "nivelActual": "Current level",
+    "nivelForzado": "Level manually set to {nivel}. It stays until the automatic calculation is restored.",
+    "bajoInactividad": "Their level dropped due to inactivity.",
+    "mantenimiento": "This month's maintenance",
+    "mantenimientoN": "{hechas} of {requeridas} purchases",
+    "mantenimientoFaltan": "{n} more purchases this month to keep {nivel}.",
+    "mantenimientoOk": "Already met this month's purchases to keep {nivel}.",
+    "perfil": "Profile",
+    "correo": "Email",
+    "telefono": "Phone",
+    "ciudad": "City",
+    "cedula": "ID number",
+    "miembroDesde": "Member since",
+    "ultimoAcceso": "Last access",
+    "carnetPlus": "Plus card",
+    "carnetSi": "Active",
+    "carnetNo": "No card",
+    "noEncontrado": "User not found",
+    "errorTitulo": "We could not load the user",
+    "volver": "Back to users",
+    "ajustarNivel": "Adjust level",
+    "enviarMensaje": "Send message",
+    "soloLectura": "Your role can only view users: actions are disabled."
+  },
+  "canjes": {
+    "titulo": "Redemption history",
+    "ultimos": "Last {n} of {total}",
+    "todos": "{total} redemptions",
+    "verTodos": "View all",
+    "verUltimos": "View latest",
+    "vacio": "This user has no redemptions yet.",
+    "fecha": "Date",
+    "comercio": "Business",
+    "promocion": "Promotion",
+    "ahorro": "Savings",
+    "estado": "Status",
+    "sinPromocion": "No promotion",
+    "canjeado": "Redeemed",
+    "anulado": "Voided"
+  },
+  "bloqueo": {
+    "titulo": "Block user",
+    "tituloBloqueado": "User blocked",
+    "ayuda": "State a reason; it is kept in the audit log.",
+    "motivoVigente": "Reason: {motivo}",
+    "desbloquear": "Unblock user",
+    "motivo": "Reason for blocking",
+    "motivos": {
+      "abuso_cupones": "Coupon abuse",
+      "cuenta_duplicada": "Duplicate account",
+      "fraude": "Fraud",
+      "otro": "Other"
+    },
+    "detalle": "Describe the reason",
+    "bloquear": "Block with reason",
+    "confirmarBloquear": "Block {nombre}? Their sessions will be closed and they will not be able to use the app.",
+    "confirmarDesbloquear": "Unblock {nombre}? They will be able to use the app again.",
+    "bloqueado": "User blocked",
+    "desbloqueado": "User unblocked"
+  },
+  "nivel": {
+    "titulo": "Adjust level",
+    "campo": "Level",
+    "auto": "Automatic (by purchases)",
+    "ayuda": "A manual adjustment replaces the purchase-based calculation. The user is notified.",
+    "motivo": "Reason for the adjustment",
+    "motivoEjemplo": "E.g.: courtesy after an incident with a business",
+    "guardar": "Save level",
+    "guardado": "Level updated"
+  },
+  "mensaje": {
+    "titulo": "Send message",
+    "campoTitulo": "Title (max. 40)",
+    "tituloEjemplo": "E.g.: Your courtesy credit",
+    "campoMensaje": "Message (max. 120)",
+    "mensajeEjemplo": "Arrives as a notification and push on their phone",
+    "enviar": "Send message",
+    "enviado": "Message sent"
+  }
 }
