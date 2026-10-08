@@ -1,3 +1,108 @@
 {
-  "title": "Niveles y reglas"
+  "title": "Niveles y reglas",
+  "subtitle": "Define cómo se sube de nivel y qué reglas aplican a toda la red de comercios.",
+  "verHistorial": "Ver historial",
+  "niveles": {
+    "titulo": "Niveles de cliente",
+    "descripcion": "Se calculan por compras canjeadas. Cada nivel empieza donde termina el anterior.",
+    "nivel": "Nivel",
+    "desde": "Desde",
+    "hasta": "Hasta",
+    "puntos": "Puntos extra",
+    "usuarios": "{n} usuarios",
+    "enAdelante": "en adelante",
+    "compras": "compras",
+    "pts": "pts",
+    "hastaDe": "Hasta, {nivel}",
+    "puntosDe": "Puntos extra, {nivel}"
+  },
+  "reglas": {
+    "titulo": "Reglas de promociones y cobro",
+    "otras": "Otras reglas de la red",
+    "publicado": "Publicado: {valor}",
+    "combinacion": {
+      "titulo": "Combinación de promociones",
+      "descripcion": "Descuento y Promo Flash no se acumulan. Al cobrar se aplica la de mayor ahorro.",
+      "descuento": "Descuento",
+      "flash": "Promo Flash",
+      "gana": "Gana la de mayor ahorro"
+    },
+    "ventana_anulacion_min": {
+      "titulo": "Ventana de anulación",
+      "descripcion": "Tiempo que tiene el comercio para anular un canje ya cobrado."
+    },
+    "descuento_max_pct": {
+      "titulo": "Descuento máximo permitido",
+      "descripcion": "Las promos que superen este tope no pasan la revisión automática."
+    },
+    "recarga_minima": {
+      "titulo": "Recarga mínima de billetera",
+      "descripcion": "Monto más bajo que un comercio puede recargar."
+    },
+    "moderacion_previa": {
+      "titulo": "Moderación previa",
+      "descripcion": "Toda promoción nueva se revisa antes de publicarse."
+    },
+    "compras_mes_mantener": {
+      "titulo": "Compras al mes para mantener nivel",
+      "descripcion": "Compras canjeadas por mes que evitan bajar de nivel."
+    },
+    "dias_baja_nivel": {
+      "titulo": "Días para bajar de nivel",
+      "descripcion": "Días sin cumplir las compras mínimas antes de bajar de nivel."
+    },
+    "puja_minima": {
+      "titulo": "Puja mínima de impulsos",
+      "descripcion": "Monto diario más bajo que se puede pujar por un impulso."
+    },
+    "qr_vigencia_seg": {
+      "titulo": "Vigencia del QR",
+      "descripcion": "Segundos que dura el código QR de canje antes de renovarse."
+    }
+  },
+  "previa": {
+    "titulo": "Vista previa del efecto",
+    "borrador": "Borrador",
+    "ejemplo": "Producto de ejemplo · precio normal {precio}",
+    "flash": "Con una Promo Flash de −{pct}%, un cliente {nivel} paga {precio}:",
+    "gana": "gana la de mayor ahorro."
+  },
+  "versiones": {
+    "titulo": "Historial de versiones",
+    "verTodo": "Ver todo",
+    "verMenos": "Ver menos",
+    "restaurar": "Restaurar",
+    "vigente": "Vigente",
+    "borradorDe": "Borrador de {autor}",
+    "sinPublicar": "Sin publicar"
+  },
+  "publicar": {
+    "sinPublicar": "Cambios sin publicar",
+    "detalle": "{n} cambios · aplican desde el próximo canje",
+    "descartar": "Descartar",
+    "publicar": "Publicar cambios",
+    "confirmarTitulo": "¿Publicar los cambios?",
+    "confirmarTexto": "Se creará una versión nueva con {n} cambios y regirá de inmediato para toda la red. Quedará registrado en Auditoría.",
+    "resumen": "Resumen de la versión (opcional)",
+    "resumenPlaceholder": "Ej.: Anulación en 30 min"
+  },
+  "restaurar": {
+    "titulo": "¿Restaurar la v{v}?",
+    "texto": "Se creará una versión nueva con el contenido de la elegida y regirá de inmediato para toda la red.",
+    "textoConBorrador": "Se creará una versión nueva con el contenido de la elegida y regirá de inmediato para toda la red. Los cambios sin publicar se descartarán."
+  },
+  "toast": {
+    "publicado": "Versión publicada",
+    "restaurada": "Se restauró la v{v}"
+  },
+  "error": {
+    "titulo": "No pudimos cargar las reglas",
+    "texto": "Revisa tu conexión e inténtalo de nuevo."
+  },
+  "errors": {
+    "entero": "Usa un número entero",
+    "min": "Mínimo {n}",
+    "max": "Máximo {n}",
+    "hastaMayor": "Debe ser mayor que el tope del nivel anterior"
+  }
 }

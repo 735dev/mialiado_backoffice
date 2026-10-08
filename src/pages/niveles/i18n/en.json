@@ -1,3 +1,108 @@
 {
-  "title": "Levels and rules"
+  "title": "Levels and rules",
+  "subtitle": "Define how customers move up levels and which rules apply to the whole merchant network.",
+  "verHistorial": "View history",
+  "niveles": {
+    "titulo": "Customer levels",
+    "descripcion": "Calculated from redeemed purchases. Each level starts where the previous one ends.",
+    "nivel": "Level",
+    "desde": "From",
+    "hasta": "To",
+    "puntos": "Extra points",
+    "usuarios": "{n} users",
+    "enAdelante": "and above",
+    "compras": "purchases",
+    "pts": "pts",
+    "hastaDe": "Up to, {nivel}",
+    "puntosDe": "Extra points, {nivel}"
+  },
+  "reglas": {
+    "titulo": "Promotion and checkout rules",
+    "otras": "Other network rules",
+    "publicado": "Published: {valor}",
+    "combinacion": {
+      "titulo": "Promotion stacking",
+      "descripcion": "Discount and Flash Promo do not stack. At checkout the one with the biggest saving applies.",
+      "descuento": "Discount",
+      "flash": "Flash Promo",
+      "gana": "Biggest saving wins"
+    },
+    "ventana_anulacion_min": {
+      "titulo": "Void window",
+      "descripcion": "Time a merchant has to void an already charged redemption."
+    },
+    "descuento_max_pct": {
+      "titulo": "Maximum allowed discount",
+      "descripcion": "Promotions above this cap do not pass the automatic review."
+    },
+    "recarga_minima": {
+      "titulo": "Minimum wallet top-up",
+      "descripcion": "Lowest amount a merchant can top up."
+    },
+    "moderacion_previa": {
+      "titulo": "Pre-moderation",
+      "descripcion": "Every new promotion is reviewed before it goes live."
+    },
+    "compras_mes_mantener": {
+      "titulo": "Monthly purchases to keep a level",
+      "descripcion": "Redeemed purchases per month that avoid dropping a level."
+    },
+    "dias_baja_nivel": {
+      "titulo": "Days before dropping a level",
+      "descripcion": "Days without meeting the minimum purchases before dropping a level."
+    },
+    "puja_minima": {
+      "titulo": "Minimum boost bid",
+      "descripcion": "Lowest daily amount that can be bid for a boost."
+    },
+    "qr_vigencia_seg": {
+      "titulo": "QR validity",
+      "descripcion": "Seconds the redemption QR code lasts before it renews."
+    }
+  },
+  "previa": {
+    "titulo": "Effect preview",
+    "borrador": "Draft",
+    "ejemplo": "Sample product · regular price {precio}",
+    "flash": "With a −{pct}% Flash Promo, a {nivel} customer pays {precio}:",
+    "gana": "the biggest saving wins."
+  },
+  "versiones": {
+    "titulo": "Version history",
+    "verTodo": "See all",
+    "verMenos": "See less",
+    "restaurar": "Restore",
+    "vigente": "Current",
+    "borradorDe": "Draft by {autor}",
+    "sinPublicar": "Unpublished"
+  },
+  "publicar": {
+    "sinPublicar": "Unpublished changes",
+    "detalle": "{n} changes · apply from the next redemption",
+    "descartar": "Discard",
+    "publicar": "Publish changes",
+    "confirmarTitulo": "Publish the changes?",
+    "confirmarTexto": "A new version with {n} changes will be created and take effect immediately for the whole network. It will be recorded in the Audit log.",
+    "resumen": "Version summary (optional)",
+    "resumenPlaceholder": "E.g.: Void window 30 min"
+  },
+  "restaurar": {
+    "titulo": "Restore v{v}?",
+    "texto": "A new version with the chosen content will be created and take effect immediately for the whole network.",
+    "textoConBorrador": "A new version with the chosen content will be created and take effect immediately for the whole network. Unpublished changes will be discarded."
+  },
+  "toast": {
+    "publicado": "Version published",
+    "restaurada": "v{v} restored"
+  },
+  "error": {
+    "titulo": "We could not load the rules",
+    "texto": "Check your connection and try again."
+  },
+  "errors": {
+    "entero": "Use a whole number",
+    "min": "Minimum {n}",
+    "max": "Maximum {n}",
+    "hastaMayor": "Must be greater than the previous level's cap"
+  }
 }
