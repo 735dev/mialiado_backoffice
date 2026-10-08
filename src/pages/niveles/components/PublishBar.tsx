@@ -19,7 +19,7 @@ export function PublishBar({ cambios, busy, onDiscard }: PublishBarProps) {
     >
       <div>
         <div className="font-extrabold">{t('niveles.publicar.sinPublicar')}</div>
-        <div className="text-sm opacity-80">{t('niveles.publicar.detalle', { n: cambios })}</div>
+        <div className="text-sm opacity-80">{t(cambios === 1 ? 'niveles.publicar.detalle_one' : 'niveles.publicar.detalle', { n: cambios })}</div>
       </div>
       <div className="flex gap-3">
         <Button size="md" variant="secondary" onClick={onDiscard} disabled={busy}>

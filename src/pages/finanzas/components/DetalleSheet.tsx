@@ -19,9 +19,11 @@ export function DetalleSheet({ open, onOpenChange, children }: DetalleSheetProps
         <Dialog.Content className="fixed inset-x-0 bottom-0 z-50 max-h-[90vh] overflow-y-auto rounded-t-panel bg-bg p-3 text-ink shadow-e2">
           <Dialog.Title className="sr-only">{t('finanzas.detalle.titulo')}</Dialog.Title>
           <Dialog.Description className="sr-only">{t('finanzas.detalle.titulo')}</Dialog.Description>
-          <Dialog.Close aria-label={t('common.close')} className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-surface-2">
-            <X size={18} />
-          </Dialog.Close>
+          <div className="mb-2 flex justify-end">
+            <Dialog.Close aria-label={t('common.close')} className="flex h-9 w-9 items-center justify-center rounded-full bg-surface-2">
+              <X size={18} />
+            </Dialog.Close>
+          </div>
           {children}
         </Dialog.Content>
       </Dialog.Portal>

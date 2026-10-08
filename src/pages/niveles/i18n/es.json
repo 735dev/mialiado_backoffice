@@ -83,9 +83,10 @@
     "descartar": "Descartar",
     "publicar": "Publicar cambios",
     "confirmarTitulo": "¿Publicar los cambios?",
-    "confirmarTexto": "Se creará una versión nueva con {n} cambios y regirá de inmediato para toda la red. Quedará registrado en Auditoría.",
+    "confirmarTexto": "Se creará una versión nueva (cambios: {n}) y regirá de inmediato para toda la red. Quedará registrado en Auditoría.",
     "resumen": "Resumen de la versión (opcional)",
-    "resumenPlaceholder": "Ej.: Anulación en 30 min"
+    "resumenPlaceholder": "Ej.: Anulación en 30 min",
+    "detalle_one": "1 cambio · aplica desde el próximo canje"
   },
   "restaurar": {
     "titulo": "¿Restaurar la v{v}?",

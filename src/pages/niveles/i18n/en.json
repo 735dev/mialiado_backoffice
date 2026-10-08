@@ -83,9 +83,10 @@
     "descartar": "Discard",
     "publicar": "Publish changes",
     "confirmarTitulo": "Publish the changes?",
-    "confirmarTexto": "A new version with {n} changes will be created and take effect immediately for the whole network. It will be recorded in the Audit log.",
+    "confirmarTexto": "A new version will be created (changes: {n}) and take effect immediately for the whole network. It will be recorded in the Audit log.",
     "resumen": "Version summary (optional)",
-    "resumenPlaceholder": "E.g.: Void window 30 min"
+    "resumenPlaceholder": "E.g.: Void window 30 min",
+    "detalle_one": "1 change · applies from the next redemption"
   },
   "restaurar": {
     "titulo": "Restore v{v}?",
