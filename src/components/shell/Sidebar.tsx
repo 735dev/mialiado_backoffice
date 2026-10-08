@@ -86,6 +86,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
                 key={l}
                 type="button"
                 aria-pressed={lang === l}
+                aria-label={t(`lang.${l}`)}
                 onClick={() => setLang(l)}
                 className={cn('h-8 rounded-pill px-3 font-mono text-xs font-semibold uppercase', lang === l ? 'bg-surface text-ink shadow-e1' : 'text-ink-muted')}
               >

@@ -10,13 +10,7 @@ export const requiredText = (min = 1, max = 120) =>
 
 export const emailSchema = z.string({ required_error: 'errors.required' }).trim().min(1, 'errors.required').email('errors.email');
 
-/** Telefono local sin prefijo (el prefijo +58 se muestra en el campo): 10 digitos. */
-export const phoneSchema = z
-  .string({ required_error: 'errors.required' })
-  .transform((v) => v.replace(/[\s-]/g, ''))
-  .pipe(z.string().regex(/^\d{10}$/, 'errors.phone'));
-
-/** 8+ caracteres, una mayuscula y un numero (reglas de la pantalla E02). */
+/** 8+ caracteres, una mayuscula y un numero (reglas del backend para contrasenas del equipo). */
 export const passwordSchema = z
   .string({ required_error: 'errors.required' })
   .min(8, 'errors.passwordRule')
