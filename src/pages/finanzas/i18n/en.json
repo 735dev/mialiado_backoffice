@@ -1,3 +1,81 @@
 {
-  "title": "Finance"
+  "title": "Finance",
+  "subtitle": "Reconcile wallet top-ups and take care of the ones left hanging.",
+  "conciliar": "Reconcile {n} pending",
+  "exportar": "Export transactions",
+  "kpi": {
+    "recargasMes": "Top-ups this month",
+    "pendientes": "Pending reconciliation",
+    "comision": "Commission",
+    "reembolsos": "Refunds",
+    "operaciones": "{n} ops."
+  },
+  "tabla": {
+    "titulo": "Wallet top-ups",
+    "buscar": "Search transaction",
+    "buscarPlaceholder": "Reference or business",
+    "filtro": "Filter by status",
+    "vacioTitulo": "No transactions",
+    "vacioTexto": "No top-up matches the filter or the search.",
+    "rango": "{from} – {to} of {total} top-ups"
+  },
+  "tabs": {
+    "todas": "All",
+    "pendiente": "Pending",
+    "acreditada": "Credited",
+    "rechazada": "Rejected",
+    "reembolsada": "Refunded"
+  },
+  "estado": {
+    "pendiente": "Pending",
+    "acreditada": "Credited",
+    "rechazada": "Rejected",
+    "reembolsada": "Refunded"
+  },
+  "metodo": {
+    "tarjeta": "Card",
+    "paypal": "PayPal",
+    "binance_pay": "Binance Pay"
+  },
+  "col": {
+    "transaccion": "Transaction",
+    "comercio": "Business",
+    "metodo": "Method",
+    "monto": "Amount",
+    "comision": "Commission",
+    "estado": "Status",
+    "fecha": "Date"
+  },
+  "detalle": {
+    "titulo": "Transaction detail",
+    "vacioTitulo": "Pick a transaction",
+    "vacioTexto": "You will see its amount, the business wallet and the timeline.",
+    "errorTitulo": "We could not load the detail",
+    "errorTexto": "Try again in a few seconds.",
+    "montoAcreditar": "Amount to credit",
+    "monto": "Amount",
+    "metodoComision": "{metodo} · commission {comision}",
+    "billeteraActual": "Current wallet",
+    "saldoTras": "Balance after crediting",
+    "fecha": "Date",
+    "referencia": "{metodo} reference",
+    "conciliadoPor": "Reconciled by",
+    "lineaTiempo": "Timeline",
+    "acreditar": "Credit manually",
+    "reembolsar": "Refund",
+    "auditoria": "It will be recorded in the Audit log under your name.",
+    "haceHm": "{h} h {m} min ago",
+    "haceM": "{m} min ago"
+  },
+  "confirmar": {
+    "reembolsarTitulo": "Refund this top-up?",
+    "reembolsarTexto": "{monto} from {comercio} ({ref}) will be returned and deducted from its wallet. If the business already spent that balance, the refund is rejected. It will be recorded in the Audit log.",
+    "conciliarTitulo": "Reconcile the pending ones?",
+    "conciliarTexto": "{n} pending top-ups worth {monto} will be credited to their businesses' wallets and they will be notified."
+  },
+  "toast": {
+    "acreditada": "Top-up credited",
+    "reembolsada": "Top-up refunded",
+    "conciliadas": "{n} top-ups credited"
+  }
 }

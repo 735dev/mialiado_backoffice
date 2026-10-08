@@ -1,3 +1,81 @@
 {
-  "title": "Finanzas"
+  "title": "Finanzas",
+  "subtitle": "Concilia las recargas de billetera y atiende las que quedaron en el aire.",
+  "conciliar": "Conciliar {n} pendientes",
+  "exportar": "Exportar movimientos",
+  "kpi": {
+    "recargasMes": "Recargas del mes",
+    "pendientes": "Pendientes de conciliar",
+    "comision": "Comisión",
+    "reembolsos": "Reembolsos",
+    "operaciones": "{n} ops."
+  },
+  "tabla": {
+    "titulo": "Recargas de billetera",
+    "buscar": "Buscar transacción",
+    "buscarPlaceholder": "Folio o comercio",
+    "filtro": "Filtrar por estado",
+    "vacioTitulo": "Sin transacciones",
+    "vacioTexto": "Ninguna recarga coincide con el filtro o la búsqueda.",
+    "rango": "{from} – {to} de {total} recargas"
+  },
+  "tabs": {
+    "todas": "Todas",
+    "pendiente": "Pendientes",
+    "acreditada": "Acreditadas",
+    "rechazada": "Rechazadas",
+    "reembolsada": "Reembolsadas"
+  },
+  "estado": {
+    "pendiente": "Pendiente",
+    "acreditada": "Acreditada",
+    "rechazada": "Rechazada",
+    "reembolsada": "Reembolsada"
+  },
+  "metodo": {
+    "tarjeta": "Tarjeta",
+    "paypal": "PayPal",
+    "binance_pay": "Binance Pay"
+  },
+  "col": {
+    "transaccion": "Transacción",
+    "comercio": "Comercio",
+    "metodo": "Método",
+    "monto": "Monto",
+    "comision": "Comisión",
+    "estado": "Estado",
+    "fecha": "Fecha"
+  },
+  "detalle": {
+    "titulo": "Detalle de la transacción",
+    "vacioTitulo": "Elige una transacción",
+    "vacioTexto": "Verás su monto, la billetera del comercio y la línea de tiempo.",
+    "errorTitulo": "No pudimos cargar el detalle",
+    "errorTexto": "Inténtalo de nuevo en unos segundos.",
+    "montoAcreditar": "Monto a acreditar",
+    "monto": "Monto",
+    "metodoComision": "{metodo} · comisión {comision}",
+    "billeteraActual": "Billetera actual",
+    "saldoTras": "Saldo tras acreditar",
+    "fecha": "Fecha",
+    "referencia": "Referencia {metodo}",
+    "conciliadoPor": "Conciliada por",
+    "lineaTiempo": "Línea de tiempo",
+    "acreditar": "Acreditar manualmente",
+    "reembolsar": "Reembolsar",
+    "auditoria": "Quedará registrado en Auditoría con tu nombre.",
+    "haceHm": "Hace {h} h {m} min",
+    "haceM": "Hace {m} min"
+  },
+  "confirmar": {
+    "reembolsarTitulo": "¿Reembolsar esta recarga?",
+    "reembolsarTexto": "Se devolverán {monto} de {comercio} ({ref}) y se descontarán de su billetera. Si el comercio ya gastó ese saldo, el reembolso se rechaza. Quedará registrado en Auditoría.",
+    "conciliarTitulo": "¿Conciliar las pendientes?",
+    "conciliarTexto": "Se acreditarán {n} recargas pendientes por {monto} en las billeteras de sus comercios y se les avisará."
+  },
+  "toast": {
+    "acreditada": "Recarga acreditada",
+    "reembolsada": "Recarga reembolsada",
+    "conciliadas": "{n} recargas acreditadas"
+  }
 }
