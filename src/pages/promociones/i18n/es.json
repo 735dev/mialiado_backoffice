@@ -1,3 +1,93 @@
 {
-  "title": "Promociones"
+  "title": "Promociones",
+  "subtitle": "{n} promociones esperan revisión antes de publicarse.",
+  "mostrando": "Mostrando {n} de {total}",
+  "tabs": {
+    "label": "Filtrar por tipo de promoción",
+    "todas": "Todas",
+    "descuento": "Descuento",
+    "flash": "Promo Flash"
+  },
+  "tipo": {
+    "descuento": "Descuento",
+    "flash": "Promo Flash"
+  },
+  "revision": {
+    "listo": "Listo",
+    "sinFoto": "Sin foto",
+    "supera": "Supera {tope} %"
+  },
+  "cola": {
+    "titulo": "Cola de revisión",
+    "pendientes": "{n} pendientes, las más antiguas arriba",
+    "plus": "Plus -{pct}%",
+    "verRestantes": "Ver las {n} restantes"
+  },
+  "vacio": {
+    "titulo": "Cola al día",
+    "texto": "No hay promociones esperando revisión.",
+    "textoTipo": "No hay promociones de este tipo esperando revisión."
+  },
+  "sinAlertas": {
+    "boton": "Aprobar las {n} sin alertas",
+    "confirmar": "¿Aprobar y publicar las {n} promociones que no tienen alertas?",
+    "hecho": "{n} promociones aprobadas"
+  },
+  "preview": {
+    "asiLoVera": "Así lo verá {nombre}",
+    "vigente": "Vigente del {desde} al {hasta}",
+    "quedan": "Quedan {n} días",
+    "canjear": "Canjear con mi QR",
+    "nivel": "Nivel del usuario"
+  },
+  "reglas": {
+    "titulo": "Reglas automáticas",
+    "nDeN": "{n} de {total}",
+    "cumple": "Cumple",
+    "noCumple": "No cumple",
+    "descuentoMaximo": "Descuento máximo",
+    "fotos": "Fotos",
+    "vigencia": "Vigencia",
+    "sinAcumulacion": "Sin acumulación",
+    "comercioVerificado": "Comercio verificado",
+    "todoEnRegla": "Todo en regla. Si apruebas, se publica ahora y se avisa a los seguidores de {comercio}.",
+    "hayPendientes": "{n} reglas no se cumplen. Revísalas antes de aprobar o pide cambios al comercio."
+  },
+  "precios": {
+    "titulo": "Precio por nivel",
+    "lista": "· lista {precio}"
+  },
+  "detalle": {
+    "enviadaPor": "{comercio} · enviada por {nombre}, {cuando}",
+    "nota": "Nota para el comercio",
+    "notaEjemplo": "Ej.: Sube una foto más nítida del producto",
+    "notaAyuda": "Obligatoria al pedir cambios. Aprobar y rechazar no la envían.",
+    "errorTitulo": "No pudimos cargar la promoción",
+    "soloLectura": "Tu rol puede revisar la cola pero no moderar: las acciones están desactivadas."
+  },
+  "acciones": {
+    "aprobar": "Aprobar y publicar",
+    "rechazar": "Rechazar",
+    "pedirCambios": "Pedir cambios",
+    "aprobada": "Promoción aprobada y publicada",
+    "cambiosPedidos": "Se pidieron cambios al comercio"
+  },
+  "rechazo": {
+    "titulo": "Rechazar promoción",
+    "motivo": "Motivo del rechazo",
+    "motivos": {
+      "supera_maximo": "Supera el máximo permitido",
+      "fotos_invalidas": "Fotos no válidas o de baja calidad",
+      "vigencia_incorrecta": "Vigencia incorrecta o ya vencida",
+      "se_acumula": "Se acumula con otra promoción activa",
+      "contenido_enganoso": "Contenido engañoso o inapropiado",
+      "otro": "Otro motivo"
+    },
+    "comentario": "Comentario para el comercio",
+    "opcional": "(opcional)",
+    "comentarioEjemplo": "Ej.: Las fotos salen movidas. Sube imágenes nítidas y vuelve a enviarla.",
+    "aviso": "Se notificará al comercio por la app y por correo. Podrá corregir la promoción y enviarla de nuevo.",
+    "confirmar": "Rechazar promoción",
+    "hecho": "Promoción rechazada"
+  }
 }

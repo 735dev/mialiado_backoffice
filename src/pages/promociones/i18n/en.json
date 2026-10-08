@@ -1,3 +1,93 @@
 {
-  "title": "Promotions"
+  "title": "Promotions",
+  "subtitle": "{n} promotions are waiting for review before they are published.",
+  "mostrando": "Showing {n} of {total}",
+  "tabs": {
+    "label": "Filter by promotion type",
+    "todas": "All",
+    "descuento": "Discount",
+    "flash": "Flash promo"
+  },
+  "tipo": {
+    "descuento": "Discount",
+    "flash": "Flash promo"
+  },
+  "revision": {
+    "listo": "Ready",
+    "sinFoto": "No photo",
+    "supera": "Over {tope} %"
+  },
+  "cola": {
+    "titulo": "Review queue",
+    "pendientes": "{n} pending, oldest first",
+    "plus": "Plus -{pct}%",
+    "verRestantes": "Show the remaining {n}"
+  },
+  "vacio": {
+    "titulo": "Queue is clear",
+    "texto": "No promotions are waiting for review.",
+    "textoTipo": "No promotions of this type are waiting for review."
+  },
+  "sinAlertas": {
+    "boton": "Approve the {n} without alerts",
+    "confirmar": "Approve and publish the {n} promotions that have no alerts?",
+    "hecho": "{n} promotions approved"
+  },
+  "preview": {
+    "asiLoVera": "How {nombre} will see it",
+    "vigente": "Valid from {desde} to {hasta}",
+    "quedan": "{n} days left",
+    "canjear": "Redeem with my QR",
+    "nivel": "User level"
+  },
+  "reglas": {
+    "titulo": "Automatic rules",
+    "nDeN": "{n} of {total}",
+    "cumple": "Passes",
+    "noCumple": "Fails",
+    "descuentoMaximo": "Maximum discount",
+    "fotos": "Photos",
+    "vigencia": "Validity",
+    "sinAcumulacion": "No stacking",
+    "comercioVerificado": "Verified business",
+    "todoEnRegla": "Everything is in order. If you approve, it goes live now and {comercio} followers are notified.",
+    "hayPendientes": "{n} rules are not met. Check them before approving or ask the business for changes."
+  },
+  "precios": {
+    "titulo": "Price by level",
+    "lista": "· list {precio}"
+  },
+  "detalle": {
+    "enviadaPor": "{comercio} · sent by {nombre}, {cuando}",
+    "nota": "Note for the business",
+    "notaEjemplo": "E.g.: Upload a sharper photo of the product",
+    "notaAyuda": "Required when asking for changes. Approving and rejecting do not send it.",
+    "errorTitulo": "We could not load the promotion",
+    "soloLectura": "Your role can review the queue but not moderate: actions are disabled."
+  },
+  "acciones": {
+    "aprobar": "Approve and publish",
+    "rechazar": "Reject",
+    "pedirCambios": "Ask for changes",
+    "aprobada": "Promotion approved and published",
+    "cambiosPedidos": "Changes requested from the business"
+  },
+  "rechazo": {
+    "titulo": "Reject promotion",
+    "motivo": "Reason for rejection",
+    "motivos": {
+      "supera_maximo": "Exceeds the maximum allowed",
+      "fotos_invalidas": "Invalid or low quality photos",
+      "vigencia_incorrecta": "Wrong or expired validity",
+      "se_acumula": "Stacks with another active promotion",
+      "contenido_enganoso": "Misleading or inappropriate content",
+      "otro": "Other reason"
+    },
+    "comentario": "Comment for the business",
+    "opcional": "(optional)",
+    "comentarioEjemplo": "E.g.: The photos are blurry. Upload sharp images and send it again.",
+    "aviso": "The business will be notified in the app and by email. They can fix the promotion and send it again.",
+    "confirmar": "Reject promotion",
+    "hecho": "Promotion rejected"
+  }
 }
