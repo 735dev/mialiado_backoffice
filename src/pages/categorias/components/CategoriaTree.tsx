@@ -144,7 +144,7 @@ function Fila({ nodo, index, total, open, dragging, setDragging, selectedId, can
         type="button"
         onClick={() => onSelect(nodo.id)}
         aria-label={t('categorias.arbol.editar', { nombre: nodo.nombre })}
-        className="flex h-9 w-9 flex-none items-center justify-center rounded-full text-ink-soft hover:bg-surface"
+        className="flex h-11 w-11 flex-none items-center justify-center rounded-full text-ink-soft hover:bg-surface md:h-9 md:w-9"
       >
         <Pencil size={16} />
       </button>

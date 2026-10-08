@@ -13,7 +13,7 @@ interface SegmentedProps<T extends string> {
   value: T;
   onChange: (value: T) => void;
   label: string;
-  /** `md` = 44 px (formularios), `sm` = 36 px (filtros de tabla). */
+  /** `md` = 44 px (formularios), `sm` = 36 px en escritorio y 44 px en tactil (filtros de tabla). */
   size?: 'sm' | 'md';
 }
 
@@ -33,7 +33,7 @@ export function Segmented<T extends string>({ options, value, onChange, label, s
             onClick={() => onChange(o.value)}
             className={cn(
               'whitespace-nowrap rounded-pill px-4 text-sm font-bold transition-colors disabled:cursor-not-allowed disabled:opacity-50',
-              size === 'md' ? 'h-11 px-[18px]' : 'h-9',
+              size === 'md' ? 'h-11 px-[18px]' : 'h-11 md:h-9',
               active ? 'bg-surface text-ink shadow-e1' : 'text-ink-muted enabled:hover:text-ink',
             )}
           >

@@ -164,6 +164,12 @@ describe('B05 usuarios', () => {
 });
 
 describe('B06 usuario, detalle', () => {
+  it('una persona sin calificaciones (promedio null) no rompe el detalle', async () => {
+    obtenerUsuario.mockResolvedValue({ ok: true, data: detalle({ calificaciones: { total: 0, promedio: null, comercios: 0 } }) });
+    renderDetalle();
+    expect(await screen.findByText(/media —/)).toBeInTheDocument();
+  });
+
   it('bloquear pide motivo y confirmacion y envia el motivo elegido', async () => {
     obtenerUsuario.mockResolvedValue({ ok: true, data: detalle() });
     bloquearUsuario.mockResolvedValue({ ok: true, data: detalle({ estado: 'Bloqueado', motivo_bloqueo: 'Fraude' }) });

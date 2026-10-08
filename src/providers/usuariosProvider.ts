@@ -82,7 +82,7 @@ export interface UsuarioDetalle {
   ahorro_total: number;
   comercios_visitados: number;
   primera_compra: string | null;
-  calificaciones: { total: number; promedio: number; comercios: number };
+  calificaciones: { total: number; promedio: number | null; comercios: number };
   progreso: ProgresoNivel;
   ultimos_canjes: CanjeResumen[];
 }

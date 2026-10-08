@@ -75,7 +75,7 @@ export default function SinPermisoView() {
           <h2 className="text-sm font-semibold text-ink-soft">{t('acceso.youCanEnter')}</h2>
           <div className="flex flex-wrap gap-2">
             {permitidas.map((s) => (
-              <Link key={s.id} to={s.ruta}>
+              <Link key={s.id} to={s.ruta} className="inline-flex min-h-11 items-center">
                 <Badge tone="ok">{t(`nav.${s.id}`)}</Badge>
               </Link>
             ))}

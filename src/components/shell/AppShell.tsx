@@ -60,7 +60,7 @@ export default function AppShell() {
           type="button"
           onClick={() => setOpen(false)}
           aria-label={t('common.closeMenu')}
-          className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full hover:bg-surface-2 md:hidden"
+          className="absolute right-3 top-3 flex h-11 w-11 items-center justify-center rounded-full hover:bg-surface-2 md:hidden"
         >
           <X size={18} />
         </button>

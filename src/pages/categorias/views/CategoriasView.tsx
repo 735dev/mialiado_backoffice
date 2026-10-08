@@ -52,7 +52,7 @@ function ArbolCabecera({ subs, comercios, canEdit, todoAbierto, onToggleTodo }: 
           {canEdit && ` · ${t('categorias.arbol.arrastra')}`}
         </p>
       </div>
-      <button type="button" onClick={onToggleTodo} className="text-sm font-bold text-primary-deep underline">
+      <button type="button" onClick={onToggleTodo} className="inline-flex min-h-11 items-center text-sm font-bold text-primary-deep underline">
         {todoAbierto ? t('categorias.arbol.contraerTodo') : t('categorias.arbol.expandirTodo')}
       </button>
     </div>

@@ -26,7 +26,9 @@ function Kpi({ icon: Icon, label, value, hint }: { icon: LucideIcon; label: stri
 export function KpisUsuario({ u }: { u: UsuarioDetalle }) {
   const t = useT();
   const { lang } = useLang();
-  const promedio = u.calificaciones.promedio.toLocaleString(lang === 'en' ? 'en-US' : 'es-VE', { maximumFractionDigits: 1 });
+  // Sin calificaciones el backend manda promedio null.
+  const { promedio: media } = u.calificaciones;
+  const promedio = media === null ? '—' : media.toLocaleString(lang === 'en' ? 'en-US' : 'es-VE', { maximumFractionDigits: 1 });
   return (
     <ul aria-label={t('usuarios.detalle.kpis')} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
       <Kpi

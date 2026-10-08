@@ -51,7 +51,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
                     onClick={onNavigate}
                     className={({ isActive }) =>
                       cn(
-                        'flex h-11 items-center gap-3 rounded-pill px-3.5 text-sm [@media(max-height:1100px)]:h-9',
+                        'flex h-11 items-center gap-3 rounded-pill px-3.5 text-sm [@media(min-width:768px)_and_(max-height:1100px)]:h-9',
                         isActive ? 'bg-primary-tint font-bold text-primary-deep' : 'font-semibold text-ink-muted hover:bg-surface-2',
                       )
                     }
@@ -76,7 +76,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
             onClick={toggle}
             aria-label={t('theme.label')}
             title={t('theme.label')}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-ink-soft hover:bg-surface-2"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-ink-soft hover:bg-surface-2"
           >
             {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
@@ -88,7 +88,7 @@ export function Sidebar({ pendientes, onNavigate, onSignOut }: SidebarProps) {
                 aria-pressed={lang === l}
                 aria-label={t(`lang.${l}`)}
                 onClick={() => setLang(l)}
-                className={cn('h-8 rounded-pill px-3 font-mono text-xs font-semibold uppercase', lang === l ? 'bg-surface text-ink shadow-e1' : 'text-ink-muted')}
+                className={cn('h-11 min-w-11 rounded-pill px-3 font-mono md:h-8 md:min-w-0 text-xs font-semibold uppercase', lang === l ? 'bg-surface text-ink shadow-e1' : 'text-ink-muted')}
               >
                 {l}
               </button>
