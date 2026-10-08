@@ -1,3 +1,143 @@
 {
-  "title": "Reportes"
+  "title": "Reportes",
+  "subtitle": "Genera exportaciones a medida, prográmalas y descarga lo que ya está listo.",
+  "fullHistory": "Historial completo",
+  "tipo": {
+    "canjes": "Canjes",
+    "comercios": "Comercios",
+    "usuarios": "Usuarios",
+    "recargas": "Recargas",
+    "impulsos": "Impulsos",
+    "valoraciones": "Valoraciones"
+  },
+  "niveles": {
+    "aliado": "Aliado",
+    "aliadopro": "AliadoPro",
+    "aliadoplus": "AliadoPlus"
+  },
+  "frecuencia": {
+    "diario": "Todos los días",
+    "semanal": "Cada semana",
+    "mensual": "Cada mes"
+  },
+  "steps": {
+    "type": "Tipo de reporte",
+    "range": "Rango de fechas",
+    "segment": "Segmento",
+    "columns": "Columnas",
+    "format": "Formato"
+  },
+  "fields": {
+    "from": "Desde",
+    "to": "Hasta",
+    "category": "Categoría",
+    "zone": "Zona",
+    "level": "Nivel",
+    "all": "Todas",
+    "allMasc": "Todos"
+  },
+  "quick": {
+    "ultimos7": "Últimos 7 días",
+    "esteMes": "Este mes",
+    "mesAnterior": "Mes anterior",
+    "ultimos90": "Últimos 90 días"
+  },
+  "col": {
+    "folio": "Folio",
+    "comercio": "Comercio",
+    "usuario": "Usuario",
+    "nivel": "Nivel",
+    "descuento": "Descuento",
+    "total": "Total cobrado",
+    "fecha": "Fecha",
+    "zona": "Zona",
+    "estado": "Estado",
+    "cajero": "Cajero",
+    "categoria": "Categoría",
+    "promocion": "Promoción",
+    "id": "ID",
+    "nombre": "Nombre",
+    "rif": "RIF",
+    "promos_activas": "Promociones activas",
+    "canjes": "Canjes",
+    "registro": "Registro",
+    "correo": "Correo",
+    "compras": "Compras",
+    "ahorro_total": "Ahorro total",
+    "ciudad": "Ciudad",
+    "ultimo_acceso": "Último acceso",
+    "referencia": "Referencia",
+    "metodo": "Método",
+    "monto": "Monto",
+    "comision": "Comisión",
+    "puja_diaria": "Puja diaria",
+    "dias": "Días",
+    "gasto": "Gasto",
+    "vistas": "Vistas",
+    "estrellas": "Estrellas",
+    "comentario": "Comentario"
+  },
+  "errors": {
+    "columnas": "Elige al menos una columna",
+    "pdf": "PDF aún no está disponible. Usa CSV o XLSX.",
+    "rango": "La fecha final no puede ser anterior a la inicial",
+    "dia": "Elige el día"
+  },
+  "generator": {
+    "aria": "Generador de reportes",
+    "title": "Nuevo reporte",
+    "draft": "Borrador",
+    "pdfNotice": "PDF aún no está disponible; genera el reporte en CSV o XLSX.",
+    "estimate": "{filas} filas estimadas · {columnas} columnas · cerca de {peso}.",
+    "estimating": "Calculando el tamaño del reporte…",
+    "estimateNone": "Elige al menos una columna para estimar el reporte.",
+    "schedule": "Programar envío",
+    "generate": "Generar reporte",
+    "ready": "Reporte «{nombre}» listo para descargar",
+    "failed": "No se pudo generar el reporte. Inténtalo de nuevo.",
+    "readOnly": "Tu rol puede descargar reportes, pero no generarlos ni programarlos."
+  },
+  "scheduled": {
+    "title": "Reportes programados",
+    "new": "Nuevo",
+    "empty": "Aún no hay reportes programados.",
+    "daily": "Todos los días · {hora} · {formato}",
+    "weekly": "Cada {dia} · {hora} · {formato}",
+    "monthly": "Día {dia} de cada mes · {hora} · {formato}",
+    "to": "Para {correo}",
+    "active": "Activo",
+    "paused": "Pausado",
+    "delete": "Eliminar {nombre}",
+    "confirmDelete": "¿Eliminar el reporte programado «{nombre}»? Dejará de enviarse.",
+    "deleted": "Reporte programado eliminado"
+  },
+  "scheduleModal": {
+    "title": "Programar un reporte",
+    "description": "Se genera solo con la frecuencia que elijas y se envía por correo.",
+    "name": "Nombre",
+    "type": "Tipo de reporte",
+    "format": "Formato",
+    "frequency": "Frecuencia",
+    "weekday": "Día de la semana",
+    "monthday": "Día del mes",
+    "time": "Hora",
+    "recipient": "Enviar a",
+    "submit": "Programar",
+    "created": "Reporte programado"
+  },
+  "downloads": {
+    "title": "Descargas recientes",
+    "kept": "Se guardan 30 días",
+    "emptyTitle": "Aún no hay reportes",
+    "emptyText": "Los que generes aparecerán aquí para descargarlos.",
+    "count": "{shown} de {total} reportes",
+    "download": "Descargar {nombre}",
+    "again": "Generar de nuevo {nombre}",
+    "estado": {
+      "listo": "Listo",
+      "fallo": "Falló",
+      "vencido": "Vencido",
+      "generando": "Generando"
+    }
+  }
 }

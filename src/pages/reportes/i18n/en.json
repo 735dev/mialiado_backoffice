@@ -1,3 +1,143 @@
 {
-  "title": "Reports"
+  "title": "Reports",
+  "subtitle": "Generate custom exports, schedule them and download what is ready.",
+  "fullHistory": "Full history",
+  "tipo": {
+    "canjes": "Redemptions",
+    "comercios": "Merchants",
+    "usuarios": "Users",
+    "recargas": "Top-ups",
+    "impulsos": "Boosts",
+    "valoraciones": "Ratings"
+  },
+  "niveles": {
+    "aliado": "Aliado",
+    "aliadopro": "AliadoPro",
+    "aliadoplus": "AliadoPlus"
+  },
+  "frecuencia": {
+    "diario": "Every day",
+    "semanal": "Every week",
+    "mensual": "Every month"
+  },
+  "steps": {
+    "type": "Report type",
+    "range": "Date range",
+    "segment": "Segment",
+    "columns": "Columns",
+    "format": "Format"
+  },
+  "fields": {
+    "from": "From",
+    "to": "To",
+    "category": "Category",
+    "zone": "Zone",
+    "level": "Level",
+    "all": "All",
+    "allMasc": "All"
+  },
+  "quick": {
+    "ultimos7": "Last 7 days",
+    "esteMes": "This month",
+    "mesAnterior": "Last month",
+    "ultimos90": "Last 90 days"
+  },
+  "col": {
+    "folio": "Receipt",
+    "comercio": "Merchant",
+    "usuario": "User",
+    "nivel": "Level",
+    "descuento": "Discount",
+    "total": "Total charged",
+    "fecha": "Date",
+    "zona": "Zone",
+    "estado": "Status",
+    "cajero": "Cashier",
+    "categoria": "Category",
+    "promocion": "Promotion",
+    "id": "ID",
+    "nombre": "Name",
+    "rif": "Tax ID",
+    "promos_activas": "Active promotions",
+    "canjes": "Redemptions",
+    "registro": "Signed up",
+    "correo": "Email",
+    "compras": "Purchases",
+    "ahorro_total": "Total savings",
+    "ciudad": "City",
+    "ultimo_acceso": "Last access",
+    "referencia": "Reference",
+    "metodo": "Method",
+    "monto": "Amount",
+    "comision": "Fee",
+    "puja_diaria": "Daily bid",
+    "dias": "Days",
+    "gasto": "Spend",
+    "vistas": "Views",
+    "estrellas": "Stars",
+    "comentario": "Comment"
+  },
+  "errors": {
+    "columnas": "Choose at least one column",
+    "pdf": "PDF is not available yet. Use CSV or XLSX.",
+    "rango": "The end date cannot be before the start date",
+    "dia": "Choose the day"
+  },
+  "generator": {
+    "aria": "Report generator",
+    "title": "New report",
+    "draft": "Draft",
+    "pdfNotice": "PDF is not available yet; generate the report as CSV or XLSX.",
+    "estimate": "{filas} estimated rows · {columnas} columns · about {peso}.",
+    "estimating": "Calculating the report size…",
+    "estimateNone": "Choose at least one column to estimate the report.",
+    "schedule": "Schedule delivery",
+    "generate": "Generate report",
+    "ready": "Report “{nombre}” is ready to download",
+    "failed": "The report could not be generated. Try again.",
+    "readOnly": "Your role can download reports but cannot generate or schedule them."
+  },
+  "scheduled": {
+    "title": "Scheduled reports",
+    "new": "New",
+    "empty": "There are no scheduled reports yet.",
+    "daily": "Every day · {hora} · {formato}",
+    "weekly": "Every {dia} · {hora} · {formato}",
+    "monthly": "Day {dia} of every month · {hora} · {formato}",
+    "to": "To {correo}",
+    "active": "Active",
+    "paused": "Paused",
+    "delete": "Delete {nombre}",
+    "confirmDelete": "Delete the scheduled report “{nombre}”? It will stop being sent.",
+    "deleted": "Scheduled report deleted"
+  },
+  "scheduleModal": {
+    "title": "Schedule a report",
+    "description": "It is generated automatically at the frequency you choose and sent by email.",
+    "name": "Name",
+    "type": "Report type",
+    "format": "Format",
+    "frequency": "Frequency",
+    "weekday": "Day of the week",
+    "monthday": "Day of the month",
+    "time": "Time",
+    "recipient": "Send to",
+    "submit": "Schedule",
+    "created": "Report scheduled"
+  },
+  "downloads": {
+    "title": "Recent downloads",
+    "kept": "Kept for 30 days",
+    "emptyTitle": "No reports yet",
+    "emptyText": "The ones you generate will show up here to download.",
+    "count": "{shown} of {total} reports",
+    "download": "Download {nombre}",
+    "again": "Generate {nombre} again",
+    "estado": {
+      "listo": "Ready",
+      "fallo": "Failed",
+      "vencido": "Expired",
+      "generando": "Generating"
+    }
+  }
 }

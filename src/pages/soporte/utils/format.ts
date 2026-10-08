@@ -14,8 +14,9 @@ export function fmtFechaHora(iso: string, lang: string): string {
   return new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }).format(new Date(iso));
 }
 
+/** «$25,00» (es) o «$25.00» (en). */
 export function fmtDinero(n: number, lang: string): string {
-  return new Intl.NumberFormat(lang, { style: 'currency', currency: 'USD' }).format(n);
+  return `$${new Intl.NumberFormat(lang === 'es' ? 'es-VE' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(n)}`;
 }
 
 export function iniciales(nombre: string): string {

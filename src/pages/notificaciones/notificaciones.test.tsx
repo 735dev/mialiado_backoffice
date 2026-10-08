@@ -101,7 +101,7 @@ describe('B12 · pantalla', () => {
     await userEvent.type(screen.getByLabelText('Mensaje'), 'Hay 12 promos nuevas');
     await userEvent.click(screen.getByRole('button', { name: 'Enviar notificación' }));
     const dialogo = await screen.findByRole('dialog');
-    expect(within(dialogo).getByText('Se enviará ahora a 3200 personas. ¿Continuar?')).toBeInTheDocument();
+    expect(within(dialogo).getByText('Se enviará ahora a 3.200 personas. ¿Continuar?')).toBeInTheDocument();
     expect(crear).not.toHaveBeenCalled();
     await userEvent.click(within(dialogo).getByRole('button', { name: 'Confirmar' }));
     await waitFor(() =>

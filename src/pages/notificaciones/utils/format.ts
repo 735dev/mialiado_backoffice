@@ -1,11 +1,14 @@
 const TZ = 'America/Caracas';
 
-export const fmtNumero = (n: number, lang: string): string => new Intl.NumberFormat(lang).format(n);
+/** Español de Venezuela: «12.480» y decimal con coma. */
+const loc = (lang: string): string => (lang === 'es' ? 'es-VE' : 'en-US');
+
+export const fmtNumero = (n: number, lang: string): string => new Intl.NumberFormat(loc(lang)).format(n);
 
 /** 3200 -> «3,2k»; por debajo de mil, el numero tal cual. */
 export function fmtCompacto(n: number, lang: string): string {
   if (n < 1000) return String(n);
-  return `${(n / 1000).toLocaleString(lang, { maximumFractionDigits: 1 })}k`;
+  return `${(n / 1000).toLocaleString(loc(lang), { maximumFractionDigits: 1 })}k`;
 }
 
 export function fmtFechaHora(iso: string | null, lang: string): string {

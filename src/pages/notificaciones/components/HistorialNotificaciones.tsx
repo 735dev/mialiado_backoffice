@@ -36,7 +36,7 @@ export function HistorialNotificaciones({ historial: h, canEdit }: HistorialProp
     notify.confirm(t('notificaciones.history.confirmSend', { titulo: n.titulo }), () => {
       void enviarNotificacion(n.id).then((res) => {
         if (res.ok) {
-          notify.toast.success(t('notificaciones.toast.sent', { n: res.data.enviados }));
+          notify.toast.success(t('notificaciones.toast.sent', { n: fmtNumero(res.data.enviados, lang) }));
           h.reload();
         } else notify.fromApiError(res);
       });
