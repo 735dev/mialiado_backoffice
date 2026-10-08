@@ -1,3 +1,65 @@
 {
-  "title": "Overview"
+  "title": "Overview",
+  "saludo": {
+    "morning": "Good morning, {nombre}",
+    "afternoon": "Good afternoon, {nombre}",
+    "evening": "Good evening, {nombre}"
+  },
+  "subtitulo": "{fecha} · San Cristóbal. Here is how Aliado is doing today.",
+  "exportar": "Export overview",
+  "nuevaComunicacion": "New message",
+  "sinPermiso": "You do not have access to this section.",
+  "error": { "title": "We could not load the overview" },
+  "kpi": {
+    "usuarios": "Active users",
+    "canjes": "Redemptions this month",
+    "comercios": "Active businesses",
+    "ingresos": "Boost revenue",
+    "vsMes": "vs. previous month",
+    "sinBase": "No previous month"
+  },
+  "canjes": {
+    "title": "Redemptions per day",
+    "subtitle": "Last {dias} days · {total} redemptions",
+    "rango": "Day range",
+    "dias": "{n} d",
+    "leyendaDia": "Redemptions per day",
+    "leyendaMedia": "7-day average",
+    "verTabla": "View as table",
+    "verGrafico": "View chart",
+    "colDia": "Day",
+    "colCanjes": "Redemptions",
+    "colMedia": "7 d avg",
+    "vacio": "No redemptions in this range yet.",
+    "aria": "Redemptions per day, last {dias} days, total {total}",
+    "tipCanjes": "{n} redemptions",
+    "tipMedia": "7 d avg: {n}"
+  },
+  "pendientes": {
+    "title": "Needs your attention",
+    "subtitle": "{n} pending today",
+    "comercios": "businesses to verify",
+    "promos": "promotions to moderate",
+    "tickets": "support tickets",
+    "recargas": "top-ups to reconcile",
+    "revisar": "Review"
+  },
+  "top": {
+    "title": "Top businesses",
+    "subtitle": "By redemptions · last 30 days",
+    "vacio": "No redemptions to rank yet."
+  },
+  "categorias": {
+    "title": "Redemptions by category",
+    "subtitle": "{n} redemptions this month",
+    "vacio": "No redemptions by category yet."
+  },
+  "actividad": {
+    "title": "Recent activity",
+    "subtitle": "From the team and the platform",
+    "verTodo": "See all",
+    "vacio": "No recent activity.",
+    "ahora": "now",
+    "hace": { "min": "{n} min ago", "h": "{n} h ago", "d": "{n} d ago" }
+  }
 }

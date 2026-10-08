@@ -1,3 +1,65 @@
 {
-  "title": "Resumen"
+  "title": "Resumen",
+  "saludo": {
+    "morning": "Buenos días, {nombre}",
+    "afternoon": "Buenas tardes, {nombre}",
+    "evening": "Buenas noches, {nombre}"
+  },
+  "subtitulo": "{fecha} · San Cristóbal. Así va Aliado hoy.",
+  "exportar": "Exportar resumen",
+  "nuevaComunicacion": "Nueva comunicación",
+  "sinPermiso": "No tienes permiso para esta sección.",
+  "error": { "title": "No pudimos cargar el resumen" },
+  "kpi": {
+    "usuarios": "Usuarios activos",
+    "canjes": "Canjes del mes",
+    "comercios": "Comercios activos",
+    "ingresos": "Ingresos por impulsos",
+    "vsMes": "vs. mes anterior",
+    "sinBase": "Sin mes previo"
+  },
+  "canjes": {
+    "title": "Canjes por día",
+    "subtitle": "Últimos {dias} días · {total} canjes",
+    "rango": "Rango de días",
+    "dias": "{n} d",
+    "leyendaDia": "Canjes por día",
+    "leyendaMedia": "Media de 7 días",
+    "verTabla": "Ver como tabla",
+    "verGrafico": "Ver gráfico",
+    "colDia": "Día",
+    "colCanjes": "Canjes",
+    "colMedia": "Media 7 d",
+    "vacio": "Aún no hay canjes en este rango.",
+    "aria": "Canjes por día, últimos {dias} días, total {total}",
+    "tipCanjes": "{n} canjes",
+    "tipMedia": "Media 7 d: {n}"
+  },
+  "pendientes": {
+    "title": "Requiere tu atención",
+    "subtitle": "{n} pendientes hoy",
+    "comercios": "comercios por verificar",
+    "promos": "promos por moderar",
+    "tickets": "tickets de soporte",
+    "recargas": "recargas por conciliar",
+    "revisar": "Revisar"
+  },
+  "top": {
+    "title": "Top comercios",
+    "subtitle": "Por canjes · últimos 30 días",
+    "vacio": "Todavía no hay canjes para clasificar."
+  },
+  "categorias": {
+    "title": "Canjes por categoría",
+    "subtitle": "{n} canjes del mes",
+    "vacio": "Sin canjes por categoría todavía."
+  },
+  "actividad": {
+    "title": "Actividad reciente",
+    "subtitle": "Del equipo y la plataforma",
+    "verTodo": "Ver todo",
+    "vacio": "Sin actividad reciente.",
+    "ahora": "ahora",
+    "hace": { "min": "hace {n} min", "h": "hace {n} h", "d": "hace {n} d" }
+  }
 }
