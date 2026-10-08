@@ -32,7 +32,7 @@ export function TwoFactorForm({ challenge, correo, busy, error, onSubmit, onBack
               {challenge.secreto}
             </p>
           )}
-          {challenge.otpauthUri && (
+          {challenge.otpauthUri?.startsWith('otpauth://') && (
             <a href={challenge.otpauthUri} className="font-semibold text-primary-deep underline">
               {t('acceso.openAuthenticator')}
             </a>

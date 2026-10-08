@@ -49,7 +49,7 @@ export function VersionesCard({ versiones, actual, borrador, canRestore, onResto
           {t('niveles.versiones.titulo')}
         </h2>
         {(versiones.length > RESUMIDO || expanded) && (
-          <button type="button" onClick={() => void toggle()} disabled={cargando} className="text-sm font-bold text-primary-deep underline disabled:opacity-50">
+          <button type="button" onClick={() => void toggle()} disabled={cargando} className="inline-flex min-h-11 items-center text-sm font-bold text-primary-deep underline disabled:opacity-50">
             {expanded ? t('niveles.versiones.verMenos') : t('niveles.versiones.verTodo')}
           </button>
         )}

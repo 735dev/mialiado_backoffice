@@ -96,8 +96,8 @@ Revisión en navegador (Edge headless con Playwright contra el backend real, SQL
 - B02: búsqueda global (⌘K) y avatar del encabezado del prototipo no están hechos. B13 «Ver canje» (en el prototipo enlaza a sí mismo): no hay pantalla de detalle de canje.
 - B08: con la semilla actual el backend devuelve `serie[].gasto` en 0 todos los días (el KPI de gasto total sí tiene valor); el gráfico muestra solo la línea de canjes. Es dato del backend.
 - B14: PDF no existe en el backend (422); la opción aparece deshabilitada.
-- Sin verificar en navegador: moderador/soporte/finanzas en oscuro y móvil, inglés pantalla por pantalla (una prueba compara las claves es/en), foco y teclado más allá de las pruebas de Testing Library, Safari/Firefox.
-- Accesibilidad: los enlaces en línea de las tablas miden ~24 px de alto (objetivo táctil menor de 44 px en móvil).
-- La sesión vive en `localStorage` vía redux-persist; evaluar cookie httpOnly o almacenamiento más seguro antes de producción.
+- Sin verificar en navegador: inglés pantalla por pantalla (una prueba compara las claves es/en), Safari/Firefox, lector de pantalla. Los 4 roles en claro/oscuro y móvil/escritorio se revisaron en la «Revisión final» de SESSIONS.md.
+- Accesibilidad: los enlaces en línea de las tablas y las casillas de la matriz de permisos miden ~24 px (el resto de objetivos táctiles ya es de 44 px en móvil).
+- La sesión vive en `localStorage` vía redux-persist; evaluar cookie httpOnly o almacenamiento más seguro antes de producción. `deploy/nginx.conf.example` trae CSP y cabeceras de seguridad; los CSV se exportan neutralizando fórmulas (`lib/utils/csv.ts`) y los enlaces del servidor solo se abren si son http(s) (`lib/utils/url.ts`).
 - React Router 6 emite avisos de *future flags* de v7 en las pruebas; migrar al subir la versión.
 - `npm install` avisa de vulnerabilidades; revisar con `npm audit`. Node local 18.17: ESLint 9 y algunas dependencias piden 18.18+/20 (solo avisos).
